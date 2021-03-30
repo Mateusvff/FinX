@@ -14,9 +14,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold( // Scaffold a ser buildado
+    return Scaffold(
+      // Scaffold a ser buildado
       backgroundColor: customBg,
-      appBar: AppBar( // Barra Inicial
+      appBar: AppBar(
+        // Barra Inicial
         title: Text(
           'Seja Bem Vindo,\n Carlos',
           style: TextStyle(
@@ -32,33 +34,57 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: SingleChildScrollView( // Scroll
-        child: Column( // Coluna Principal
+      body: SingleChildScrollView(
+        // Scroll
+        child: Column(
+          // Coluna Principal
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container( // Primeiro Container (PRINCIPAL)
-              margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
-              padding: const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(25))),
-              child: Column(),
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Container(
+                  // Primeiro Container (PRINCIPAL)
+                  margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
+                  padding:
+                      const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(25))),
+                  child: Column(),
+                ),
+                CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  radius: 35.0,
+                ),
+              ],
             ),
-            Container( // Segundo Container (INFO CARTOES)
+            Container(
+              // Segundo Container (INFO CARTOES)
               margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
               padding: const EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(25))),
             ),
-            Container( // Terceiro Container (EXTRATO DA CONTA BANCARIA)
+            Container(
+              // Terceiro Container (EXTRATO DA CONTA BANCARIA)
               margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
               padding: const EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(25))),
+              child: Column(
+                children: <Widget>[
+                  Text('Extrato da conta (Nubank)'),
+                  Text('Mês'),
+                  Text('fjksdbj'),
+                  Text('bhfvsdb'),
+                ],
+              ),
             ),
-            Container( // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
+            Container(
+              // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
               margin: const EdgeInsets.fromLTRB(55.0, 20.0, 55.0, 20.0),
               padding: const EdgeInsets.fromLTRB(5.0, 20.0, 5.0, 20.0),
               decoration: BoxDecoration(
