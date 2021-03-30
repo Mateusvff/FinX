@@ -32,73 +32,78 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
-            padding: EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: Column(),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
-            padding: EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
-            padding: EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(55.0, 20.0, 55.0, 20.0),
-            padding: EdgeInsets.fromLTRB(5.0, 20.0, 5.0, 20.0),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 10.0, right: 45.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Cartões',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 45.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Extrato',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 10.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Categorias',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
+              padding: const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(25))),
+              child: Column(),
             ),
-          )
-        ],
+            Container(
+              margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(25))),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(25))),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(55.0, 20.0, 55.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(5.0, 20.0, 5.0, 20.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(25))),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Cartões',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Extrato',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Categorias',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
