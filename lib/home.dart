@@ -102,43 +102,53 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Stack(
-              children: [
-                Container(
-                    // Terceiro Container (EXTRATO DA CONTA BANCARIA)
-                    margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
-                    padding:
-                        const EdgeInsets.fromLTRB(130.0, 50.0, 130.0, 50.0),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(25)))),
-                Positioned.fill(
-                  child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Cartões de crédito")),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 71.0),
+              child: SizedBox(
+                width: 383,
+                height: 112,
+                child: Container(
+                  // Terceiro Container (EXTRATO DA CONTA BANCARIA)
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(25))),
+                  child: Column(
+                    children: <Widget>[
+                      Text('Extrato da conta (Nubank)'),
+                      Text('Mês'),
+                      Text('fjksdbj'),
+                      Text('bhfvsdb'),
+                    ],
+                  ),
                 ),
-              ],
+              ),
             ),
-            Container(
-              // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
-              margin: const EdgeInsets.fromLTRB(55.0, 20.0, 55.0, 20.0),
-              padding: const EdgeInsets.all(5.0),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(25))),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: TextButton(
-                        child: Text('Cartões',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            )),
-                        onPressed: () {},
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 16.0),
+              child: SizedBox(
+                width: 300,
+                height: 50,
+                child: Container(
+                  // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(25))),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: TextButton(
+                            child: Text('Cartões',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                )),
+                            onPressed: () {},
+                          ),
+                        ),
                       ),
                       Expanded(
                         child: Container(
