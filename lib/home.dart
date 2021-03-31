@@ -56,14 +56,14 @@ class _HomeState extends State<Home> {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(25))),
                       child: Column(
-                        children: [],
+                        children: <Widget>[],
                       ),
                     ),
                   ),
                 ),
                 Positioned.fill(
                     child: Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment(0.0, 0.85),
                   child: CircleAvatar(
                     backgroundColor: customPurple,
                     radius: 30.0,
@@ -78,10 +78,13 @@ class _HomeState extends State<Home> {
                 Positioned.fill(
                     child: Align(
                   alignment: Alignment.topLeft,
-                  child: CircleAvatar(
-                    backgroundColor:
-                        customGrey, // Adicionar Foto do Usuario (Firebase)
-                    radius: 30.0,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5.0),
+                    child: CircleAvatar(
+                      backgroundColor:
+                          customGrey, // Adicionar Foto do Usuario (Firebase)
+                      radius: 30.0,
+                    ),
                   ),
                 )),
               ],
@@ -98,7 +101,7 @@ class _HomeState extends State<Home> {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
                   child: Column(
-                    children: [
+                    children: <Widget>[
                       Align(
                         alignment: Alignment(-0.8, 0.0),
                         child: Text("Cartão de crédito (banco)"),
