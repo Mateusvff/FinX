@@ -45,19 +45,29 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.fromLTRB(14.0, 20.0, 14.0, 47.0),
-                  child: SizedBox(
+                  child: Container(
                     width: 383.0,
                     height: 226.0,
-                    child: Container(
-                      padding:
-                          const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(25))),
-                      child: Column(
-                        children: <Widget>[],
-                      ),
+                    padding:
+                        const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(25))),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.arrow_back_ios_rounded,
+                          color: Colors.black,
+                        ),
+                        Text(
+                          'Mês atual',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        Icon(Icons.arrow_forward_ios_rounded,
+                            color: Colors.black)
+                      ],
                     ),
                   ),
                 ),
@@ -91,115 +101,106 @@ class _HomeState extends State<Home> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 50.0),
-              child: SizedBox(
+              child: Container(
                 width: 383,
                 height: 112,
-                child: Container(
-                  // Segundo Container (INFO CARTOES)
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(25))),
-                  child: Column(
-                    children: <Widget>[
-                      Align(
-                        alignment: Alignment(-0.8, 0.0),
-                        child: Text("Cartão de crédito (banco)"),
-                      ),
-                    ],
-                  ),
+                // Segundo Container (INFO CARTOES)
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: const BorderRadius.all(Radius.circular(25))),
+                child: Column(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment(-0.8, 0.0),
+                      child: Text("Cartão de crédito (banco)"),
+                    ),
+                  ],
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 71.0),
-              child: SizedBox(
+              child: Container(
                 width: 383,
                 height: 112,
-                child: Container(
-                  // Terceiro Container (EXTRATO DA CONTA BANCARIA)
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(25))),
-                  child: Column(
-                    children: <Widget>[
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20.0, top: 5.0),
-                          child: Text(
-                            'Extrato da conta (Nubank)',
-                          ),
+                // Terceiro Container (EXTRATO DA CONTA BANCARIA)
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: const BorderRadius.all(Radius.circular(25))),
+                child: Column(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0, top: 5.0),
+                        child: Text(
+                          'Extrato da conta (Nubank)',
                         ),
                       ),
-                      Text('Mês'),
-                      Text('fjksdbj'),
-                      Text('bhfvsdb'),
-                    ],
-                  ),
+                    ),
+                    Text('Mês'),
+                    Text('Comedia'),
+                    Text('Noia'),
+                  ],
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 16.0),
-              child: SizedBox(
+              child: Container(
                 width: 300,
                 height: 50,
-                child: Container(
-                  // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(25))),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            child: Text('Cartões',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                )),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            child: Text('Extrato',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                )),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            child: Text(
-                              'Categorias',
+                // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: const BorderRadius.all(Radius.circular(25))),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: TextButton(
+                          child: Text('Cartões',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                              ),
-                            ),
-                            onPressed: () {},
-                          ),
+                              )),
+                          onPressed: () {},
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: TextButton(
+                          child: Text('Extrato',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              )),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: TextButton(
+                          child: Text(
+                            'Categorias',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
