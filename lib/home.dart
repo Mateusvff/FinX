@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         // Barra Inicial
         title: Text(
-          'Seja Bem Vindo,\n Carlos',
+          'Seja Bem Vindo,\n xxxx', // o nome sera pego pelo firebase
           style: TextStyle(
             fontSize: 16.0,
           ),
@@ -39,25 +39,15 @@ class _HomeState extends State<Home> {
         child: Column(
           // Coluna Principal
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Container(
-                  // Primeiro Container (PRINCIPAL)
-                  margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
-                  padding:
-                      const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(25))),
-                  child: Column(),
-                ),
-                CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  radius: 35.0,
-                ),
-              ],
+          children: [
+            Container(
+              // Primeiro Container (PRINCIPAL)
+              margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
+              padding: const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(25))),
+              child: Column(),
             ),
             Container(
               // Segundo Container (INFO CARTOES)
@@ -74,14 +64,6 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(25))),
-              child: Column(
-                children: <Widget>[
-                  Text('Extrato da conta (Nubank)'),
-                  Text('Mês'),
-                  Text('fjksdbj'),
-                  Text('bhfvsdb'),
-                ],
-              ),
             ),
             Container(
               // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
@@ -95,33 +77,38 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: Container(
                       alignment: Alignment.center,
-                      child: Text(
-                        'Cartões',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      child: TextButton(
+                        child: Text('Cartões',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            )),
+                        onPressed: () {},
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       alignment: Alignment.center,
-                      child: Text(
-                        'Extrato',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      child: TextButton(
+                        child: Text('Extrato',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            )),
+                        onPressed: () {},
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       alignment: Alignment.center,
-                      child: Text(
-                        'Categorias',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                      child: TextButton(
+                        child: Text(
+                          'Categorias',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
+                        onPressed: () {},
                       ),
                     ),
                   ),
