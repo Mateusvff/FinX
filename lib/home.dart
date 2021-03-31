@@ -5,6 +5,7 @@ const customPurple = const Color(0xff7524ff); // Cor Principal
 const customRed = const Color(0xfff03244); // Vermelho Customizado
 const customCyan = const Color(0xff00d5e2); // Ciano Customizado
 const customPink = const Color(0xfffc00e3); // Rosa Customizado
+const customGrey = const Color(0xffc4c4c4); // Cinza Customizado
 
 class Home extends StatefulWidget {
   @override
@@ -79,7 +80,7 @@ class _HomeState extends State<Home> {
                   alignment: Alignment.topLeft,
                   child: CircleAvatar(
                     backgroundColor:
-                        Colors.grey, // Adicionar Foto do Usuario (Firebase)
+                        customGrey, // Adicionar Foto do Usuario (Firebase)
                     radius: 30.0,
                   ),
                 )),
