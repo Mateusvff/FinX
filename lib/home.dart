@@ -118,6 +118,7 @@ class _HomeState extends State<Home> {
                 height: 112,
                 child: Container(
                   // Terceiro Container (EXTRATO DA CONTA BANCARIA)
+<<<<<<< Updated upstream
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius:
@@ -128,6 +129,19 @@ class _HomeState extends State<Home> {
                         textAlign: TextAlign.right,),
 
                     ],
+=======
+                  margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
+                  padding: const EdgeInsets.fromLTRB(130.0, 60.0, 130.0, 60.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(
+                          Radius.circular(25)))),
+              Positioned.fill(
+                    child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text("Cartões de crédito")
+                    ),
+>>>>>>> Stashed changes
                   ),
                 ),
               ),
