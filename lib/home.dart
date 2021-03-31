@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
                     child: CircleAvatar(
                       backgroundColor:
                           Colors.grey, // Adicionar Foto do Usuario (Firebase)
-                      radius: 30.0,
+                      radius: 33.0,
                     ),
                   )),
                 ],
