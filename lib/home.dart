@@ -41,6 +41,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+<<<<<<< Updated upstream
               child: Stack(
                 children: [
                   Container(
@@ -54,10 +55,26 @@ class _HomeState extends State<Home> {
                       children: [
 
                       ],
+=======
+              // Primeiro Container (PRINCIPAL)
+              child: Stack(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
+                    padding:
+                        const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(25))),
+                    child: Column(
+                      children: [],
+>>>>>>> Stashed changes
                     ),
                   ),
                   Positioned.fill(
                       child: Align(
+<<<<<<< Updated upstream
                         alignment: Alignment.bottomCenter,
                         child: CircleAvatar(
                           backgroundColor: customPurple,
@@ -79,6 +96,29 @@ class _HomeState extends State<Home> {
                         ),
                       )
                   ),
+=======
+                    alignment: Alignment.bottomCenter,
+                    child: CircleAvatar(
+                      backgroundColor: customPurple,
+                      radius: 30.0,
+                      child: IconButton(
+                        icon: Icon(Icons.add),
+                        iconSize: 40.0,
+                        color: Colors.white,
+                        onPressed: () {},
+                      ),
+                    ),
+                  )),
+                  Positioned.fill(
+                      child: Align(
+                    alignment: Alignment.topLeft,
+                    child: CircleAvatar(
+                      backgroundColor:
+                          Colors.grey, // Adicionar Foto do Usuario (Firebase)
+                      radius: 30.0,
+                    ),
+                  )),
+>>>>>>> Stashed changes
                 ],
               ),
             ),
