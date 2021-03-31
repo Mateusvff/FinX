@@ -90,14 +90,25 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(25))),
             ),
-            Container(
-              // Terceiro Container (EXTRATO DA CONTA BANCARIA)
-              margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
-              padding: const EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(25))),
+            Stack(
+              children: [
+                Container(
+                  // Terceiro Container (EXTRATO DA CONTA BANCARIA)
+                  margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
+                  padding: const EdgeInsets.fromLTRB(130.0, 50.0, 130.0, 50.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(
+                          Radius.circular(25)))),
+              Positioned.fill(
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Cartões de crédito")
+                    ),
+                  ),
+              ],
             ),
+
             Container(
               // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
               margin: const EdgeInsets.fromLTRB(55.0, 20.0, 55.0, 20.0),
