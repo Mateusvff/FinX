@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         // Barra Inicial
         title: Text(
-          'Seja Bem Vindo,\n Carlos', // Adicionar Nome do Usuario (Firebase)
+          'Seja Bem Vindo,\n xxxx', // o nome sera pego pelo firebase
           style: TextStyle(
             fontSize: 16.0,
           ),
@@ -41,46 +41,13 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              child: Stack(
-                children: [
-                  Container(
-                    // Primeiro Container (PRINCIPAL)
-                    margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
-                    padding: const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: const BorderRadius.all(Radius.circular(25))),
-                    child: Column(
-                      children: [
-
-                      ],
-                    ),
-                  ),
-                  Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: CircleAvatar(
-                          backgroundColor: customPurple,
-                          radius: 30.0,
-                          child: IconButton(
-                            icon: Icon(Icons.add),
-                            color: Colors.white,
-                            onPressed: (){},
-                          ),
-                        ),
-                      )
-                  ),
-                  Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.grey, // Adicionar Foto do Usuario (Firebase)
-                          radius: 25.0,
-                        ),
-                      )
-                  ),
-                ],
-              ),
+              // Primeiro Container (PRINCIPAL)
+              margin: const EdgeInsets.fromLTRB(5.0, 25.0, 5.0, 25.0),
+              padding: const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(25))),
+              child: Column(),
             ),
             Container(
               // Segundo Container (INFO CARTOES)
@@ -92,16 +59,22 @@ class _HomeState extends State<Home> {
             ),
             Container(
               // Terceiro Container (EXTRATO DA CONTA BANCARIA)
-              margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
-              padding: const EdgeInsets.fromLTRB(15.0, 60.0, 15.0, 60.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(25))),
+              child: Column(
+                children: <Widget>[
+                  Text('Extrato da conta (Nubank)'),
+                  Text('Mês'),
+                  Text('fjksdbj'),
+                  Text('bhfvsdb'),
+                ],
+              ),
             ),
             Container(
               // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
               margin: const EdgeInsets.fromLTRB(55.0, 20.0, 55.0, 20.0),
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.fromLTRB(5.0, 20.0, 5.0, 20.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(25))),
@@ -114,7 +87,6 @@ class _HomeState extends State<Home> {
                         child: Text('Cartões',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
                             )),
                         onPressed: () {},
                       ),
@@ -127,7 +99,6 @@ class _HomeState extends State<Home> {
                         child: Text('Extrato',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
                             )),
                         onPressed: () {},
                       ),
@@ -141,7 +112,6 @@ class _HomeState extends State<Home> {
                           'Categorias',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
                           ),
                         ),
                         onPressed: () {},
