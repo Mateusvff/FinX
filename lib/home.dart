@@ -97,6 +97,14 @@ class _HomeState extends State<Home> {
                       color: Colors.white,
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
+                  child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment(-0.8,0.0 ),
+                          child: Text("Cartão de crédito (banco)"),
+                        ),
+                      ],
+                  ),
                 ),
               ),
             ),
