@@ -98,12 +98,12 @@ class _HomeState extends State<Home> {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
                   child: Column(
-                      children: [
-                        Align(
-                          alignment: Alignment(-0.8,0.0 ),
-                          child: Text("Cartão de crédito (banco)"),
-                        ),
-                      ],
+                    children: [
+                      Align(
+                        alignment: Alignment(-0.8, 0.0),
+                        child: Text("Cartão de crédito (banco)"),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -124,7 +124,7 @@ class _HomeState extends State<Home> {
                       Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
+                          padding: const EdgeInsets.only(left: 20.0, top: 5.0),
                           child: Text(
                             'Extrato da conta (Nubank)',
                           ),
