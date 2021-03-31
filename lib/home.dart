@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                     alignment: Alignment.bottomCenter,
                     child: CircleAvatar(
                       backgroundColor: customPurple,
-                      radius: 30.0,
+                      radius: 40.0,
                       child: IconButton(
                         icon: Icon(Icons.add),
                         iconSize: 40.0,
