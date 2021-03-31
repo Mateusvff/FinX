@@ -5,6 +5,7 @@ const customPurple = const Color(0xff7524ff); // Cor Principal
 const customRed = const Color(0xfff03244); // Vermelho Customizado
 const customCyan = const Color(0xff00d5e2); // Ciano Customizado
 const customPink = const Color(0xfffc00e3); // Rosa Customizado
+const customGrey = const Color(0xffc4c4c4); // Cinza Customizado
 
 class Home extends StatefulWidget {
   @override
@@ -39,54 +40,51 @@ class _HomeState extends State<Home> {
         child: Column(
           // Coluna Principal
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(14.0, 20.0, 14.0, 47.0),
-              child: SizedBox(
-                width: 383,
-                height: 226,
-                child: Container(
-                  // Primeiro Container (PRINCIPAL)
-                  child: Stack(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(
-                            190.0, 120.0, 190.0, 120.0),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(25))),
-                        child: Column(
-                          children: [],
-                        ),
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(14.0, 20.0, 14.0, 47.0),
+                  child: SizedBox(
+                    width: 383.0,
+                    height: 226.0,
+                    child: Container(
+                      padding:
+                          const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(25))),
+                      child: Column(
+                        children: [],
                       ),
-                      Positioned.fill(
-                          child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: CircleAvatar(
-                          backgroundColor: customPurple,
-                          radius: 30.0,
-                          child: IconButton(
-                            icon: Icon(Icons.add),
-                            iconSize: 40.0,
-                            color: Colors.white,
-                            onPressed: () {},
-                          ),
-                        ),
-                      )),
-                      Positioned.fill(
-                          child: Align(
-                        alignment: Alignment.topLeft,
-                        child: CircleAvatar(
-                          backgroundColor: Colors
-                              .grey, // Adicionar Foto do Usuario (Firebase)
-                          radius: 30.0,
-                        ),
-                      )),
-                    ],
+                    ),
                   ),
                 ),
-              ),
+                Positioned.fill(
+                    child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: CircleAvatar(
+                    backgroundColor: customPurple,
+                    radius: 30.0,
+                    child: IconButton(
+                      icon: Icon(Icons.add),
+                      iconSize: 40.0,
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                )),
+                Positioned.fill(
+                    child: Align(
+                  alignment: Alignment.topLeft,
+                  child: CircleAvatar(
+                    backgroundColor:
+                        customGrey, // Adicionar Foto do Usuario (Firebase)
+                    radius: 30.0,
+                  ),
+                )),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 50.0),
@@ -99,15 +97,6 @@ class _HomeState extends State<Home> {
                       color: Colors.white,
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment(-0.8,0.0 ),
-                        child: Text("Cartão de crédito (banco)"),
-                      ),
-
-                    ]
-                  ),
                 ),
               ),
             ),
@@ -118,30 +107,25 @@ class _HomeState extends State<Home> {
                 height: 112,
                 child: Container(
                   // Terceiro Container (EXTRATO DA CONTA BANCARIA)
-<<<<<<< Updated upstream
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
                   child: Column(
                     children: <Widget>[
-                      Text('Extrato da conta (Nubank)',
-                        textAlign: TextAlign.right,),
-
-                    ],
-=======
-                  margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 20.0),
-                  padding: const EdgeInsets.fromLTRB(130.0, 60.0, 130.0, 60.0),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: const BorderRadius.all(
-                          Radius.circular(25)))),
-              Positioned.fill(
-                    child: Align(
+                      Align(
                         alignment: Alignment.topLeft,
-                        child: Text("Cartões de crédito")
-                    ),
->>>>>>> Stashed changes
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: Text(
+                            'Extrato da conta (Nubank)',
+                          ),
+                        ),
+                      ),
+                      Text('Mês'),
+                      Text('fjksdbj'),
+                      Text('bhfvsdb'),
+                    ],
                   ),
                 ),
               ),
