@@ -21,9 +21,20 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Scaffold a ser buildado
+      endDrawer: Drawer(),
       backgroundColor: customBg,
       appBar: AppBar(
         // Barra Inicial
+        actions: <Widget>[
+          //Mudando o icone do EndDrawer
+          Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            ),
+          ),
+        ],
         title: Text(
           'Seja Bem Vindo,\n Wesley Gonzaga', // Adicionar Nome do Usuario (Firebase)
           style: TextStyle(
@@ -31,13 +42,6 @@ class _HomeState extends State<Home> {
           ),
         ),
         backgroundColor: customBg,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings_outlined),
-            color: Colors.white,
-            onPressed: () {},
-          )
-        ],
       ),
       body: SingleChildScrollView(
         // Scroll
