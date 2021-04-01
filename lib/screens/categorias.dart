@@ -8,6 +8,8 @@ class categorias extends StatefulWidget {
 class _categoriasState extends State<categorias> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Color(0xff131b26),
+    );
   }
 }
