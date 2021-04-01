@@ -8,6 +8,8 @@ class extrato extends StatefulWidget {
 class _extratoState extends State<extrato> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Color(0xff131b26),
+    );
   }
 }
