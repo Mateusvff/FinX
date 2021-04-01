@@ -52,8 +52,6 @@ class _HomeState extends State<Home> {
                   child: Container(
                     width: 383.0,
                     height: 226.0,
-                    padding:
-                        const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius:
@@ -129,10 +127,9 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-
                     Padding(
-                        padding: EdgeInsets.only(top: 0.0),
-                         child: LinearPercentIndicator(
+                      padding: EdgeInsets.only(top: 0.0),
+                      child: LinearPercentIndicator(
                         width: 300.00,
                         lineHeight: 10.0,
                         percent: 0.2,
@@ -140,7 +137,6 @@ class _HomeState extends State<Home> {
                         progressColor: customPurple,
                       ),
                     ),
-
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
