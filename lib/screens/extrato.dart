@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class extrato extends StatefulWidget {
+class Extrato extends StatefulWidget {
   @override
-  _extratoState createState() => _extratoState();
+  _ExtratoState createState() => _ExtratoState();
 }
 
-class _extratoState extends State<extrato> {
+class _ExtratoState extends State<Extrato> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class cartoes extends StatefulWidget {
+class Cartoes extends StatefulWidget {
   @override
-  _cartoesState createState() => _cartoesState();
+  _CartoesState createState() => _CartoesState();
 }
 
-class _cartoesState extends State<cartoes> {
+class _CartoesState extends State<Cartoes> {
   @override
   Widget build(BuildContext context) {
     return Container(

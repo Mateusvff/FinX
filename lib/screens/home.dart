@@ -193,7 +193,7 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (BuildContext context) => cartoes(),
+                                builder: (BuildContext context) => Cartoes(),
                               ),
                             );
                           },
@@ -213,7 +213,7 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (BuildContext context) => extrato(),
+                                builder: (BuildContext context) => Extrato(),
                               ),
                             );
                           },
@@ -235,7 +235,7 @@ class _HomeState extends State<Home> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (BuildContext context) => categorias(),
+                                builder: (BuildContext context) => Categorias(),
                               ),
                             );
                           },
