@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'cartoes.dart';
-import 'extrato.dart';
-import 'categorias.dart';
 
 const customBg = const Color(0xff131b26); // Nosso BackGround
 const customPurple = const Color(0xff7524ff); // Cor Principal
@@ -25,7 +21,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         // Barra Inicial
         title: Text(
-          'Seja Bem Vindo,\n Wesley Gonzaga', // Adicionar Nome do Usuario (Firebase)
+          'Seja Bem Vindo,\n Carlos', // Adicionar Nome do Usuario (Firebase)
           style: TextStyle(
             fontSize: 16.0,
           ),
@@ -50,9 +46,10 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(14.0, 20.0, 14.0, 47.0),
                   child: Container(
-                    /*------------PRIMEIRO CONTAINER (Extrato MÊS)------------------*/
                     width: 383.0,
                     height: 226.0,
+                    padding:
+                        const EdgeInsets.fromLTRB(190.0, 120.0, 190.0, 120.0),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius:
@@ -60,24 +57,19 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            IconButton(
-                              icon: Icon(Icons.arrow_back_ios_rounded),
-                              color: Colors.black,
-                              onPressed: () {},
-                            ),
-                            Text(
-                              'Mês atual',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                            IconButton(
-                              icon: Icon(Icons.arrow_forward_ios_rounded,
-                                  color: Colors.black),
-                              onPressed: () {},
-                            ),
-                          ],
+                        IconButton(
+                          icon: Icon(Icons.arrow_back_ios_rounded),
+                          color: Colors.black,
+                          onPressed: () {},
+                        ),
+                        Text(
+                          'Mês atual',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios_rounded,
+                              color: Colors.black),
+                          onPressed: () {},
                         )
                       ],
                     ),
@@ -116,7 +108,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 width: 383,
                 height: 112,
-                /*--------------------- Segundo Container (INFO CARTOES)----------------------*/
+                // Segundo Container (INFO CARTOES)
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(25))),
@@ -133,20 +125,10 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 0.0),
-                      child: LinearPercentIndicator(
-                        width: 300.00,
-                        lineHeight: 10.0,
-                        percent: 0.2,
-                        backgroundColor: Colors.grey,
-                        progressColor: customPurple,
-                      ),
-                    ),
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0, top: 60.0),
+                        padding: const EdgeInsets.only(left: 15.0, top: 65.0),
                         child: Text(
                           "Fechamento da fatura: xx/xx/xxxx",
                           style: TextStyle(fontSize: 12.0),
@@ -162,7 +144,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 width: 383,
                 height: 112,
-                /*--------------------------- Terceiro Container (EXTRATO DA CONTA BANCARIA)--------------------*/
+                // Terceiro Container (EXTRATO DA CONTA BANCARIA)
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(25))),
@@ -189,7 +171,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 width: 300,
                 height: 50,
-                /*---------------- Quarto Container (CARTOES/EXTRATO/CATEGORIAS)----------------------------------*/
+                // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(25))),
@@ -204,14 +186,7 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               )),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (BuildContext context) => Cartoes(),
-                              ),
-                            );
-                          },
+                          onPressed: () {},
                         ),
                       ),
                     ),
@@ -224,14 +199,7 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               )),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (BuildContext context) => Extrato(),
-                              ),
-                            );
-                          },
+                          onPressed: () {},
                         ),
                       ),
                     ),
@@ -246,14 +214,7 @@ class _HomeState extends State<Home> {
                               color: Colors.black,
                             ),
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (BuildContext context) => Categorias(),
-                              ),
-                            );
-                          },
+                          onPressed: () {},
                         ),
                       ),
                     ),
