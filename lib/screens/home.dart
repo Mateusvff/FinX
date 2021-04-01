@@ -66,15 +66,18 @@ class _HomeState extends State<Home> {
                             IconButton(
                               icon: Icon(Icons.arrow_back_ios_rounded),
                               color: Colors.black,
+                              iconSize: 18,
                               onPressed: () {},
                             ),
                             Text(
                               'Mês atual',
-                              style: TextStyle(color: Colors.black),
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20),
                             ),
                             IconButton(
-                              icon: Icon(Icons.arrow_forward_ios_rounded,
-                                  color: Colors.black),
+                              icon: Icon(Icons.arrow_forward_ios_rounded),
+                              color: Colors.black,
+                              iconSize: 18,
                               onPressed: () {},
                             ),
                           ],
