@@ -111,9 +111,29 @@ class _HomeState extends State<Home> {
                 child: Column(
                   children: <Widget>[
                     Align(
-                      alignment: Alignment(-0.8, 0.0),
-                      child: Text("Cartão de crédito (banco)"),
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0, top: 5.0),
+                      child: Text("Cartão de crédito (banco)",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
+                          ),
                     ),
+                    ),
+
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left:15.0, top: 65.0),
+                        child: Text(
+                            "Fechamento da fatura: xx/xx/xxxx",
+                          style: TextStyle(
+                            fontSize: 12.0),
+
+                        ),
+                      ),
+                      ),
                   ],
                 ),
               ),
