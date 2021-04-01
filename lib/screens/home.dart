@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
                               icon: Icon(Icons.arrow_back_ios_rounded),
