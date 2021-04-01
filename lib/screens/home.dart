@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'cartoes.dart';
 import 'extrato.dart';
 import 'categorias.dart';
+
 
 const customBg = const Color(0xff131b26); // Nosso BackGround
 const customPurple = const Color(0xff7524ff); // Cor Principal
@@ -128,13 +130,33 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+<<<<<<< Updated upstream
+=======
+                    Padding(
+                        padding: EdgeInsets.only(top:10.0),
+                    child: LinearPercentIndicator(
+                      width: 300.00,
+                      lineHeight: 15.0,
+                      percent: 0.2,
+                      backgroundColor: Colors.grey,
+                      progressColor: Colors.blue,
+                    ),
+                    ),
+
+>>>>>>> Stashed changes
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 15.0, top: 65.0),
                         child: Text(
+<<<<<<< Updated upstream
                           "Fechamento da fatura: xx/xx/xxxx",
                           style: TextStyle(fontSize: 12.0),
+=======
+                            "Fechamento da fatura: xx/xx/xxxx",
+                          style: TextStyle(
+                            fontSize: 12.0),
+>>>>>>> Stashed changes
                         ),
                       ),
                     ),
