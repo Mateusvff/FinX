@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:projeto_flutter/Custom_Drawer.dart';
 import 'cartoes.dart';
 import 'extrato.dart';
 import 'categorias.dart';
-
-const customBg = const Color(0xff131b26); // Nosso BackGround
-const customPurple = const Color(0xff7524ff); // Cor Principal
-const customRed = const Color(0xfff03244); // Vermelho Customizado
-const customCyan = const Color(0xff00d5e2); // Ciano Customizado
-const customPink = const Color(0xfffc00e3); // Rosa Customizado
-const customGrey = const Color(0xffc4c4c4); // Cinza Customizado
+import '../Cores.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -21,7 +16,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Scaffold a ser buildado
-      endDrawer: Drawer(),
+      endDrawer: CustomDrawer(),
       backgroundColor: customBg,
       appBar: AppBar(
         // Barra Inicial
