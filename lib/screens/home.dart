@@ -189,7 +189,7 @@ class _HomeState extends State<Home> {
                     Align(
                       alignment: Alignment.topLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 20.0, top: 5.0),
+                        padding: const EdgeInsets.only(left: 40.0, top: 5.0),
                         child: Text(
                           "Cartão de crédito (banco)",
                           style: TextStyle(
@@ -198,13 +198,22 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 0.0),
+                      padding: EdgeInsets.only(),
                       child: LinearPercentIndicator(
-                        width: 300.00,
-                        lineHeight: 10.0,
-                        percent: 0.2,
+                        width: 320.00,
+                        lineHeight: 12.0,
+                        percent: 0.5,
                         backgroundColor: Colors.grey,
                         progressColor: customPurple,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Padding(
+                        padding: EdgeInsets.only(right:40.0),
+                        child: Text(
+                            "Limite disponível: R\$ XXX,XX",
+                        ),
                       ),
                     ),
                     Align(
