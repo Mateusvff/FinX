@@ -57,16 +57,20 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(
-                          Icons.arrow_back_ios_rounded,
+                        IconButton(
+                          icon: Icon(Icons.arrow_back_ios_rounded),
                           color: Colors.black,
+                          onPressed: () {},
                         ),
                         Text(
                           'Mês atual',
                           style: TextStyle(color: Colors.black),
                         ),
-                        Icon(Icons.arrow_forward_ios_rounded,
-                            color: Colors.black)
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios_rounded,
+                              color: Colors.black),
+                          onPressed: () {},
+                        )
                       ],
                     ),
                   ),
@@ -114,26 +118,23 @@ class _HomeState extends State<Home> {
                       alignment: Alignment.topLeft,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20.0, top: 5.0),
-                      child: Text("Cartão de crédito (banco)",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold),
-                          ),
+                        child: Text(
+                          "Cartão de crédito (banco)",
+                          style: TextStyle(
+                              fontSize: 15.0, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                    ),
-
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left:15.0, top: 65.0),
+                        padding: const EdgeInsets.only(left: 15.0, top: 65.0),
                         child: Text(
-                            "Fechamento da fatura: xx/xx/xxxx",
-                          style: TextStyle(
-                            fontSize: 12.0),
-
+                          "Fechamento da fatura: xx/xx/xxxx",
+                          style: TextStyle(fontSize: 12.0),
                         ),
                       ),
-                      ),
+                    ),
                   ],
                 ),
               ),
