@@ -36,7 +36,8 @@ class _HomeState extends State<Home> {
           ),
         ],
         title: Text(
-          'Seja Bem Vindo,\n Wesley Gonzaga', // Adicionar Nome do Usuario (Firebase)
+          'Seja Bem Vindo,\n Wesley Gonzaga',
+          /* Adicionar Nome do Usuario (Firebase) */
           style: TextStyle(
             fontSize: 16.0,
           ),
@@ -54,9 +55,9 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(14.0, 20.0, 14.0, 47.0),
                   child: Container(
-                    /*------------PRIMEIRO CONTAINER (Extrato MÊS)------------------*/
                     width: 383.0,
                     height: 226.0,
+                    /*------------PRIMEIRO CONTAINER (Extrato MÊS)------------------*/
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius:
@@ -70,10 +71,11 @@ class _HomeState extends State<Home> {
                               icon: Icon(Icons.arrow_back_ios_rounded),
                               color: Colors.black,
                               iconSize: 18,
-                              onPressed: () {},
+                              onPressed: () {}, /* Mes Passado */
                             ),
                             Text(
                               'Mês atual',
+                              /* Puxar de acordo com o mes atual */
                               style:
                                   TextStyle(color: Colors.black, fontSize: 20),
                             ),
@@ -81,8 +83,66 @@ class _HomeState extends State<Home> {
                               icon: Icon(Icons.arrow_forward_ios_rounded),
                               color: Colors.black,
                               iconSize: 18,
-                              onPressed: () {},
+                              onPressed: () {}, /* Proximo Mes */
                             ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Saldo em conta',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 14),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.remove_red_eye_sharp),
+                              color: Colors.black,
+                              iconSize: 18,
+                              onPressed:
+                                  () {}, /* Tampar o saldo do usuario ou Mostrar o saldo do usuario*/
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('R\$10,000,00',
+                                /* Puxar do usuario de acordo com Receita - Despesa */
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 18)),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Receitas ',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 16),
+                            ),
+                            Text(
+                              ' Despesas',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 16),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'R\$15.000,00 ',
+                              style: TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'R\$5.000,00 ',
+                              style: TextStyle(
+                                  color: customRed,
+                                  fontWeight: FontWeight.bold),
+                            )
                           ],
                         )
                       ],
@@ -99,7 +159,8 @@ class _HomeState extends State<Home> {
                       icon: Icon(Icons.add),
                       iconSize: 40.0,
                       color: Colors.white,
-                      onPressed: () {},
+                      onPressed:
+                          () {}, /* Abre container de Adicionar Despesa ou Receita */
                     ),
                   ),
                 )),
