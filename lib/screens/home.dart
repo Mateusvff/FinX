@@ -60,16 +60,20 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(
-                          Icons.arrow_back_ios_rounded,
+                        IconButton(
+                          icon: Icon(Icons.arrow_back_ios_rounded),
                           color: Colors.black,
+                          onPressed: () {},
                         ),
                         Text(
                           'Mês atual',
                           style: TextStyle(color: Colors.black),
                         ),
-                        Icon(Icons.arrow_forward_ios_rounded,
-                            color: Colors.black)
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios_rounded,
+                              color: Colors.black),
+                          onPressed: () {},
+                        )
                       ],
                     ),
                   ),
