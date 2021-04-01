@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'screens/home.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Home(),
-    theme: ThemeData(),
-  ));
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Home(),
+      theme: ThemeData(),
+    ),
+  );
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'cartoes.dart';
+import 'extrato.dart';
+import 'categorias.dart';
 
 const customBg = const Color(0xff131b26); // Nosso BackGround
 const customPurple = const Color(0xff7524ff); // Cor Principal
@@ -186,7 +189,13 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               )),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        cartoes()));
+                          },
                         ),
                       ),
                     ),
@@ -199,7 +208,13 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               )),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        extrato()));
+                          },
                         ),
                       ),
                     ),
@@ -214,7 +229,13 @@ class _HomeState extends State<Home> {
                               color: Colors.black,
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        categorias()));
+                          },
                         ),
                       ),
                     ),
