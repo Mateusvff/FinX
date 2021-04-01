@@ -133,12 +133,14 @@ class _HomeState extends State<Home> {
                           children: [
                             Text(
                               'R\$15.000,00 ',
+                              /* Puxar do Add Receitas */
                               style: TextStyle(
                                   color: Colors.green,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
                               'R\$5.000,00 ',
+                              /* Puxar do Add Despesas */
                               style: TextStyle(
                                   color: customRed,
                                   fontWeight: FontWeight.bold),
