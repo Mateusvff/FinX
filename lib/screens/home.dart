@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'cartoes.dart';
 import 'extrato.dart';
 import 'categorias.dart';
@@ -24,7 +25,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         // Barra Inicial
         title: Text(
-          'Seja Bem Vindo,\n Arthur', // Adicionar Nome do Usuario (Firebase)
+          'Seja Bem Vindo,\n Wesley Gonzaga', // Adicionar Nome do Usuario (Firebase)
           style: TextStyle(
             fontSize: 16.0,
           ),
@@ -128,6 +129,18 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+
+                    Padding(
+                        padding: EdgeInsets.only(top: 0.0),
+                         child: LinearPercentIndicator(
+                        width: 300.00,
+                        lineHeight: 10.0,
+                        percent: 0.2,
+                        backgroundColor: Colors.grey,
+                        progressColor: customPurple,
+                      ),
+                    ),
+
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
