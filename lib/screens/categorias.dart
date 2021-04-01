@@ -13,14 +13,11 @@ class _CategoriasState extends State<Categorias> {
       backgroundColor: customBg,
       appBar: AppBar(
         backgroundColor: customBg,
-        title: Center(
-          child: Text(
-            'Categorias',
-            style: TextStyle(
-              decoration: TextDecoration.none,
-              fontWeight: FontWeight.bold,
-              color: customGrey,
-            ),
+        title: Text(
+          'Categorias',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: customGrey,
           ),
         ),
       ),

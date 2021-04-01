@@ -13,18 +13,31 @@ class _ExtratoState extends State<Extrato> {
       backgroundColor: customBg,
       appBar: AppBar(
         backgroundColor: customBg,
-        title: Center(
-          child: Text(
-            'Extrato',
-            style: TextStyle(
-              decoration: TextDecoration.none,
-              fontWeight: FontWeight.bold,
-              color: customGrey,
-            ),
+        title: Text(
+          'Extrato',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: customGrey,
           ),
         ),
       ),
-      body: SingleChildScrollView(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Center(
+              child: Text(
+                'calendario',
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: customGrey),
+              ),
+            ),
+            Text(
+              'extrato',
+              style: TextStyle(fontWeight: FontWeight.bold, color: customGrey),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

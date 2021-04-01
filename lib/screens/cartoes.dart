@@ -13,18 +13,20 @@ class _CartoesState extends State<Cartoes> {
       backgroundColor: customBg,
       appBar: AppBar(
         backgroundColor: customBg,
-        title: Center(
-          child: Text(
-            'Cartões',
-            style: TextStyle(
-              decoration: TextDecoration.none,
-              fontWeight: FontWeight.bold,
-              color: customGrey,
-            ),
+        title: Text(
+          'Cartões',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: customGrey,
           ),
         ),
       ),
-      body: SingleChildScrollView(),
+      body: SingleChildScrollView(
+        child: Text(
+          'cartões cadastrados',
+          style: TextStyle(fontWeight: FontWeight.bold, color: customGrey),
+        ),
+      ),
     );
   }
 }
