@@ -50,6 +50,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(14.0, 20.0, 14.0, 47.0),
                   child: Container(
+                    /*------------PRIMEIRO CONTAINER (Extrato MÊS)------------------*/
                     width: 383.0,
                     height: 226.0,
                     decoration: BoxDecoration(
@@ -110,7 +111,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 width: 383,
                 height: 112,
-                // Segundo Container (INFO CARTOES)
+                /*--------------------- Segundo Container (INFO CARTOES)----------------------*/
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(25))),
@@ -140,7 +141,7 @@ class _HomeState extends State<Home> {
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0, top: 65.0),
+                        padding: const EdgeInsets.only(left: 15.0, top: 60.0),
                         child: Text(
                           "Fechamento da fatura: xx/xx/xxxx",
                           style: TextStyle(fontSize: 12.0),
@@ -156,7 +157,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 width: 383,
                 height: 112,
-                // Terceiro Container (EXTRATO DA CONTA BANCARIA)
+                /*--------------------------- Terceiro Container (EXTRATO DA CONTA BANCARIA)--------------------*/
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(25))),
@@ -183,7 +184,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 width: 300,
                 height: 50,
-                // Quarto Container (CARTOES/EXTRATO/CATEGORIAS)
+                /*---------------- Quarto Container (CARTOES/EXTRATO/CATEGORIAS)----------------------------------*/
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(25))),
