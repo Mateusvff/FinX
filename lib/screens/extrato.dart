@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class Extrato extends StatefulWidget {
   @override
@@ -8,18 +9,22 @@ class Extrato extends StatefulWidget {
 class _ExtratoState extends State<Extrato> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          'Extrato',
-          style: TextStyle(
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.bold,
-            color: Color(0xff7524ff),
+    return Scaffold(
+      backgroundColor: customBg,
+      appBar: AppBar(
+        backgroundColor: customBg,
+        title: Center(
+          child: Text(
+            'Extrato',
+            style: TextStyle(
+              decoration: TextDecoration.none,
+              fontWeight: FontWeight.bold,
+              color: customGrey,
+            ),
           ),
         ),
       ),
-      color: Color(0xff131b26),
+      body: SingleChildScrollView(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class Categorias extends StatefulWidget {
   @override
@@ -8,18 +9,22 @@ class Categorias extends StatefulWidget {
 class _CategoriasState extends State<Categorias> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          'Categorias',
-          style: TextStyle(
-            decoration: TextDecoration.none,
-            fontWeight: FontWeight.bold,
-            color: Color(0xff7524ff),
+    return Scaffold(
+      backgroundColor: customBg,
+      appBar: AppBar(
+        backgroundColor: customBg,
+        title: Center(
+          child: Text(
+            'Categorias',
+            style: TextStyle(
+              decoration: TextDecoration.none,
+              fontWeight: FontWeight.bold,
+              color: customGrey,
+            ),
           ),
         ),
       ),
-      color: Color(0xff131b26),
+      body: SingleChildScrollView(),
     );
   }
 }
