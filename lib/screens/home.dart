@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
           //Mudando o icone do EndDrawer
           Builder(
             builder: (context) => IconButton(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.settings_outlined),
               onPressed: () => Scaffold.of(context).openEndDrawer(),
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             ),
