@@ -58,11 +58,10 @@ class _HomeState extends State<Home> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(25))),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: <Widget>[
                             IconButton(
                               icon: Icon(Icons.arrow_back_ios_rounded),
                               color: Colors.black,
