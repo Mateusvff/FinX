@@ -13,6 +13,7 @@ class _cartoesState extends State<cartoes> {
         child: Text(
           'Cartões',
           style: TextStyle(
+            decoration: TextDecoration.none,
             fontWeight: FontWeight.bold,
             color: Color(0xff7524ff),
           ),

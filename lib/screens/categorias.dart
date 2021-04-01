@@ -13,6 +13,7 @@ class _categoriasState extends State<categorias> {
         child: Text(
           'Categorias',
           style: TextStyle(
+            decoration: TextDecoration.none,
             fontWeight: FontWeight.bold,
             color: Color(0xff7524ff),
           ),

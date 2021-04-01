@@ -13,6 +13,7 @@ class _extratoState extends State<extrato> {
         child: Text(
           'Extrato',
           style: TextStyle(
+            decoration: TextDecoration.none,
             fontWeight: FontWeight.bold,
             color: Color(0xff7524ff),
           ),

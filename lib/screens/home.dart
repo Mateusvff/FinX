@@ -191,10 +191,11 @@ class _HomeState extends State<Home> {
                               )),
                           onPressed: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        cartoes()));
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => cartoes(),
+                              ),
+                            );
                           },
                         ),
                       ),
@@ -210,10 +211,11 @@ class _HomeState extends State<Home> {
                               )),
                           onPressed: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        extrato()));
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => extrato(),
+                              ),
+                            );
                           },
                         ),
                       ),
@@ -231,10 +233,11 @@ class _HomeState extends State<Home> {
                           ),
                           onPressed: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        categorias()));
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => categorias(),
+                              ),
+                            );
                           },
                         ),
                       ),
