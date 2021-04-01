@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         // Barra Inicial
         title: Text(
-          'Seja Bem Vindo,\n Carlos', // Adicionar Nome do Usuario (Firebase)
+          'Seja Bem Vindo,\n Arthur', // Adicionar Nome do Usuario (Firebase)
           style: TextStyle(
             fontSize: 16.0,
           ),
@@ -117,26 +117,23 @@ class _HomeState extends State<Home> {
                       alignment: Alignment.topLeft,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20.0, top: 5.0),
-                      child: Text("Cartão de crédito (banco)",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold),
-                          ),
+                        child: Text(
+                          "Cartão de crédito (banco)",
+                          style: TextStyle(
+                              fontSize: 15.0, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                    ),
-
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left:15.0, top: 65.0),
+                        padding: const EdgeInsets.only(left: 15.0, top: 65.0),
                         child: Text(
-                            "Fechamento da fatura: xx/xx/xxxx",
-                          style: TextStyle(
-                            fontSize: 12.0),
-
+                          "Fechamento da fatura: xx/xx/xxxx",
+                          style: TextStyle(fontSize: 12.0),
                         ),
                       ),
-                      ),
+                    ),
                   ],
                 ),
               ),
