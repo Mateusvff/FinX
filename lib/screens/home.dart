@@ -156,16 +156,8 @@ class _HomeState extends State<Home> {
                       icon: Icon(Icons.add),
                       iconSize: 40.0,
                       color: Colors.white,
-                      onPressed: () {
-                        showModalBottomSheet(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return Container(
-                                height: 200,
-                                color: customPurple,
-                              );
-                            });
-                      }, /* Abre container de Adicionar Despesa ou Receita */
+                      onPressed:
+                          () {}, /* Abre container de Adicionar Despesa ou Receita */
                     ),
                   ),
                 )),
@@ -208,11 +200,7 @@ class _HomeState extends State<Home> {
                     Padding(
                       padding: EdgeInsets.only(top: 10.0),
                       child: LinearPercentIndicator(
-<<<<<<< Updated upstream
                         width: 300.00,
-=======
-                        width: 350.00,
->>>>>>> Stashed changes
                         lineHeight: 12.0,
                         percent: 0.5,
                         backgroundColor: Colors.grey,
