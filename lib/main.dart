@@ -7,8 +7,10 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: Home(),
       theme: ThemeData(
-          bottomSheetTheme:
-              BottomSheetThemeData(backgroundColor: Colors.black38)),
+        bottomSheetTheme: BottomSheetThemeData(
+          backgroundColor: Color(0xff131b26),
+        ),
+      ),
     ),
   );
 }
