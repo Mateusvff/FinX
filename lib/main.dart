@@ -6,7 +6,9 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
-      theme: ThemeData(),
+      theme: ThemeData(
+          bottomSheetTheme:
+              BottomSheetThemeData(backgroundColor: Color(0xff131b26))),
     ),
   );
 }
