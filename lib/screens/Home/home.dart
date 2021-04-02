@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/BottomSheet.dart';
 import 'package:projeto_flutter/Widgets/Drawer/Custom_Drawer.dart';
-import 'package:projeto_flutter/screens/Home/Cartoes.dart';
-import 'package:projeto_flutter/screens/Home/Conta_banco.dart';
-import 'package:projeto_flutter/screens/Home/Mes.dart';
+import 'package:projeto_flutter/screens/Home/4Container.dart';
+import 'package:projeto_flutter/screens/Home/3Container.dart';
+import 'package:projeto_flutter/screens/Home/1Container.dart';
 
 import '../../Cores.dart';
-import 'Info_cart.dart';
+import '2Container.dart';
 
 class Home extends StatefulWidget {
   @override
