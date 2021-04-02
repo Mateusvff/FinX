@@ -200,7 +200,7 @@ class _HomeState extends State<Home> {
                      Padding(
                        padding: EdgeInsets.only(top:10.0),
                        child: LinearPercentIndicator(
-                       width: 350.00,
+                       width: 300.00,
                        lineHeight: 12.0,
                        percent: 0.5,
                        backgroundColor: Colors.grey,
