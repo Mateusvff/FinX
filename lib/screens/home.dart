@@ -161,8 +161,12 @@ class _HomeState extends State<Home> {
                             context: context,
                             builder: (BuildContext context) {
                               return Container(
-                                height: 200,
-                                color: customPurple,
+                                height: 265,
+                                decoration: BoxDecoration(
+                                    color: customPurple,
+                                    borderRadius: const BorderRadius.only(
+                                        topLeft: Radius.circular(30),
+                                        topRight: Radius.circular(30))),
                               );
                             });
                       }, /* Abre container de Adicionar Despesa ou Receita */
