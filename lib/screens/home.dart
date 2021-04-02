@@ -197,32 +197,38 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(),
-                      child: LinearPercentIndicator(
-                        width: 320.00,
-                        lineHeight: 12.0,
-                        percent: 0.5,
-                        backgroundColor: Colors.grey,
-                        progressColor: customPurple,
-                      ),
-                    ),
+                     Padding(
+                       padding: EdgeInsets.only(top:10.0),
+                       child: LinearPercentIndicator(
+                       width: 350.00,
+                       lineHeight: 12.0,
+                       percent: 0.5,
+                       backgroundColor: Colors.grey,
+                       progressColor: customPurple,
+                     ),
+                     ),
+
+
                     Align(
                       alignment: Alignment.bottomRight,
                       child: Padding(
                         padding: EdgeInsets.only(right:40.0),
                         child: Text(
-                            "Limite disponível: R\$ XXX,XX",
+                            "Limite disponível: R\$ xxx,xx",
+                          style: TextStyle(fontSize: 12.0,
+                              fontWeight: FontWeight.bold
+                          ),
                         ),
                       ),
                     ),
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0, top: 60.0),
+                        padding: const EdgeInsets.only(left: 15.0, top: 30.0),
                         child: Text(
                           "Fechamento da fatura: xx/xx/xxxx",
-                          style: TextStyle(fontSize: 12.0),
+                          style: TextStyle(fontSize: 12.0,
+                          ),
                         ),
                       ),
                     ),
