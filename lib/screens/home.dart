@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:projeto_flutter/Drawer/Custom_Drawer.dart';
+import 'package:projeto_flutter/Widgets/BottomSheet.dart';
+import 'package:projeto_flutter/Widgets/Drawer/Custom_Drawer.dart';
 import 'cartoes.dart';
 import 'extrato.dart';
 import 'categorias.dart';
@@ -160,41 +161,7 @@ class _HomeState extends State<Home> {
                         showModalBottomSheet(
                             context: context,
                             builder: (BuildContext context) {
-                              return Container(
-                                height: 265,
-                                decoration: BoxDecoration(
-                                    color: customPurple,
-                                    borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(30),
-                                        topRight: Radius.circular(30))),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 300,
-                                      height: 50,
-                                      decoration: BoxDecoration(
-                                          color: customPink,
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(25))),
-                                    ),
-                                    Container(
-                                      width: 300,
-                                      height: 50,
-                                      decoration: BoxDecoration(
-                                          color: customPink,
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(25))),
-                                    ),
-                                    CircleAvatar(
-                                      backgroundColor: customPink,
-                                      child: IconButton(
-                                          icon: Icon(Icons.close_rounded),
-                                          onPressed: () {}),
-                                    )
-                                  ],
-                                ),
-                              );
+                              return BottomShee();
                             });
                       }, /* Abre container de Adicionar Despesa ou Receita */
                     ),

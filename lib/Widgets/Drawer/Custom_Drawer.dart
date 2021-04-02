@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_flutter/Drawer/title.dart';
-import '../Cores.dart';
+import 'package:projeto_flutter/Widgets/Drawer/title.dart';
+import '../../Cores.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -45,6 +45,14 @@ class CustomDrawer extends StatelessWidget {
                                 fontSize: 25.0,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
+                          )),
+                      Positioned(
+                          left: 0.0,
+                          bottom: 0.0,
+                          child: Text(
+                            'Olá,\nWesley Gonzaga',
+                            textAlign: TextAlign.start,
+                            style: TextStyle(color: Colors.white),
                           )),
                     ],
                   ),
