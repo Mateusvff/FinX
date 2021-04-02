@@ -167,6 +167,33 @@ class _HomeState extends State<Home> {
                                     borderRadius: const BorderRadius.only(
                                         topLeft: Radius.circular(30),
                                         topRight: Radius.circular(30))),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 300,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          color: customPink,
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(25))),
+                                    ),
+                                    Container(
+                                      width: 300,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          color: customPink,
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(25))),
+                                    ),
+                                    CircleAvatar(
+                                      backgroundColor: customPink,
+                                      child: IconButton(
+                                          icon: Icon(Icons.close_rounded),
+                                          onPressed: () {}),
+                                    )
+                                  ],
+                                ),
                               );
                             });
                       }, /* Abre container de Adicionar Despesa ou Receita */
