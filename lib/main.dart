@@ -8,7 +8,7 @@ void main() {
       home: Home(),
       theme: ThemeData(
           bottomSheetTheme:
-              BottomSheetThemeData(backgroundColor: Color(0xff131b26))),
+              BottomSheetThemeData(backgroundColor: Colors.black38)),
     ),
   );
 }
