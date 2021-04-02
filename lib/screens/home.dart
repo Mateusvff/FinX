@@ -156,8 +156,16 @@ class _HomeState extends State<Home> {
                       icon: Icon(Icons.add),
                       iconSize: 40.0,
                       color: Colors.white,
-                      onPressed:
-                          () {}, /* Abre container de Adicionar Despesa ou Receita */
+                      onPressed: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 200,
+                                color: customPurple,
+                              );
+                            });
+                      }, /* Abre container de Adicionar Despesa ou Receita */
                     ),
                   ),
                 )),
