@@ -48,13 +48,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 255.0),
-                  child: Column(
+                  child: Stack(
+                    alignment: Alignment.center,
                     children: [
-                      Icon(
-                        Icons.account_circle_sharp,
-                        size: 60,
-                        color: Color(0xffC4C4C4),
-                      ),
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
@@ -96,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: Text(
                                       "Email",
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'NotoSans',
@@ -131,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: Text(
                                       "Senha",
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'NotoSans',
@@ -171,6 +167,14 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ],
                           ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 310),
+                        child: Icon(
+                          Icons.account_circle_sharp,
+                          size: 80,
+                          color: Color(0xffC4C4C4),
                         ),
                       ),
                     ],
