@@ -70,7 +70,7 @@ class _CadastroState extends State<Cadastro> {
                           height: 42.0,
                           child: RaisedButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SigninScreen()));
                             },
                             color: Color(0xFFFC00E3),
                             elevation: 10,
@@ -88,7 +88,7 @@ class _CadastroState extends State<Cadastro> {
                         ),
                         FlatButton(
                             onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SigninScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
                               },
                             child: Text('Já sou cadastrado',
                               style: TextStyle(color: Colors.white,
