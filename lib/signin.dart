@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/cadastro.dart';
 
 class SigninScreen extends StatefulWidget {
   @override
@@ -20,7 +21,31 @@ class _SigninScreenState extends State<SigninScreen> {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 30.0, 0, 5.0),
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  child: FlatButton(
+                    color: Colors.transparent,
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Cadastro()));
+                      },
+                     child: Row(
+                       children: <Widget> [
+                         Icon(Icons.arrow_back_ios_outlined, size: 20, color: Colors.white,),
+                         Text(
+                           'Voltar',
+                           style: TextStyle(
+                             fontSize: 20,
+                             fontWeight: FontWeight.bold,
+                             fontFamily: 'NotoSans',
+                             color: Colors.white,
+                             decoration: TextDecoration.none,
+                           ),
+                         ),
+                       ],
+                     ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 5.0),
                   child: Text(
                     "Finx",
                     style: TextStyle(

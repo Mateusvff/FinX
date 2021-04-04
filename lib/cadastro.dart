@@ -50,11 +50,11 @@ class _CadastroState extends State<Cadastro> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 437.0),
+                padding: EdgeInsets.only(top: 417.0),
                 child: Container(
-                  margin: const EdgeInsets.only(top: 10.0),
+                  margin: const EdgeInsets.only(bottom: 0),
                   width: 500.0,
-                  height: 205.0,
+                  height: 195.0,
                   decoration: BoxDecoration(
                     color: Color(0xff7524ff),
                     borderRadius: BorderRadius.only(
