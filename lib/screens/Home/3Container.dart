@@ -22,13 +22,41 @@ class _ExtratoBancoState extends State<ExtratoBanco> {
             child: Padding(
               padding: const EdgeInsets.only(left: 20.0, top: 5.0),
               child: Text(
-                'Extrato da conta (Nubank)',
+                'Extrato da conta (Banco)',
+                style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
               ),
             ),
           ),
-          Text('Mês'),
-          Text('Comedia'),
-          Text('Noia'),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 5.0),
+              child: Text(
+                'Mês atual',
+                style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 5.0),
+              child: Text(
+                '- Dia(xx/xx): pagamento/recebido :R\$ xxx,xx(valor da transação)',
+                style: TextStyle(fontSize: 12.0),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 5.0),
+              child: Text(
+                '- Dia(xx/xx): pagamento/recebido :R\$ xxx,xx(valor da transação)',
+                style: TextStyle(fontSize: 12.0),
+              ),
+            ),
+          ),
         ],
       ),
     );
