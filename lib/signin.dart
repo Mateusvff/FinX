@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/cadastro.dart';
+import 'package:projeto_flutter/screens/Home/home.dart';
 
 class SigninScreen extends StatefulWidget {
   @override
@@ -7,7 +8,6 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
-
   bool _obscureText = true;
 
   void _toggle() {
@@ -30,27 +30,34 @@ class _SigninScreenState extends State<SigninScreen> {
             Column(
               children: [
                 Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                   child: FlatButton(
                     color: Colors.transparent,
-                      onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Cadastro()));
-                      },
-                     child: Row(
-                       children: <Widget> [
-                         Icon(Icons.arrow_back_ios_outlined, size: 20, color: Colors.white,),
-                         Text(
-                           'Voltar',
-                           style: TextStyle(
-                             fontSize: 20,
-                             fontWeight: FontWeight.bold,
-                             fontFamily: 'NotoSans',
-                             color: Colors.white,
-                             decoration: TextDecoration.none,
-                           ),
-                         ),
-                       ],
-                     ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Cadastro()));
+                    },
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.arrow_back_ios_outlined,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          'Voltar',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'NotoSans',
+                            color: Colors.white,
+                            decoration: TextDecoration.none,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
@@ -84,7 +91,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   padding: EdgeInsets.only(top: 155.0),
                   child: Stack(
                     alignment: Alignment.center,
-                    children: <Widget> [
+                    children: <Widget>[
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
@@ -101,7 +108,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           child: Column(
                             children: [
                               Padding(
-                                  padding: EdgeInsets.only(top: 30),
+                                padding: EdgeInsets.only(top: 30),
                                 child: Text(
                                   'Cadastre-se',
                                   style: TextStyle(
@@ -114,7 +121,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 ),
                               ),
                               Padding(
-                                  padding: EdgeInsets.only(top:15.0),
+                                padding: EdgeInsets.only(top: 15.0),
                                 child: Container(
                                   width: 350,
                                   height: 42,
@@ -216,7 +223,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                           onPressed: () {},
                                           child: TextField(
                                             keyboardType:
-                                            TextInputType.visiblePassword,
+                                                TextInputType.visiblePassword,
                                             decoration: InputDecoration(
                                               labelText: "Senha",
                                               labelStyle: TextStyle(
@@ -242,7 +249,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                               topRight: Radius.circular(22.0),
                                               topLeft: Radius.circular(22.0),
                                               bottomLeft: Radius.circular(22.0),
-                                              bottomRight: Radius.circular(22.0),
+                                              bottomRight:
+                                                  Radius.circular(22.0),
                                             ),
                                           ),
                                           child: FlatButton(
@@ -288,7 +296,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                           onPressed: () {},
                                           child: TextField(
                                             keyboardType:
-                                            TextInputType.visiblePassword,
+                                                TextInputType.visiblePassword,
                                             decoration: InputDecoration(
                                               labelText: "Confirmação de senha",
                                               labelStyle: TextStyle(
@@ -314,7 +322,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                               topRight: Radius.circular(22.0),
                                               topLeft: Radius.circular(22.0),
                                               bottomLeft: Radius.circular(22.0),
-                                              bottomRight: Radius.circular(22.0),
+                                              bottomRight:
+                                                  Radius.circular(22.0),
                                             ),
                                           ),
                                           child: FlatButton(
@@ -349,7 +358,15 @@ class _SigninScreenState extends State<SigninScreen> {
                                     color: Color(0xFFFC00E3),
                                   ),
                                   child: FlatButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              Home(),
+                                        ),
+                                      );
+                                    },
                                     child: Text(
                                       "Continuar",
                                       style: TextStyle(

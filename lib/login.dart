@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/cadastro.dart';
+import 'package:projeto_flutter/screens/Home/home.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -188,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                       Padding(
-                                          padding: EdgeInsets.only(left: 270),
+                                        padding: EdgeInsets.only(left: 270),
                                         child: Container(
                                           width: 80,
                                           height: 42,
@@ -198,7 +199,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                               topRight: Radius.circular(22.0),
                                               topLeft: Radius.circular(22.0),
                                               bottomLeft: Radius.circular(22.0),
-                                              bottomRight: Radius.circular(22.0),
+                                              bottomRight:
+                                                  Radius.circular(22.0),
                                             ),
                                           ),
                                           child: FlatButton(
@@ -214,8 +216,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             ),
                                           ),
                                         ),
-                                          ),
-
+                                      ),
                                     ],
                                   )),
                               Padding(
@@ -234,7 +235,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                     color: Color(0xFFFC00E3),
                                   ),
                                   child: FlatButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              Home(),
+                                        ),
+                                      );
+                                    },
                                     child: Text(
                                       "Continuar",
                                       style: TextStyle(
