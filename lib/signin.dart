@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
@@ -145,9 +146,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                     onPressed: () {},
                                     child: TextField(
                                       keyboardType: TextInputType.name,
-                                      decoration: InputDecoration(
-                                        labelText: "Nome completo",
-                                        labelStyle: TextStyle(
+                                      decoration: InputDecoration.collapsed(
+                                        hintText: 'Nome Completo',
+                                        hintStyle: TextStyle(
                                           color: Colors.black,
                                           fontSize: 17,
                                           fontWeight: FontWeight.bold,
@@ -183,9 +184,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                     onPressed: () {},
                                     child: TextField(
                                       keyboardType: TextInputType.emailAddress,
-                                      decoration: InputDecoration(
-                                        labelText: "Email",
-                                        labelStyle: TextStyle(
+                                      decoration: InputDecoration.collapsed(
+                                        hintText: 'Email',
+                                        hintStyle: TextStyle(
                                           color: Colors.black,
                                           fontSize: 17,
                                           fontWeight: FontWeight.bold,
@@ -223,17 +224,16 @@ class _SigninScreenState extends State<SigninScreen> {
                                           onPressed: () {},
                                           child: TextField(
                                             keyboardType:
-                                                TextInputType.visiblePassword,
-                                            decoration: InputDecoration(
-                                              labelText: "Senha",
-                                              labelStyle: TextStyle(
+                                            TextInputType.visiblePassword,
+                                            decoration: InputDecoration.collapsed(
+                                              hintText: 'Senha',
+                                              hintStyle: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'NotoSans',
                                               ),
                                             ),
-                                            textAlign: TextAlign.center,
                                             obscureText: _obscureText,
                                           ),
                                         ),
@@ -297,16 +297,15 @@ class _SigninScreenState extends State<SigninScreen> {
                                           child: TextField(
                                             keyboardType:
                                                 TextInputType.visiblePassword,
-                                            decoration: InputDecoration(
-                                              labelText: "Confirmação de senha",
-                                              labelStyle: TextStyle(
+                                            decoration: InputDecoration.collapsed(
+                                              hintText: 'Confirmação de senha',
+                                              hintStyle: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'NotoSans',
                                               ),
                                             ),
-                                            textAlign: TextAlign.center,
                                             obscureText: _obscureText,
                                           ),
                                         ),

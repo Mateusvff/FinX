@@ -132,10 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                     onPressed: () {},
                                     child: TextField(
                                       keyboardType: TextInputType.emailAddress,
-                                      textAlign: TextAlign.center,
-                                      decoration: InputDecoration(
-                                        labelText: "Email",
-                                        labelStyle: TextStyle(
+                                      decoration: InputDecoration.collapsed(
+                                        hintText: 'Email',
+                                        hintStyle: TextStyle(
                                           color: Colors.black,
                                           fontSize: 17,
                                           fontWeight: FontWeight.bold,
@@ -174,16 +173,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                           child: TextField(
                                             keyboardType:
                                                 TextInputType.visiblePassword,
-                                            decoration: InputDecoration(
-                                              labelText: "Senha",
-                                              labelStyle: TextStyle(
+                                            decoration: InputDecoration.collapsed(
+                                              hintText: 'Senha',
+                                              hintStyle: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'NotoSans',
                                               ),
                                             ),
-                                            textAlign: TextAlign.center,
                                             obscureText: _obscureText,
                                           ),
                                         ),
