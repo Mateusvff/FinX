@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Cores.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
 
@@ -69,7 +70,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       fontSize: 45.0,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'NotoSans',
-                      color: Color(0xff7524ff),
+                      color: customPurple,
                       decoration: TextDecoration.none,
                     ),
                   ),
@@ -98,7 +99,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         width: 500.0,
                         height: 505.0,
                         decoration: BoxDecoration(
-                          color: Color(0xff7524ff),
+                          color: customPurple,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(22.0),
                             topLeft: Radius.circular(22.0),
@@ -224,8 +225,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                           onPressed: () {},
                                           child: TextField(
                                             keyboardType:
-                                            TextInputType.visiblePassword,
-                                            decoration: InputDecoration.collapsed(
+                                                TextInputType.visiblePassword,
+                                            decoration:
+                                                InputDecoration.collapsed(
                                               hintText: 'Senha',
                                               hintStyle: TextStyle(
                                                 color: Colors.black,
@@ -297,7 +299,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                           child: TextField(
                                             keyboardType:
                                                 TextInputType.visiblePassword,
-                                            decoration: InputDecoration.collapsed(
+                                            decoration:
+                                                InputDecoration.collapsed(
                                               hintText: 'Confirmação de senha',
                                               hintStyle: TextStyle(
                                                 color: Colors.black,
@@ -354,7 +357,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                         offset: Offset(0.0, 0.75),
                                       ),
                                     ],
-                                    color: Color(0xFFFC00E3),
+                                    color: customPink,
                                   ),
                                   child: FlatButton(
                                     onPressed: () {

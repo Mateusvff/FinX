@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'Cores.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/login.dart';
 import 'package:projeto_flutter/signin.dart';
@@ -30,7 +31,7 @@ class _CadastroState extends State<Cadastro> {
                     fontSize: 45.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'NotoSans',
-                    color: Color(0xff7524ff),
+                    color: customPurple,
                     decoration: TextDecoration.none,
                   ),
                 ),
@@ -55,7 +56,7 @@ class _CadastroState extends State<Cadastro> {
                   width: 500.0,
                   height: 195.0,
                   decoration: BoxDecoration(
-                    color: Color(0xff7524ff),
+                    color: customPurple,
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(22.0),
                         topLeft: Radius.circular(22.0)),
@@ -69,9 +70,13 @@ class _CadastroState extends State<Cadastro> {
                           height: 42.0,
                           child: RaisedButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SigninScreen()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          SigninScreen()));
                             },
-                            color: Color(0xFFFC00E3),
+                            color: customPink,
                             elevation: 10,
                             child: Text("Começar",
                                 style: TextStyle(
@@ -86,17 +91,21 @@ class _CadastroState extends State<Cadastro> {
                           height: 12,
                         ),
                         FlatButton(
-                            onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
-                              },
-                            child: Text('Já sou cadastrado',
-                              style: TextStyle(color: Colors.white,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          LoginScreen()));
+                            },
+                            child: Text(
+                              'Já sou cadastrado',
+                              style: TextStyle(
+                                  color: Colors.white,
                                   fontFamily: 'NotoSans',
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 19
-                              ),
-                            )
-                        )
+                                  fontSize: 19),
+                            ))
                       ],
                     ),
                   ),

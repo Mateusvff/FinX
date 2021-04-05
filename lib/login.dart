@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Cores.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
 
@@ -68,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontSize: 45.0,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'NotoSans',
-                      color: Color(0xff7524ff),
+                      color: customPurple,
                       decoration: TextDecoration.none,
                     ),
                   ),
@@ -97,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 500.0,
                         height: 305.0,
                         decoration: BoxDecoration(
-                          color: Color(0xff7524ff),
+                          color: customPurple,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(22.0),
                             topLeft: Radius.circular(22.0),
@@ -173,7 +174,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           child: TextField(
                                             keyboardType:
                                                 TextInputType.visiblePassword,
-                                            decoration: InputDecoration.collapsed(
+                                            decoration:
+                                                InputDecoration.collapsed(
                                               hintText: 'Senha',
                                               hintStyle: TextStyle(
                                                 color: Colors.black,
@@ -230,7 +232,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         offset: Offset(0.0, 0.75),
                                       ),
                                     ],
-                                    color: Color(0xFFFC00E3),
+                                    color: customPink,
                                   ),
                                   child: FlatButton(
                                     onPressed: () {

@@ -20,28 +20,37 @@ class _BottomSheeState extends State<BottomShee> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 15.0),
+            padding: const EdgeInsets.only(bottom: 35.0),
             child: Container(
-              width: 300,
+              width: 350,
               height: 50,
+              child: TextButton(
+                child: Text(
+                  'Adicionar Receita',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+                onPressed: () {},
+              ),
               decoration: BoxDecoration(
                   color: customPink,
                   borderRadius: const BorderRadius.all(Radius.circular(25))),
             ),
           ),
-          Container(
-            width: 300,
-            height: 50,
-            decoration: BoxDecoration(
-                color: customPink,
-                borderRadius: const BorderRadius.all(Radius.circular(25))),
-          ),
           Padding(
-            padding: const EdgeInsets.only(top: 30.0),
-            child: CircleAvatar(
-              backgroundColor: customPink,
-              child:
-                  IconButton(icon: Icon(Icons.close_rounded), onPressed: () {}),
+            padding: const EdgeInsets.only(bottom: 15.0),
+            child: Container(
+              width: 350,
+              height: 50,
+              child: TextButton(
+                child: Text(
+                  'Adicionar Despesa',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+                onPressed: () {},
+              ),
+              decoration: BoxDecoration(
+                  color: customPink,
+                  borderRadius: const BorderRadius.all(Radius.circular(25))),
             ),
           )
         ],

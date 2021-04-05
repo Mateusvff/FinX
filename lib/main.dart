@@ -4,6 +4,8 @@ import 'cadastro.dart';
 void main() {
   runApp(MaterialApp(
     home: Cadastro(),
-    theme: ThemeData(),
+    theme: ThemeData(
+        bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black)),
+    debugShowCheckedModeBanner: false,
   ));
 }
