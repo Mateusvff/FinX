@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/Drawer/title.dart';
+import 'package:projeto_flutter/screens/Home/home.dart';
+import 'package:projeto_flutter/screens/cartoes.dart';
 import '../../Cores.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -33,7 +35,13 @@ class CustomDrawer extends StatelessWidget {
                           child: IconButton(
                             alignment: Alignment.centerLeft,
                             icon: Icon(Icons.arrow_back_rounded),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          Home()));
+                            },
                             color: Colors.white,
                           )),
                       Positioned(
@@ -58,14 +66,22 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 ),
                 Divider(),
-                DrawerTitle(Icons.person_outline_outlined, 'Conta'),
-                DrawerTitle(Icons.lock_outlined, 'Privacidade'),
-                DrawerTitle(Icons.notifications_none_rounded, 'Notificações'),
-                DrawerTitle(Icons.person_add_outlined, 'Convidar Amigos'),
-                DrawerTitle(Icons.info_outline_rounded, 'Sobre'),
-                DrawerTitle(Icons.help_outline_outlined, 'Ajuda'),
-                DrawerTitle(Icons.bug_report_outlined, 'Relatar Problema'),
-                DrawerTitle(Icons.logout, 'Sair'),
+                DrawerTitle(Icons.person_outline_outlined, 'Conta',
+                    (Home())), // Tem que mudar a função
+                DrawerTitle(Icons.lock_outlined, 'Privacidade',
+                    Cartoes()), // Tem que mudar a função
+                DrawerTitle(Icons.notifications_none_rounded, 'Notificações',
+                    Cartoes()), // Tem que mudar a função
+                DrawerTitle(Icons.person_add_outlined, 'Convidar Amigos',
+                    Cartoes()), // Tem que mudar a função
+                DrawerTitle(Icons.info_outline_rounded, 'Sobre',
+                    Cartoes()), // Tem que mudar a função
+                DrawerTitle(Icons.help_outline_outlined, 'Ajuda',
+                    Cartoes()), // Tem que mudar a função
+                DrawerTitle(Icons.bug_report_outlined, 'Relatar Problema',
+                    Cartoes()), // Tem que mudar a função
+                DrawerTitle(
+                    Icons.logout, 'Sair', Cartoes()), // Tem que mudar a função
               ],
             )
           ],

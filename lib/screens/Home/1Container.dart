@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../Cores.dart';
 
 class ExtratoMes extends StatefulWidget {
@@ -44,11 +43,15 @@ class _ExtratoMesState extends State<ExtratoMes> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Saldo em conta',
-                style: TextStyle(color: Colors.black, fontSize: 14),
+              Padding(
+                padding: const EdgeInsets.only(left: 50.0),
+                child: Text(
+                  'Saldo em conta',
+                  style: TextStyle(color: Colors.black, fontSize: 14),
+                ),
               ),
               IconButton(
+                alignment: Alignment.topRight,
                 icon: Icon(Icons.remove_red_eye_sharp),
                 color: Colors.black,
                 iconSize: 18,
