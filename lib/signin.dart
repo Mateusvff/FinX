@@ -126,7 +126,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                         offset: Offset(0.0, 0.75),
                                       ),
                                     ],
-                                    color: Color(0xFFC4C4C4),
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.only(
                                       topRight: Radius.circular(22.0),
                                       topLeft: Radius.circular(22.0),
@@ -142,12 +142,11 @@ class _SigninScreenState extends State<SigninScreen> {
                                         labelText: "Nome completo",
                                         labelStyle: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 18,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'NotoSans',
                                         ),
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ),
@@ -165,7 +164,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                         offset: Offset(0.0, 0.75),
                                       ),
                                     ],
-                                    color: Color(0xFFC4C4C4),
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.only(
                                       topRight: Radius.circular(22.0),
                                       topLeft: Radius.circular(22.0),
@@ -181,12 +180,11 @@ class _SigninScreenState extends State<SigninScreen> {
                                         labelText: "Email",
                                         labelStyle: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 18,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'NotoSans',
                                         ),
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ),
@@ -206,7 +204,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                               offset: Offset(0.0, 0.75),
                                             ),
                                           ],
-                                          color: Color(0xFFC4C4C4),
+                                          color: Colors.white,
                                           borderRadius: BorderRadius.only(
                                             topRight: Radius.circular(22.0),
                                             topLeft: Radius.circular(22.0),
@@ -223,7 +221,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                               labelText: "Senha",
                                               labelStyle: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18,
+                                                fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'NotoSans',
                                               ),
@@ -278,7 +276,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                               offset: Offset(0.0, 0.75),
                                             ),
                                           ],
-                                          color: Color(0xFFC4C4C4),
+                                          color: Colors.white,
                                           borderRadius: BorderRadius.only(
                                             topRight: Radius.circular(22.0),
                                             topLeft: Radius.circular(22.0),
@@ -295,7 +293,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                               labelText: "Confirmação de senha",
                                               labelStyle: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18,
+                                                fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'NotoSans',
                                               ),

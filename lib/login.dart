@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         offset: Offset(0.0, 0.75),
                                       ),
                                     ],
-                                    color: Color(0xFFC4C4C4),
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.only(
                                       topRight: Radius.circular(22.0),
                                       topLeft: Radius.circular(22.0),
@@ -131,16 +131,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                     onPressed: () {},
                                     child: TextField(
                                       keyboardType: TextInputType.emailAddress,
+                                      textAlign: TextAlign.center,
                                       decoration: InputDecoration(
                                         labelText: "Email",
                                         labelStyle: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 18,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'NotoSans',
                                         ),
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ),
@@ -160,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               offset: Offset(0.0, 0.75),
                                             ),
                                           ],
-                                          color: Color(0xFFC4C4C4),
+                                          color: Colors.white,
                                           borderRadius: BorderRadius.only(
                                             topRight: Radius.circular(22.0),
                                             topLeft: Radius.circular(22.0),
@@ -177,7 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               labelText: "Senha",
                                               labelStyle: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18,
+                                                fontSize: 17,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'NotoSans',
                                               ),

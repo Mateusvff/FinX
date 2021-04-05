@@ -50,9 +50,8 @@ class _CadastroState extends State<Cadastro> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 417.0),
+                padding: EdgeInsets.only(top: 450.0),
                 child: Container(
-                  margin: const EdgeInsets.only(bottom: 0),
                   width: 500.0,
                   height: 195.0,
                   decoration: BoxDecoration(
@@ -84,7 +83,7 @@ class _CadastroState extends State<Cadastro> {
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 12,
                         ),
                         FlatButton(
                             onPressed: (){
