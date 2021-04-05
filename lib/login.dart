@@ -129,14 +129,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   child: FlatButton(
                                     onPressed: () {},
-                                    child: Text(
-                                      "Email",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'NotoSans',
+                                    child: TextField(
+                                      keyboardType: TextInputType.emailAddress,
+                                      decoration: InputDecoration(
+                                        labelText: "Email",
+                                        labelStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'NotoSans',
+                                        ),
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ),

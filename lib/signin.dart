@@ -7,6 +7,15 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
+
+  bool _obscureText = true;
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,14 +136,18 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                   child: FlatButton(
                                     onPressed: () {},
-                                    child: Text(
-                                      "Nome completo",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'NotoSans',
+                                    child: TextField(
+                                      keyboardType: TextInputType.name,
+                                      decoration: InputDecoration(
+                                        labelText: "Nome completo",
+                                        labelStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'NotoSans',
+                                        ),
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ),
@@ -162,88 +175,166 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                   child: FlatButton(
                                     onPressed: () {},
-                                    child: Text(
-                                      "Email",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'NotoSans',
+                                    child: TextField(
+                                      keyboardType: TextInputType.emailAddress,
+                                      decoration: InputDecoration(
+                                        labelText: "Email",
+                                        labelStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'NotoSans',
+                                        ),
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(top: 30),
-                                child: Container(
-                                  width: 350,
-                                  height: 42,
-                                  decoration: BoxDecoration(
-                                    boxShadow: <BoxShadow>[
-                                      BoxShadow(
-                                        color: Colors.black54,
-                                        blurRadius: 5.0,
-                                        offset: Offset(0.0, 0.75),
+                                  padding: EdgeInsets.only(top: 30),
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Container(
+                                        width: 350,
+                                        height: 42,
+                                        decoration: BoxDecoration(
+                                          boxShadow: <BoxShadow>[
+                                            BoxShadow(
+                                              color: Colors.black54,
+                                              blurRadius: 5.0,
+                                              offset: Offset(0.0, 0.75),
+                                            ),
+                                          ],
+                                          color: Color(0xFFC4C4C4),
+                                          borderRadius: BorderRadius.only(
+                                            topRight: Radius.circular(22.0),
+                                            topLeft: Radius.circular(22.0),
+                                            bottomLeft: Radius.circular(22.0),
+                                            bottomRight: Radius.circular(22.0),
+                                          ),
+                                        ),
+                                        child: FlatButton(
+                                          onPressed: () {},
+                                          child: TextField(
+                                            keyboardType:
+                                            TextInputType.visiblePassword,
+                                            decoration: InputDecoration(
+                                              labelText: "Senha",
+                                              labelStyle: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'NotoSans',
+                                              ),
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            obscureText: _obscureText,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 270),
+                                        child: Container(
+                                          width: 80,
+                                          height: 42,
+                                          decoration: BoxDecoration(
+                                            color: Colors.transparent,
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(22.0),
+                                              topLeft: Radius.circular(22.0),
+                                              bottomLeft: Radius.circular(22.0),
+                                              bottomRight: Radius.circular(22.0),
+                                            ),
+                                          ),
+                                          child: FlatButton(
+                                            onPressed: _toggle,
+                                            child: Text(
+                                              _obscureText ? "Show" : "Hide",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'NotoSans',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ],
-                                    color: Color(0xFFC4C4C4),
-                                    borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(22.0),
-                                      topLeft: Radius.circular(22.0),
-                                      bottomLeft: Radius.circular(22.0),
-                                      bottomRight: Radius.circular(22.0),
-                                    ),
-                                  ),
-                                  child: FlatButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      "Senha",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'NotoSans',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                                  )),
                               Padding(
-                                  padding: EdgeInsets.only(top: 30.0),
-                                child: Container(
-                                  width: 350,
-                                  height: 42,
-                                  decoration: BoxDecoration(
-                                    boxShadow: <BoxShadow>[
-                                      BoxShadow(
-                                        color: Colors.black54,
-                                        blurRadius: 5.0,
-                                        offset: Offset(0.0, 0.75),
+                                  padding: EdgeInsets.only(top: 30),
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Container(
+                                        width: 350,
+                                        height: 42,
+                                        decoration: BoxDecoration(
+                                          boxShadow: <BoxShadow>[
+                                            BoxShadow(
+                                              color: Colors.black54,
+                                              blurRadius: 5.0,
+                                              offset: Offset(0.0, 0.75),
+                                            ),
+                                          ],
+                                          color: Color(0xFFC4C4C4),
+                                          borderRadius: BorderRadius.only(
+                                            topRight: Radius.circular(22.0),
+                                            topLeft: Radius.circular(22.0),
+                                            bottomLeft: Radius.circular(22.0),
+                                            bottomRight: Radius.circular(22.0),
+                                          ),
+                                        ),
+                                        child: FlatButton(
+                                          onPressed: () {},
+                                          child: TextField(
+                                            keyboardType:
+                                            TextInputType.visiblePassword,
+                                            decoration: InputDecoration(
+                                              labelText: "Confirmação de senha",
+                                              labelStyle: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'NotoSans',
+                                              ),
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            obscureText: _obscureText,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 270),
+                                        child: Container(
+                                          width: 80,
+                                          height: 42,
+                                          decoration: BoxDecoration(
+                                            color: Colors.transparent,
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(22.0),
+                                              topLeft: Radius.circular(22.0),
+                                              bottomLeft: Radius.circular(22.0),
+                                              bottomRight: Radius.circular(22.0),
+                                            ),
+                                          ),
+                                          child: FlatButton(
+                                            onPressed: _toggle,
+                                            child: Text(
+                                              _obscureText ? "Show" : "Hide",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'NotoSans',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ],
-                                    color: Color(0xFFC4C4C4),
-                                    borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(22.0),
-                                      topLeft: Radius.circular(22.0),
-                                      bottomLeft: Radius.circular(22.0),
-                                      bottomRight: Radius.circular(22.0),
-                                    ),
-                                  ),
-                                  child: FlatButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      "Cofirmação de senha",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'NotoSans',
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                                  )),
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(
