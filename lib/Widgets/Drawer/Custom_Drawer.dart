@@ -3,6 +3,7 @@ import 'package:projeto_flutter/Widgets/Drawer/title.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
 import 'package:projeto_flutter/screens/cartoes.dart';
 import '../../Cores.dart';
+import '../../cadastro.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -81,7 +82,7 @@ class CustomDrawer extends StatelessWidget {
                 DrawerTitle(Icons.bug_report_outlined, 'Relatar Problema',
                     Cartoes()), // Tem que mudar a função
                 DrawerTitle(
-                    Icons.logout, 'Sair', Cartoes()), // Tem que mudar a função
+                    Icons.logout, 'Sair', Cadastro()), // Tem que mudar a função
               ],
             )
           ],
