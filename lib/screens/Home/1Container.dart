@@ -40,25 +40,24 @@ class _ExtratoMesState extends State<ExtratoMes> {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 50.0),
-                child: Text(
+          Padding(
+            padding: const EdgeInsets.only(left: 50.0),
+            child: Row(
+              children: [
+                Text(
                   'Saldo em conta',
                   style: TextStyle(color: Colors.black, fontSize: 14),
                 ),
-              ),
-              IconButton(
-                alignment: Alignment.topRight,
-                icon: Icon(Icons.remove_red_eye_sharp),
-                color: Colors.black,
-                iconSize: 18,
-                onPressed:
-                    () {}, /* Tampar o saldo do usuario ou Mostrar o saldo do usuario*/
-              )
-            ],
+                IconButton(
+                  alignment: Alignment.topRight,
+                  icon: Icon(Icons.remove_red_eye_sharp),
+                  color: Colors.black,
+                  iconSize: 18,
+                  onPressed:
+                      () {}, /* Tampar o saldo do usuario ou Mostrar o saldo do usuario*/
+                )
+              ],
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
