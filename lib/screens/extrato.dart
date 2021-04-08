@@ -15,7 +15,7 @@ class _ExtratoState extends State<Extrato> {
       appBar: AppBar(
         backgroundColor: customBg,
         title: Text(
-          'Extrato',
+          'vai se fuder thiag',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: customGrey,
