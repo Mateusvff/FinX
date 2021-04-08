@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'Cores.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
@@ -10,6 +12,35 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
+  FirebaseUser _currentUser;
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseAuth.instance.onAuthStateChanged.listen((user) {
+      setState(() {
+        _currentUser = user;
+      });
+    });
+  }
+
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+
+  Future<FirebaseUser> _getUser() async {
+    try {
+      final GoogleSignInAccount googleSignInAccount =
+          await googleSignIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
+      final AuthCredential credential = GoogleAuthProvider.getCredential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken);
+      final AuthResult authResult =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+      final FirebaseUser user = authResult.user;
+    } catch (error) {}
+  }
+
   bool _obscureText = true;
 
   void _toggle() {
@@ -361,13 +392,16 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                   child: FlatButton(
                                     onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              Home(),
-                                        ),
-                                      );
+                                      _getUser();
+                                      if (_currentUser != null) {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                Home(),
+                                          ),
+                                        );
+                                      }
                                     },
                                     child: Text(
                                       "Continuar",
