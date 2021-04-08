@@ -17,7 +17,7 @@ class _CartoesState extends State<Cartoes> {
           'Cartões',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: customGrey,
+            color: Colors.white,
           ),
         ),
       ),

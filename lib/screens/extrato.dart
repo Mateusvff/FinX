@@ -18,7 +18,7 @@ class _ExtratoState extends State<Extrato> {
           'Extrato',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: customGrey,
+            color: Colors.white,
           ),
         ),
       ),
@@ -26,10 +26,10 @@ class _ExtratoState extends State<Extrato> {
         child: Column(
           children: <Widget>[
             Center(
-              child: Container(color: customGrey, child: Calendar()),
+              child: Container(color: Colors.white, child: Calendar()),
             ),
             Text(
-              'vai se fud thiago',
+              'Informações do dia',
               style: TextStyle(fontWeight: FontWeight.bold, color: customGrey),
             ),
           ],

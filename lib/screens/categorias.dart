@@ -17,7 +17,7 @@ class _CategoriasState extends State<Categorias> {
           'Categorias',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: customGrey,
+            color: Colors.white,
           ),
         ),
       ),
