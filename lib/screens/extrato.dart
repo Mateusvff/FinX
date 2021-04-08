@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/Widgets/calendar.dart';
 import '../Cores.dart';
 
 class Extrato extends StatefulWidget {
@@ -25,11 +26,7 @@ class _ExtratoState extends State<Extrato> {
         child: Column(
           children: <Widget>[
             Center(
-              child: Text(
-                'calendario',
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: customGrey),
-              ),
+              child: Calendar(),
             ),
             Text(
               'extrato',
