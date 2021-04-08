@@ -58,7 +58,7 @@ class _SigninScreenState extends State<SigninScreen> {
             Image.asset(
               "assets/bg_login.png",
               fit: BoxFit.cover,
-              height: 535,
+              height: 360,
             ),
             Column(
               children: [
@@ -128,7 +128,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 505.0,
+                        height: 455.0,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -419,18 +419,18 @@ class _SigninScreenState extends State<SigninScreen> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 500),
-                        child: Icon(
-                          Icons.account_circle_sharp,
-                          size: 80,
-                          color: Color(0xffC4C4C4),
-                        ),
-                      ),
                     ],
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(160, 300, 0 ,0),
+              child: Icon(
+                Icons.account_circle_sharp,
+                size: 80,
+                color: Colors.white,
+              ),
             ),
           ],
         ),

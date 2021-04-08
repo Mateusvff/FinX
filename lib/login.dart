@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Image.asset(
               "assets/bg_login.png",
               fit: BoxFit.cover,
-              height: 535,
+              height: 470,
             ),
             Column(
               children: [
@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 305.0,
+                        height: 255.0,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -287,18 +287,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                   ),
+
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 310),
-                        child: Icon(
-                          Icons.account_circle_sharp,
-                          size: 80,
-                          color: Color(0xffC4C4C4),
                         ),
                       ),
                     ],
@@ -306,6 +299,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ],
             ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(160, 400, 0, 0),
+              child: Icon(
+                Icons.account_circle_sharp,
+                size: 80,
+                color: Colors.white,
+              ),
+            )
           ],
         ),
       ),

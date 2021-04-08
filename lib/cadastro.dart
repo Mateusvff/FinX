@@ -19,12 +19,12 @@ class _CadastroState extends State<Cadastro> {
           Image.asset(
             'assets/fundo.jpg',
             fit: BoxFit.cover,
-            height: 730,
+            height: 690,
           ),
           Column(
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 30, 0, 5),
+                padding: EdgeInsets.fromLTRB(0, 15, 0, 5),
                 child: Text(
                   "FinX,",
                   style: TextStyle(
@@ -51,10 +51,10 @@ class _CadastroState extends State<Cadastro> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 450.0),
+                padding: EdgeInsets.only(top: 430.0),
                 child: Container(
                   width: 500.0,
-                  height: 195.0,
+                  height: 155.0,
                   decoration: BoxDecoration(
                     color: customPurple,
                     borderRadius: BorderRadius.only(
