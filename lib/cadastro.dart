@@ -71,10 +71,12 @@ class _CadastroState extends State<Cadastro> {
                           child: RaisedButton(
                             onPressed: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (BuildContext context) =>
-                                          SigninScreen()));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      SigninScreen(),
+                                ),
+                              );
                             },
                             color: customPink,
                             elevation: 10,
