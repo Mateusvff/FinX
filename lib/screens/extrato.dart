@@ -15,7 +15,7 @@ class _ExtratoState extends State<Extrato> {
       appBar: AppBar(
         backgroundColor: customBg,
         title: Text(
-          'vai se fuder thiag',
+          'Extrato',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: customGrey,
@@ -26,10 +26,10 @@ class _ExtratoState extends State<Extrato> {
         child: Column(
           children: <Widget>[
             Center(
-              child: Calendar(),
+              child: Container(color: customGrey, child: Calendar()),
             ),
             Text(
-              'extrato',
+              'vai se fud thiago',
               style: TextStyle(fontWeight: FontWeight.bold, color: customGrey),
             ),
           ],
