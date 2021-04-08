@@ -5,6 +5,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'Cores.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
+import 'package:flutter/services.dart';
 
 class SigninScreen extends StatefulWidget {
   @override
@@ -51,6 +52,7 @@ class _SigninScreenState extends State<SigninScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(

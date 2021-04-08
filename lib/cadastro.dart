@@ -3,6 +3,7 @@ import 'Cores.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/login.dart';
 import 'package:projeto_flutter/signin.dart';
+import 'package:flutter/services.dart';
 
 class Cadastro extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class Cadastro extends StatefulWidget {
 class _CadastroState extends State<Cadastro> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
         body: SingleChildScrollView(
       child: Stack(
@@ -19,7 +21,7 @@ class _CadastroState extends State<Cadastro> {
           Image.asset(
             'assets/fundo.jpg',
             fit: BoxFit.cover,
-            height: 690,
+            height: 735,
           ),
           Column(
             children: [
@@ -51,7 +53,7 @@ class _CadastroState extends State<Cadastro> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 430.0),
+                padding: EdgeInsets.only(top: 485.0),
                 child: Container(
                   width: 500.0,
                   height: 155.0,

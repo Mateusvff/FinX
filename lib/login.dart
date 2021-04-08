@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'Cores.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
+import 'package:flutter/services.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -50,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -57,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Image.asset(
               "assets/bg_login.png",
               fit: BoxFit.cover,
-              height: 470,
+              height: 500
             ),
             Column(
               children: [
@@ -120,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 255.0),
+                  padding: EdgeInsets.only(top: 292.0),
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
@@ -300,7 +302,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(160, 400, 0, 0),
+              padding: EdgeInsets.fromLTRB(160, 440, 0, 0),
               child: Icon(
                 Icons.account_circle_sharp,
                 size: 80,

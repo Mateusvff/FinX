@@ -3,6 +3,7 @@ import 'cadastro.dart';
 import 'cores.dart';
 
 void main() {
+
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
