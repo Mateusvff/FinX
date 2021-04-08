@@ -25,12 +25,19 @@ class _ExtratoState extends State<Extrato> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Center(
-              child: Container(color: Colors.white, child: Calendar()),
-            ),
-            Text(
-              'Informações do dia',
-              style: TextStyle(fontWeight: FontWeight.bold, color: customGrey),
+            Container(color: Colors.white, child: Calendar()),
+            Padding(
+              padding: const EdgeInsets.only(top: 80.0),
+              child: Container(
+                width: 400,
+                height: 400,
+                color: customPurple,
+                child: Text(
+                  'Informações do dia',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+              ),
             ),
           ],
         ),

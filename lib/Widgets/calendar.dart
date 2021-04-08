@@ -13,11 +13,11 @@ class _CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     return TableCalendar(
-      calendarStyle: CalendarStyle(),
       firstDay: DateTime.utc(2019, 01, 01),
       lastDay: DateTime.utc(2040, 05, 13),
       focusedDay: DateTime.now(),
       calendarFormat: _calendarFormat,
+      calendarStyle: CalendarStyle(),
       onFormatChanged: (format) {
         setState(() {
           _calendarFormat = format;
