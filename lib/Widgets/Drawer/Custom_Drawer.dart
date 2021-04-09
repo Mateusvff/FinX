@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/Drawer/title.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
-import 'package:projeto_flutter/screens/cartoes.dart';
 import '../../Cores.dart';
 
 class CustomDrawer extends StatelessWidget {

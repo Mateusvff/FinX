@@ -31,11 +31,19 @@ class _ExtratoState extends State<Extrato> {
               child: Container(
                 width: 400,
                 height: 400,
-                color: customPurple,
-                child: Text(
-                  'Informações do dia',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.all(Radius.circular(25))),
+                child: Column(
+                  children: [
+                    Text(
+                      'Informações do dia',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 30),
+                    ),
+                  ],
                 ),
               ),
             ),
