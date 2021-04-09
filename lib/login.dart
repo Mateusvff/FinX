@@ -27,6 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
   Future<FirebaseUser> _getUser() async {
+    if (_currentUser != null) return _currentUser;
     try {
       final GoogleSignInAccount googleSignInAccount =
           await googleSignIn.signIn();
@@ -270,12 +271,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                     onPressed: () async {
                                       final FirebaseUser user =
                                           await _getUser();
+                                      Map<String, dynamic> data = {
+                                        "uid": user.uid,
+                                        "userName": user.displayName,
+                                        "UserPhotoUrl": user.photoUrl,
+                                      };
                                       if (user != null) {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (BuildContext context) =>
-                                                Home(),
+                                                Home(data: data),
                                           ),
                                         );
                                       }
