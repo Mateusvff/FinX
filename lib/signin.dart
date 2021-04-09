@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -127,14 +128,14 @@ class _SigninScreenState extends State<SigninScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 155.0),
+                  padding: EdgeInsets.only(top: 150.0),
                   child: Stack(
                     alignment: Alignment.center,
                     children: <Widget>[
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 490.0,
+                        height: 530.0,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -381,6 +382,37 @@ class _SigninScreenState extends State<SigninScreen> {
                                       ),
                                     ],
                                   )),
+                              Padding(
+                                padding: EdgeInsets.only(top: 30),
+                                child: Container(
+                                    width: 350,
+                                    height: 42,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(22))),
+                                    child: SignInButton(
+                                      Buttons.Google,
+                                      text: "Cadastro com o Google",
+                                      onPressed: () async {
+                                        final FirebaseUser user =
+                                            await _getUser();
+                                        Map<String, dynamic> data = {
+                                          "uid": user.uid,
+                                          "userName": user.displayName,
+                                          "UserPhotoUrl": user.photoUrl,
+                                        };
+                                        if (user != null) {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (BuildContext context) =>
+                                                  Home(data: data),
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    )),
+                              ),
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(
