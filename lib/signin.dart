@@ -403,7 +403,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                           await _getUser();
                                       Map<String, dynamic> data = {
                                         "uid": user.uid,
-                                        "senderName": user.displayName,
+                                        "userName": user.displayName,
                                         "UserPhotoUrl": user.photoUrl,
                                       };
                                       if (user != null) {
