@@ -38,7 +38,10 @@ class _LoginScreenState extends State<LoginScreen> {
       final AuthResult authResult =
           await FirebaseAuth.instance.signInWithCredential(credential);
       final FirebaseUser user = authResult.user;
-    } catch (error) {}
+      return user;
+    } catch (error) {
+      return null;
+    }
   }
 
   bool _obscureText = true;

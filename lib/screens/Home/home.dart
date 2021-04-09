@@ -10,11 +10,19 @@ import '../../Cores.dart';
 import '2Container.dart';
 
 class Home extends StatefulWidget {
+  final Map<String, dynamic> data;
+
+  const Home({Key key, this.data}) : super(key: key);
+
   @override
-  _HomeState createState() => _HomeState();
+  _HomeState createState() => _HomeState(data);
 }
 
 class _HomeState extends State<Home> {
+  final Map<String, dynamic> data;
+
+  _HomeState(this.data);
+
   final GoogleSignIn googleSignIn = GoogleSignIn();
   void initState() {
     super.initState();
@@ -122,6 +130,7 @@ class _HomeState extends State<Home> {
                       backgroundColor:
                           customGrey, // Adicionar Foto do Usuario (Firebase)
                       radius: 30.0,
+                      backgroundImage: NetworkImage(data['UserPhotoUrl']),
                     ),
                   ),
                 )),
