@@ -18,6 +18,7 @@ class _ExtratoState extends State<Extrato> {
           'Extrato',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontFamily: 'NotoSans',
             color: Colors.white,
           ),
         ),
@@ -40,6 +41,7 @@ class _ExtratoState extends State<Extrato> {
                       'Informações do dia',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'NotoSans',
                           color: Colors.white,
                           fontSize: 30),
                     ),

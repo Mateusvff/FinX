@@ -17,14 +17,86 @@ class _CartoesState extends State<Cartoes> {
           'Cartões',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontFamily: 'NotoSans',
             color: Colors.white,
           ),
         ),
       ),
       body: SingleChildScrollView(
-        child: Text(
-          'cartões cadastrados',
-          style: TextStyle(fontWeight: FontWeight.bold, color: customGrey),
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0),
+                child: Text(
+                  'Adicionar cartão',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'NotoSans',
+                      color: customGrey),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0),
+                child: Text(
+                  'Remover cartão',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'NotoSans',
+                      color: customGrey),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 150.0),
+                child: Container(
+                  height: 700,
+                  width: 400,
+                  decoration: BoxDecoration(
+                      color: customPurple,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(25))),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Cartão x (banco y)',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'NotoSans',
+                            fontSize: 18),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: Text(
+                          'Cartão x (banco y)',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'NotoSans',
+                              fontSize: 18),
+                        ),
+                      ),
+                      Text(
+                        'Cartão x (banco y)',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'NotoSans',
+                            fontSize: 18),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: Text(
+                          'Cartão x (banco y)',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'NotoSans',
+                              fontSize: 18),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
