@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/BottomSheet.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:projeto_flutter/Widgets/Drawer/Custom_Drawer.dart';
 import 'package:projeto_flutter/screens/Home/4Container.dart';
 import 'package:projeto_flutter/screens/Home/3Container.dart';
 import 'package:projeto_flutter/screens/Home/1Container.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import '../../Cores.dart';
 import '2Container.dart';
 
@@ -22,43 +20,6 @@ class _HomeState extends State<Home> {
   final Map<String, dynamic> data;
 
   _HomeState(this.data);
-
-  final GoogleSignIn googleSignIn = GoogleSignIn();
-  void initState() {
-    super.initState();
-
-    FirebaseAuth.instance.onAuthStateChanged.listen((user) {
-      setState(() {
-        _currentUser = user;
-      });
-    });
-  }
-
-  Future<FirebaseUser> _getUser() async {
-    if (_currentUser != null) return _currentUser;
-
-    try {
-      final GoogleSignInAccount googleSignInAccount =
-          await googleSignIn.signIn();
-      final GoogleSignInAuthentication googleSignInAuthentication =
-          await googleSignInAccount.authentication;
-
-      final AuthCredential credential = GoogleAuthProvider.getCredential(
-        idToken: googleSignInAuthentication.idToken,
-        accessToken: googleSignInAuthentication.accessToken,
-      );
-
-      final AuthResult authResult =
-          await FirebaseAuth.instance.signInWithCredential(credential);
-
-      final FirebaseUser user = authResult.user;
-      return user;
-    } catch (error) {
-      return null;
-    }
-  }
-
-  FirebaseUser _currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -79,9 +40,7 @@ class _HomeState extends State<Home> {
           ),
         ],
         title: Text(
-          _currentUser != null
-              ? 'Seja Bem Vindo,\n ${_currentUser.displayName}'
-              : 'FinX - Erro no Login',
+          'Seja Bem Vindo,\n ${data['userName']}',
           /* Adicionar Nome do Usuario (Firebase) */
           style: TextStyle(
             fontSize: 16.0,
@@ -130,7 +89,9 @@ class _HomeState extends State<Home> {
                       backgroundColor:
                           customGrey, // Adicionar Foto do Usuario (Firebase)
                       radius: 30.0,
-                      backgroundImage: NetworkImage(data['UserPhotoUrl']),
+                      backgroundImage: (data['UserPhotoUrl'] == null)
+                          ? AssetImage('images/user-avatar.png')
+                          : NetworkImage(data['UserPhotoUrl']),
                     ),
                   ),
                 )),
