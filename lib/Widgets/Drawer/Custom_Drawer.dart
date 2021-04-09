@@ -66,22 +66,38 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 ),
                 Divider(),
-                DrawerTitle(Icons.person_outline_outlined, 'Conta',
-                    (Home())), // Tem que mudar a função
-                DrawerTitle(Icons.lock_outlined, 'Privacidade',
-                    Cartoes()), // Tem que mudar a função
-                DrawerTitle(Icons.notifications_none_rounded, 'Notificações',
-                    Cartoes()), // Tem que mudar a função
-                DrawerTitle(Icons.person_add_outlined, 'Convidar Amigos',
-                    Cartoes()), // Tem que mudar a função
-                DrawerTitle(Icons.info_outline_rounded, 'Sobre',
-                    Cartoes()), // Tem que mudar a função
-                DrawerTitle(Icons.help_outline_outlined, 'Ajuda',
-                    Cartoes()), // Tem que mudar a função
-                DrawerTitle(Icons.bug_report_outlined, 'Relatar Problema',
-                    Cartoes()), // Tem que mudar a função
                 DrawerTitle(
-                    Icons.logout, 'Sair', Cartoes()), // Tem que mudar a função
+                    icon: Icons.person_outline_outlined,
+                    text: 'Conta',
+                    page: (Home())), // Tem que mudar a função
+                DrawerTitle(
+                    icon: Icons.lock_outlined,
+                    text: 'Privacidade',
+                    page: Cartoes()), // Tem que mudar a função
+                DrawerTitle(
+                    icon: Icons.notifications_none_rounded,
+                    text: 'Notificações',
+                    page: Cartoes()), // Tem que mudar a função
+                DrawerTitle(
+                    icon: Icons.person_add_outlined,
+                    text: 'Convidar Amigos',
+                    page: Cartoes()), // Tem que mudar a função
+                DrawerTitle(
+                    icon: Icons.info_outline_rounded,
+                    text: 'Sobre',
+                    page: Cartoes()), // Tem que mudar a função
+                DrawerTitle(
+                    icon: Icons.help_outline_outlined,
+                    text: 'Ajuda',
+                    page: Cartoes()), // Tem que mudar a função
+                DrawerTitle(
+                    icon: Icons.bug_report_outlined,
+                    text: 'Relatar Problema',
+                    page: Cartoes()), // Tem que mudar a função
+                DrawerTitle(
+                  icon: Icons.logout,
+                  text: 'Sair',
+                ) // Tem que mudar a função
               ],
             )
           ],

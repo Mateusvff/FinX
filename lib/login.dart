@@ -56,11 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Stack(
           children: <Widget>[
-            Image.asset(
-              "assets/bg_login.png",
-              fit: BoxFit.cover,
-              height: 500
-            ),
+            Image.asset("assets/bg_login.png", fit: BoxFit.cover, height: 500),
             Column(
               children: [
                 Padding(
@@ -268,16 +264,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                     color: customPink,
                                   ),
                                   child: FlatButton(
-                                    onPressed: () {
-                                      _getUser();
-
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              Home(),
-                                        ),
-                                      );
+                                    onPressed: () async {
+                                      final FirebaseUser user =
+                                          await _getUser();
+                                      if (user != null) {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                Home(),
+                                          ),
+                                        );
+                                      }
                                     },
                                     child: Text(
                                       "Continuar",
@@ -289,7 +287,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                   ),
-
                                 ),
                               ),
                             ],

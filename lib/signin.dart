@@ -28,6 +28,7 @@ class _SigninScreenState extends State<SigninScreen> {
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
   Future<FirebaseUser> _getUser() async {
+    if (_currentUser != null) return _currentUser;
     try {
       final GoogleSignInAccount googleSignInAccount =
           await googleSignIn.signIn();
@@ -39,7 +40,10 @@ class _SigninScreenState extends State<SigninScreen> {
       final AuthResult authResult =
           await FirebaseAuth.instance.signInWithCredential(credential);
       final FirebaseUser user = authResult.user;
-    } catch (error) {}
+      return user;
+    } catch (error) {
+      return null;
+    }
   }
 
   bool _obscureText = true;
@@ -393,9 +397,10 @@ class _SigninScreenState extends State<SigninScreen> {
                                     color: customPink,
                                   ),
                                   child: FlatButton(
-                                    onPressed: () {
-                                      _getUser();
-                                      if (_currentUser != null) {
+                                    onPressed: () async {
+                                      final FirebaseUser user =
+                                          await _getUser();
+                                      if (user != null) {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -427,7 +432,7 @@ class _SigninScreenState extends State<SigninScreen> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(160, 300, 0 ,0),
+              padding: EdgeInsets.fromLTRB(160, 300, 0, 0),
               child: Icon(
                 Icons.account_circle_sharp,
                 size: 80,
