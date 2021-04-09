@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -400,7 +401,14 @@ class _SigninScreenState extends State<SigninScreen> {
                                     onPressed: () async {
                                       final FirebaseUser user =
                                           await _getUser();
+                                      Map<String, dynamic> data = {
+                                        "uid": user.uid,
+                                        "senderName": user.displayName,
+                                        "senderPhotoUrl": user.photoUrl,
+                                        "time": Timestamp.now(),
+                                      };
                                       if (user != null) {
+                                        print(data);
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(

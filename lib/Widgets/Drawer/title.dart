@@ -26,7 +26,9 @@ class DrawerTitle extends StatelessWidget {
                 builder: (BuildContext context) => page,
               ),
             );
-          } else {}
+          } else {
+            return null;
+          }
         },
         child: Container(
           height: 60.0,
