@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/BottomSheet.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:projeto_flutter/Widgets/Drawer/Custom_Drawer.dart';
 import 'package:projeto_flutter/screens/Home/4Container.dart';
 import 'package:projeto_flutter/screens/Home/3Container.dart';
 import 'package:projeto_flutter/screens/Home/1Container.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 import '../../Cores.dart';
 import '2Container.dart';
 
@@ -14,6 +15,43 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+  void initState() {
+    super.initState();
+
+    FirebaseAuth.instance.onAuthStateChanged.listen((user) {
+      setState(() {
+        _currentUser = user;
+      });
+    });
+  }
+
+  Future<FirebaseUser> _getUser() async {
+    if (_currentUser != null) return _currentUser;
+
+    try {
+      final GoogleSignInAccount googleSignInAccount =
+          await googleSignIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.getCredential(
+        idToken: googleSignInAuthentication.idToken,
+        accessToken: googleSignInAuthentication.accessToken,
+      );
+
+      final AuthResult authResult =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      final FirebaseUser user = authResult.user;
+      return user;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  FirebaseUser _currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +71,9 @@ class _HomeState extends State<Home> {
           ),
         ],
         title: Text(
-          'Seja Bem Vindo,\n Wesley Gonzaga',
+          _currentUser != null
+              ? 'Seja Bem Vindo,\n ${_currentUser.displayName}'
+              : 'Chat App',
           /* Adicionar Nome do Usuario (Firebase) */
           style: TextStyle(
             fontSize: 16.0,
