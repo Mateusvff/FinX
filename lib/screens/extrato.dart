@@ -31,10 +31,13 @@ class _ExtratoState extends State<Extrato> {
               padding: const EdgeInsets.only(top: 80.0),
               child: Container(
                 width: 400,
-                height: 400,
+                height: 375,
                 decoration: BoxDecoration(
                     color: customPurple,
-                    borderRadius: const BorderRadius.all(Radius.circular(25))),
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(22.0),
+                      topLeft: Radius.circular(22.0),
+                    )),
                 child: Column(
                   children: [
                     Text(
