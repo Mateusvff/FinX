@@ -28,28 +28,46 @@ class _CartoesState extends State<Cartoes> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 50.0),
-                child: Text(
-                  'Adicionar cartão',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'NotoSans',
-                      color: customGrey),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: customPurple,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(18))),
+                  child: TextButton(
+                    child: Text(
+                      'Adicionar cartão',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'NotoSans',
+                          color: Colors.white),
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 50.0),
-                child: Text(
-                  'Remover cartão',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'NotoSans',
-                      color: customGrey),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: customPurple,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(18))),
+                  child: TextButton(
+                    child: Text(
+                      'Remover cartão',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'NotoSans',
+                          color: Colors.white),
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 150.0),
                 child: Container(
-                  height: 480,
+                  height: 450,
                   width: 400,
                   decoration: BoxDecoration(
                       color: customPurple,
