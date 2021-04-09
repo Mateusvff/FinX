@@ -134,7 +134,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 455.0,
+                        height: 490.0,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(

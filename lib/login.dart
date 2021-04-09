@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Cores.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
 import 'package:flutter/services.dart';
@@ -129,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 255.0,
+                        height: 355.0,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -252,6 +253,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ],
                                   )),
+                              Padding(
+                                padding: EdgeInsets.only(top: 30),
+                                child: Container(
+                                    width: 350,
+                                    height: 42,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(22))),
+                                    child: SignInButton(
+                                      Buttons.Google,
+                                      text: "Entrar com o Google",
+                                      onPressed: () {},
+                                    )),
+                              ),
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(
