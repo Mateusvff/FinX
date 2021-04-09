@@ -21,7 +21,7 @@ class _SigninScreenState extends State<SigninScreen> {
     super.initState();
     FirebaseAuth.instance.onAuthStateChanged.listen((user) {
       setState(() {
-        _currentUser = user;
+        _currentUser = user; // salvando o usario autual
       });
     });
   }
@@ -29,6 +29,7 @@ class _SigninScreenState extends State<SigninScreen> {
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
   Future<FirebaseUser> _getUser() async {
+    //Login com o Google
     if (_currentUser != null) return _currentUser;
     try {
       final GoogleSignInAccount googleSignInAccount =
@@ -391,6 +392,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                           );
                                         }
                                       },
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(22)),
                                     )),
                               ),
                               Padding(
