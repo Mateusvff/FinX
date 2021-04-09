@@ -264,7 +264,24 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: SignInButton(
                                       Buttons.Google,
                                       text: "Entrar com o Google",
-                                      onPressed: () {},
+                                      onPressed: () async {
+                                        final FirebaseUser user =
+                                            await _getUser();
+                                        Map<String, dynamic> data = {
+                                          "uid": user.uid,
+                                          "userName": user.displayName,
+                                          "UserPhotoUrl": user.photoUrl,
+                                        };
+                                        if (user != null) {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (BuildContext context) =>
+                                                  Home(data: data),
+                                            ),
+                                          );
+                                        }
+                                      },
                                     )),
                               ),
                               Padding(
@@ -283,24 +300,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     color: customPink,
                                   ),
                                   child: TextButton(
-                                    onPressed: () async {
-                                      final FirebaseUser user =
-                                          await _getUser();
-                                      Map<String, dynamic> data = {
-                                        "uid": user.uid,
-                                        "userName": user.displayName,
-                                        "UserPhotoUrl": user.photoUrl,
-                                      };
-                                      if (user != null) {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (BuildContext context) =>
-                                                Home(data: data),
-                                          ),
-                                        );
-                                      }
-                                    },
+                                    onPressed: () {},
                                     child: Text(
                                       "Continuar",
                                       style: TextStyle(

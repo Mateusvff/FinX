@@ -27,7 +27,12 @@ class DrawerTitle extends StatelessWidget {
               ),
             );
           } else {
-            return null;
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => page,
+              ),
+            );
           }
         },
         child: Container(

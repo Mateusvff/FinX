@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Scaffold a ser buildado
-      endDrawer: CustomDrawer(),
+      endDrawer: CustomDrawer(data),
       backgroundColor: customBg,
       appBar: AppBar(
         // Barra Inicial

@@ -6,6 +6,10 @@ import 'package:projeto_flutter/screens/cartoes.dart';
 import '../../Cores.dart';
 
 class CustomDrawer extends StatelessWidget {
+  final Map<String, dynamic> data;
+
+  CustomDrawer(this.data);
+
   @override
   Widget build(BuildContext context) {
     Widget _buildDrawerBack() => Container(
@@ -40,8 +44,9 @@ class CustomDrawer extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (BuildContext context) =>
-                                          Home()));
+                                      builder: (BuildContext context) => Home(
+                                            data: data,
+                                          )));
                             },
                             color: Colors.white,
                           )),
@@ -59,7 +64,7 @@ class CustomDrawer extends StatelessWidget {
                           left: 0.0,
                           bottom: 0.0,
                           child: Text(
-                            'Olá,\nWesley Gonzaga',
+                            'Olá,\n${data['userName']}',
                             textAlign: TextAlign.start,
                             style: TextStyle(color: Colors.white),
                           )),
@@ -70,31 +75,39 @@ class CustomDrawer extends StatelessWidget {
                 DrawerTitle(
                     icon: Icons.person_outline_outlined,
                     text: 'Conta',
-                    page: (Home())), // Tem que mudar a função
+                    sair: false,
+                    page: (Home(
+                      data: data,
+                    ))), // Tem que mudar a função
                 DrawerTitle(
-                    icon: Icons.lock_outlined,
-                    text: 'Privacidade',
-                    page: Cartoes()), // Tem que mudar a função
+                  icon: Icons.lock_outlined,
+                  text: 'Privacidade',
+                  sair: false,
+                ), // Tem que mudar a função
                 DrawerTitle(
-                    icon: Icons.notifications_none_rounded,
-                    text: 'Notificações',
-                    page: Cartoes()), // Tem que mudar a função
+                  icon: Icons.notifications_none_rounded,
+                  text: 'Notificações',
+                  sair: false,
+                ), // Tem que mudar a função
                 DrawerTitle(
-                    icon: Icons.person_add_outlined,
-                    text: 'Convidar Amigos',
-                    page: Cartoes()), // Tem que mudar a função
+                  icon: Icons.person_add_outlined,
+                  text: 'Convidar Amigos',
+                  sair: false,
+                ), // Tem que mudar a função
                 DrawerTitle(
-                    icon: Icons.info_outline_rounded,
-                    text: 'Sobre',
-                    page: Cartoes()), // Tem que mudar a função
+                  icon: Icons.info_outline_rounded,
+                  text: 'Sobre',
+                  sair: false,
+                ), // Tem que mudar a função
                 DrawerTitle(
-                    icon: Icons.help_outline_outlined,
-                    text: 'Ajuda',
-                    page: Cartoes()), // Tem que mudar a função
+                  icon: Icons.help_outline_outlined,
+                  text: 'Ajuda',
+                  sair: false,
+                ), // Tem que mudar a função
                 DrawerTitle(
-                    icon: Icons.bug_report_outlined,
-                    text: 'Relatar Problema',
-                    page: Cartoes()), // Tem que mudar a função
+                  icon: Icons.bug_report_outlined,
+                  text: 'Relatar Problema',
+                ), // Tem que mudar a função
                 DrawerTitle(
                   icon: Icons.logout,
                   text: 'Sair',
