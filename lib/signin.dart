@@ -174,11 +174,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                       ),
                                     ],
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(22.0),
-                                      topLeft: Radius.circular(22.0),
-                                      bottomLeft: Radius.circular(22.0),
-                                      bottomRight: Radius.circular(22.0),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(22.0),
                                     ),
                                   ),
                                   child: TextButton(
@@ -212,11 +209,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                       ),
                                     ],
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(22.0),
-                                      topLeft: Radius.circular(22.0),
-                                      bottomLeft: Radius.circular(22.0),
-                                      bottomRight: Radius.circular(22.0),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(22.0),
                                     ),
                                   ),
                                   child: TextButton(
@@ -252,11 +246,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                             ),
                                           ],
                                           color: Colors.white,
-                                          borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(22.0),
-                                            topLeft: Radius.circular(22.0),
-                                            bottomLeft: Radius.circular(22.0),
-                                            bottomRight: Radius.circular(22.0),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(22.0),
                                           ),
                                         ),
                                         child: TextButton(
@@ -285,12 +276,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                           height: 42,
                                           decoration: BoxDecoration(
                                             color: Colors.transparent,
-                                            borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(22.0),
-                                              topLeft: Radius.circular(22.0),
-                                              bottomLeft: Radius.circular(22.0),
-                                              bottomRight:
-                                                  Radius.circular(22.0),
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(22.0),
                                             ),
                                           ),
                                           child: TextButton(
@@ -325,11 +312,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                             ),
                                           ],
                                           color: Colors.white,
-                                          borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(22.0),
-                                            topLeft: Radius.circular(22.0),
-                                            bottomLeft: Radius.circular(22.0),
-                                            bottomRight: Radius.circular(22.0),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(22.0),
                                           ),
                                         ),
                                         child: TextButton(
@@ -358,12 +342,8 @@ class _SigninScreenState extends State<SigninScreen> {
                                           height: 42,
                                           decoration: BoxDecoration(
                                             color: Colors.transparent,
-                                            borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(22.0),
-                                              topLeft: Radius.circular(22.0),
-                                              bottomLeft: Radius.circular(22.0),
-                                              bottomRight:
-                                                  Radius.circular(22.0),
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(22.0),
                                             ),
                                           ),
                                           child: TextButton(
