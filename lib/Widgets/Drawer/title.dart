@@ -20,6 +20,12 @@ class DrawerTitle extends StatelessWidget {
           if (sair) {
             FirebaseAuth.instance.signOut();
             googleSignIn.signOut();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => page,
+              ),
+            );
           } else {}
         },
         child: Container(

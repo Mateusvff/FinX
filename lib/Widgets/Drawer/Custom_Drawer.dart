@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/Drawer/title.dart';
+import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
 import 'package:projeto_flutter/screens/cartoes.dart';
 import '../../Cores.dart';
@@ -97,6 +98,8 @@ class CustomDrawer extends StatelessWidget {
                 DrawerTitle(
                   icon: Icons.logout,
                   text: 'Sair',
+                  sair: true,
+                  page: Cadastro(),
                 ) // Tem que mudar a função
               ],
             )
