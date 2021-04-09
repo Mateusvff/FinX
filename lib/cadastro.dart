@@ -70,7 +70,7 @@ class _CadastroState extends State<Cadastro> {
                         Container(
                           width: 350.0,
                           height: 42.0,
-                          child: RaisedButton(
+                          child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -80,8 +80,10 @@ class _CadastroState extends State<Cadastro> {
                                 ),
                               );
                             },
-                            color: customPink,
-                            elevation: 10,
+                            style: ElevatedButton.styleFrom(
+                              primary: customPink,
+                              elevation: 10,
+                            ),
                             child: Text("Começar",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -94,7 +96,7 @@ class _CadastroState extends State<Cadastro> {
                         SizedBox(
                           height: 12,
                         ),
-                        FlatButton(
+                        TextButton(
                             onPressed: () {
                               Navigator.push(
                                   context,

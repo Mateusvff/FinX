@@ -61,8 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: FlatButton(
-                    color: Colors.transparent,
+                  child: TextButton(
+                    style: TextButton.styleFrom(primary: Colors.transparent),
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -158,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       bottomRight: Radius.circular(22.0),
                                     ),
                                   ),
-                                  child: FlatButton(
+                                  child: TextButton(
                                     onPressed: () {},
                                     child: TextField(
                                       keyboardType: TextInputType.emailAddress,
@@ -198,7 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             bottomRight: Radius.circular(22.0),
                                           ),
                                         ),
-                                        child: FlatButton(
+                                        child: TextButton(
                                           onPressed: () {},
                                           child: TextField(
                                             keyboardType:
@@ -232,7 +232,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   Radius.circular(22.0),
                                             ),
                                           ),
-                                          child: FlatButton(
+                                          child: TextButton(
                                             onPressed: _toggle,
                                             child: Text(
                                               _obscureText ? "Show" : "Hide",
@@ -263,7 +263,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ],
                                     color: customPink,
                                   ),
-                                  child: FlatButton(
+                                  child: TextButton(
                                     onPressed: () async {
                                       final FirebaseUser user =
                                           await _getUser();

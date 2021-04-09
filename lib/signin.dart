@@ -71,8 +71,8 @@ class _SigninScreenState extends State<SigninScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: FlatButton(
-                    color: Colors.transparent,
+                  child: TextButton(
+                    style: TextButton.styleFrom(primary: Colors.transparent),
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -181,7 +181,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                       bottomRight: Radius.circular(22.0),
                                     ),
                                   ),
-                                  child: FlatButton(
+                                  child: TextButton(
                                     onPressed: () {},
                                     child: TextField(
                                       keyboardType: TextInputType.name,
@@ -219,7 +219,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                       bottomRight: Radius.circular(22.0),
                                     ),
                                   ),
-                                  child: FlatButton(
+                                  child: TextButton(
                                     onPressed: () {},
                                     child: TextField(
                                       keyboardType: TextInputType.emailAddress,
@@ -259,7 +259,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                             bottomRight: Radius.circular(22.0),
                                           ),
                                         ),
-                                        child: FlatButton(
+                                        child: TextButton(
                                           onPressed: () {},
                                           child: TextField(
                                             keyboardType:
@@ -293,7 +293,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                                   Radius.circular(22.0),
                                             ),
                                           ),
-                                          child: FlatButton(
+                                          child: TextButton(
                                             onPressed: _toggle,
                                             child: Text(
                                               _obscureText ? "Show" : "Hide",
@@ -332,7 +332,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                             bottomRight: Radius.circular(22.0),
                                           ),
                                         ),
-                                        child: FlatButton(
+                                        child: TextButton(
                                           onPressed: () {},
                                           child: TextField(
                                             keyboardType:
@@ -366,7 +366,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                                   Radius.circular(22.0),
                                             ),
                                           ),
-                                          child: FlatButton(
+                                          child: TextButton(
                                             onPressed: _toggle,
                                             child: Text(
                                               _obscureText ? "Show" : "Hide",
@@ -397,15 +397,14 @@ class _SigninScreenState extends State<SigninScreen> {
                                     ],
                                     color: customPink,
                                   ),
-                                  child: FlatButton(
+                                  child: TextButton(
                                     onPressed: () async {
                                       final FirebaseUser user =
                                           await _getUser();
                                       Map<String, dynamic> data = {
                                         "uid": user.uid,
                                         "senderName": user.displayName,
-                                        "senderPhotoUrl": user.photoUrl,
-                                        "time": Timestamp.now(),
+                                        "UserPhotoUrl": user.photoUrl,
                                       };
                                       if (user != null) {
                                         print(data);
