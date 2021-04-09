@@ -70,7 +70,7 @@ class _ExtratoMesState extends State<ExtratoMes> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('R\$10,000,00',
+              Text('R\$10.000,00',
                   /* Puxar do usuario de acordo com Receita - Despesa */
                   style: TextStyle(
                       color: Colors.black,
