@@ -73,7 +73,7 @@ class _HomeState extends State<Home> {
         title: Text(
           _currentUser != null
               ? 'Seja Bem Vindo,\n ${_currentUser.displayName}'
-              : 'Chat App',
+              : 'FinX - Erro no Login',
           /* Adicionar Nome do Usuario (Firebase) */
           style: TextStyle(
             fontSize: 16.0,
