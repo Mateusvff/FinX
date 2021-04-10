@@ -23,100 +23,99 @@ class _CartoesState extends State<Cartoes> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 50.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: customPurple,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(18))),
-                  child: TextButton(
-                    child: Text(
-                      'Adicionar cartão',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'NotoSans',
-                          color: Colors.white),
-                    ),
-                    onPressed: () {},
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.all(Radius.circular(18))),
+                child: TextButton(
+                  child: Text(
+                    'Adicionar cartão',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'NotoSans',
+                        color: Colors.white),
                   ),
+                  onPressed: () {},
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 50.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: customPurple,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(18))),
-                  child: TextButton(
-                    child: Text(
-                      'Remover cartão',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'NotoSans',
-                          color: Colors.white),
-                    ),
-                    onPressed: () {},
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.all(Radius.circular(18))),
+                child: TextButton(
+                  child: Text(
+                    'Remover cartão',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'NotoSans',
+                        color: Colors.white),
                   ),
+                  onPressed: () {},
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 150.0),
-                child: Container(
-                  height: 450,
-                  width: 400,
-                  decoration: BoxDecoration(
-                      color: customPurple,
-                      borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(22.0),
-                        topLeft: Radius.circular(22.0),
-                      )),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Cartão x (banco y)',
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 150.0),
+              child: Container(
+                height: 450,
+                width: 400,
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(22.0),
+                      topLeft: Radius.circular(22.0),
+                    )),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 50.0),
+                      child: Text(
+                        'Visa black (Banco do Brasil)',
+                        style: TextStyle(
+                            color: customCyan,
+                            fontFamily: 'NotoSans',
+                            fontSize: 18),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Text(
+                        'MasterCard (Banco do Brasil)',
+                        style: TextStyle(
+                            color: customRed,
+                            fontFamily: 'NotoSans',
+                            fontSize: 18),
+                      ),
+                    ),
+                    Text(
+                      'Visa Platinum (Santander)',
+                      style: TextStyle(
+                          color: Colors.yellowAccent,
+                          fontFamily: 'NotoSans',
+                          fontSize: 18),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Text(
+                        'Crédito Universitário (Nubank)',
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: 'NotoSans',
                             fontSize: 18),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(18.0),
-                        child: Text(
-                          'Cartão x (banco y)',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'NotoSans',
-                              fontSize: 18),
-                        ),
-                      ),
-                      Text(
-                        'Cartão x (banco y)',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'NotoSans',
-                            fontSize: 18),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(18.0),
-                        child: Text(
-                          'Cartão x (banco y)',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'NotoSans',
-                              fontSize: 18),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

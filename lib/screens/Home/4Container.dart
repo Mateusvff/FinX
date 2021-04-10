@@ -27,6 +27,7 @@ class _CartaoHomeState extends State<CartaoHome> {
               child: TextButton(
                 child: Text('Cartões',
                     style: TextStyle(
+                      fontFamily: 'NotoSans',
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     )),
@@ -47,6 +48,7 @@ class _CartaoHomeState extends State<CartaoHome> {
               child: TextButton(
                 child: Text('Extrato',
                     style: TextStyle(
+                      fontFamily: 'NotoSans',
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     )),
@@ -68,6 +70,7 @@ class _CartaoHomeState extends State<CartaoHome> {
                 child: Text(
                   'Categorias',
                   style: TextStyle(
+                    fontFamily: 'NotoSans',
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
