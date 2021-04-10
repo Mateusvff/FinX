@@ -12,7 +12,7 @@ class _InfoCartState extends State<InfoCart> {
   Widget build(BuildContext context) {
     return Container(
       width: 383,
-      height: 112,
+      height: 125,
       /*--------------------- Segundo Container (INFO CARTOES)----------------------*/
       decoration: BoxDecoration(
           color: Colors.white,

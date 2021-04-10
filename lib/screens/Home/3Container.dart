@@ -10,7 +10,7 @@ class _ExtratoBancoState extends State<ExtratoBanco> {
   Widget build(BuildContext context) {
     return Container(
       width: 383,
-      height: 112,
+      height: 130,
       /*--------------------------- Terceiro Container (EXTRATO DA CONTA BANCARIA)--------------------*/
       decoration: BoxDecoration(
           color: Colors.white,
