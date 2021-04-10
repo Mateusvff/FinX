@@ -66,7 +66,7 @@ class _CartoesState extends State<Cartoes> {
             Padding(
               padding: const EdgeInsets.only(top: 150.0),
               child: Container(
-                height: 450,
+                height: 440,
                 width: 400,
                 decoration: BoxDecoration(
                     color: customPurple,
