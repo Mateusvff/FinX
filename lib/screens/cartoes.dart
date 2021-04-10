@@ -28,6 +28,7 @@ class _CartoesState extends State<Cartoes> {
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Container(
+                width: 300,
                 decoration: BoxDecoration(
                     color: customPurple,
                     borderRadius: const BorderRadius.all(Radius.circular(18))),
@@ -46,6 +47,7 @@ class _CartoesState extends State<Cartoes> {
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Container(
+                width: 300,
                 decoration: BoxDecoration(
                     color: customPurple,
                     borderRadius: const BorderRadius.all(Radius.circular(18))),
@@ -76,39 +78,77 @@ class _CartoesState extends State<Cartoes> {
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(top: 50.0),
-                      child: Text(
-                        'Visa black (Banco do Brasil)',
-                        style: TextStyle(
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.credit_card,
                             color: customCyan,
-                            fontFamily: 'NotoSans',
-                            fontSize: 18),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Visa black (Banco do Brasil)',
+                              style: TextStyle(
+                                  color: customCyan,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Text(
-                        'MasterCard (Banco do Brasil)',
-                        style: TextStyle(
-                            color: customRed,
-                            fontFamily: 'NotoSans',
-                            fontSize: 18),
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.credit_card, color: customRed),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'MasterCard (Banco do Brasil)',
+                              style: TextStyle(
+                                  color: customRed,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Text(
-                      'Visa Platinum (Santander)',
-                      style: TextStyle(
-                          color: Colors.yellowAccent,
-                          fontFamily: 'NotoSans',
-                          fontSize: 18),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.credit_card, color: Colors.yellow),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Visa Platinum (Santander)',
+                              style: TextStyle(
+                                  color: Colors.yellowAccent,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Text(
-                        'Crédito Universitário (Nubank)',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'NotoSans',
-                            fontSize: 18),
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.credit_card, color: Colors.white),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Crédito Universitário (Nubank)',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
