@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_flutter/Widgets/calendar.dart';
+import 'package:projeto_flutter/Widgets/calendario.dart';
 import '../Cores.dart';
 
 class Extrato extends StatefulWidget {
@@ -26,12 +26,22 @@ class _ExtratoState extends State<Extrato> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(color: Colors.white, child: Calendar()),
             Padding(
-              padding: const EdgeInsets.only(top: 80.0),
+              padding: EdgeInsets.only(top: 70),
               child: Container(
-                width: 400,
-                height: 375,
+                width: 210,
+                height: 60,
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.all(Radius.circular(18))),
+                child: Calendario(),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 170.0),
+              child: Container(
+                width: 410,
+                height: 485,
                 decoration: BoxDecoration(
                     color: customPurple,
                     borderRadius: const BorderRadius.only(
