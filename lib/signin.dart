@@ -62,14 +62,23 @@ class _SigninScreenState extends State<SigninScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
+
+          // Stack para imagens e afins...
+
           children: <Widget>[
             Image.asset(
               "assets/bg_login.png",
               fit: BoxFit.cover,
               height: 360,
             ),
+
+            /////// Coluna principal dos textos /////////
+
             Column(
               children: [
+
+                ///// Posição do botão voltar /////
+
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                   child: TextButton(
@@ -80,6 +89,9 @@ class _SigninScreenState extends State<SigninScreen> {
                           MaterialPageRoute(
                               builder: (BuildContext context) => Cadastro()));
                     },
+
+                    //// Linha para o ícone e o texto "Voltar" ////
+
                     child: Row(
                       children: <Widget>[
                         Icon(
@@ -101,6 +113,9 @@ class _SigninScreenState extends State<SigninScreen> {
                     ),
                   ),
                 ),
+
+                ////// Posição do texto "Finx" ///////
+
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 5.0),
                   child: Text(
@@ -114,6 +129,9 @@ class _SigninScreenState extends State<SigninScreen> {
                     ),
                   ),
                 ),
+
+                //// Posição do texto "Seu mais novo assistente financeiro" ////
+
                 Padding(
                   padding: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
                   child: Text(
@@ -128,9 +146,15 @@ class _SigninScreenState extends State<SigninScreen> {
                     ),
                   ),
                 ),
+
+                ////// posição do container principal inferior roxo /////
+
                 Padding(
                   padding: EdgeInsets.only(top: 150.0),
                   child: Stack(
+
+                    // Stack para o container roxo e todos os container brancos
+
                     alignment: Alignment.center,
                     children: <Widget>[
                       Container(
@@ -144,6 +168,9 @@ class _SigninScreenState extends State<SigninScreen> {
                             topLeft: Radius.circular(22.0),
                           ),
                         ),
+
+                        ////// Posição do texto "Cadastre-se" //////
+
                         child: Padding(
                           padding: EdgeInsets.only(top: 10),
                           child: Column(
@@ -161,6 +188,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                 ),
                               ),
+
+                              ////// Container Nome completo /////
+
                               Padding(
                                 padding: EdgeInsets.only(top: 15.0),
                                 child: Container(
@@ -196,6 +226,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                 ),
                               ),
+
+                              ////// Container "Email" ////////
+
                               Padding(
                                 padding: EdgeInsets.only(top: 30.0),
                                 child: Container(
@@ -231,9 +264,15 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                 ),
                               ),
+
+                              ///// Container "Senha" //////
+
                               Padding(
                                   padding: EdgeInsets.only(top: 30),
                                   child: Stack(
+
+                                    // stack para senha e Show : Hide //
+
                                     children: <Widget>[
                                       Container(
                                         width: 350,
@@ -270,6 +309,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                           ),
                                         ),
                                       ),
+
+                                      ///// Container Show : Hide //////
+
                                       Padding(
                                         padding: EdgeInsets.only(left: 270),
                                         child: Container(
@@ -297,9 +339,15 @@ class _SigninScreenState extends State<SigninScreen> {
                                       ),
                                     ],
                                   )),
+
+                            //// Container "Confirmação Senha" ////
+
                               Padding(
                                   padding: EdgeInsets.only(top: 30),
                                   child: Stack(
+
+                                    // stack confirmação e Show : Hide
+
                                     children: <Widget>[
                                       Container(
                                         width: 350,
@@ -336,6 +384,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                           ),
                                         ),
                                       ),
+
+                                      ///// Container "Show : Hide" /////
+
                                       Padding(
                                         padding: EdgeInsets.only(left: 270),
                                         child: Container(
@@ -363,6 +414,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                       ),
                                     ],
                                   )),
+
+                              ///////// Container Google ///////
+
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(
@@ -397,6 +451,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                               BorderRadius.circular(22)),
                                     )),
                               ),
+
+                              ///////// Container "Continuar" ////////
+
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(
@@ -455,6 +512,9 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
               ],
             ),
+
+            ///////// posição do Ícone ////////
+
             Padding(
               padding: EdgeInsets.fromLTRB(160, 300, 0, 0),
               child: Icon(
