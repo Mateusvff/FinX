@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {/
+  Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: SingleChildScrollView(
@@ -191,8 +191,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   child: TextButton(
                                     onPressed: () {},
-                                    child: TextField(
+                                    child: TextFormField(
                                       keyboardType: TextInputType.emailAddress,
+                                      maxLength: 40,
+                                      validator: (value){
+
                                       decoration: InputDecoration.collapsed(
                                         hintText: 'Email',
                                         hintStyle: TextStyle(
