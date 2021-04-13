@@ -55,25 +55,34 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {/
     SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: SingleChildScrollView(
-        child: Stack(
+        child: Stack( //Stack para imagem de fundo e afins...
           children: <Widget>[
             Image.asset("assets/bg_login.png", fit: BoxFit.cover, height: 500),
             Column(
               children: [
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+
+                  ////////////////////////Botão de Voltar///////////////////////
+
                   child: TextButton(
                     style: TextButton.styleFrom(primary: Colors.transparent),
                     onPressed: () {
                       Navigator.push(
                           context,
+
+                          ////////////// Leva ao ínicio do app /////////////
+
                           MaterialPageRoute(
                               builder: (BuildContext context) => Cadastro()));
                     },
+
+                    // Linha para insirir o Ícone e o texto "voltar" dentro do botão//
+
                     child: Row(
                       children: <Widget>[
                         Icon(
@@ -95,6 +104,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
+                ///////////////// Posição do texto Finx ///////////////
+
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 0, 5.0),
                   child: Text(
@@ -108,6 +120,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
+                //Define posição do texto "Seu mais novo assistente financeiro"//
+
                 Padding(
                   padding: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
                   child: Text(
@@ -122,6 +137,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
+                //// Padding para o container principal inferior roxo ////
+
                 Padding(
                   padding: EdgeInsets.only(top: 292.0),
                   child: Stack(
@@ -138,10 +156,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             topLeft: Radius.circular(22.0),
                           ),
                         ),
+
+                        // Padding para definir uma distancia entre o topo
+                        // so cointainer principal roxo e demais
+                        // containers brancos
+
                         child: Padding(
                           padding: EdgeInsets.only(top: 10),
+
+                          //// coluna para os containers brancos /////
+
                           child: Column(
                             children: [
+
+                              //// Container para "Email" /////
+
                               Padding(
                                 padding: EdgeInsets.only(top: 30.0),
                                 child: Container(
@@ -177,10 +206,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ),
+
+                             // Padding para o container "Senha" e "Show: Hide" //
+
                               Padding(
                                   padding: EdgeInsets.only(top: 30),
                                   child: Stack(
+
+                                    // Stack para sobrepor o Show : Hide no
+                                    // container senha
+
                                     children: <Widget>[
+
+                                      //////// Container "senha" //////////
+
                                       Container(
                                         width: 350,
                                         height: 42,
@@ -216,6 +255,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                           ),
                                         ),
                                       ),
+
+                                      /////// container Show : Hide /////////
+
                                       Padding(
                                         padding: EdgeInsets.only(left: 270),
                                         child: Container(
@@ -243,6 +285,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ],
                                   )),
+
+                              // Padding para container do login com o Google
+
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(
@@ -277,6 +322,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                               BorderRadius.circular(22)),
                                     )),
                               ),
+
+                              // Padding para o Container "Continuar" //
+
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(
@@ -315,6 +363,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ],
             ),
+
+              // Padding para o Icone branco no //
+  //        //centro do container principal roxo//
+
             Padding(
               padding: EdgeInsets.fromLTRB(160, 440, 0, 0),
               child: Icon(
