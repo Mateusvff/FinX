@@ -22,49 +22,49 @@ class _CartoesState extends State<Cartoes> {
           ),
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 50.0),
-            child: Container(
-              width: 300,
-              decoration: BoxDecoration(
-                  color: customPurple,
-                  borderRadius: const BorderRadius.all(Radius.circular(18))),
-              child: TextButton(
-                child: Text(
-                  'Adicionar cartão',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'NotoSans',
-                      color: Colors.white),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Container(
+                width: 300,
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.all(Radius.circular(18))),
+                child: TextButton(
+                  child: Text(
+                    'Adicionar cartão',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'NotoSans',
+                        color: Colors.white),
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 50.0),
-            child: Container(
-              width: 300,
-              decoration: BoxDecoration(
-                  color: customPurple,
-                  borderRadius: const BorderRadius.all(Radius.circular(18))),
-              child: TextButton(
-                child: Text(
-                  'Remover cartão',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'NotoSans',
-                      color: Colors.white),
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Container(
+                width: 300,
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.all(Radius.circular(18))),
+                child: TextButton(
+                  child: Text(
+                    'Remover cartão',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'NotoSans',
+                        color: Colors.white),
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 150.0),
-            child: SingleChildScrollView(
+            Padding(
+              padding: const EdgeInsets.only(top: 150.0),
               child: Container(
                 height: 440,
                 width: 410,
@@ -155,8 +155,8 @@ class _CartoesState extends State<Cartoes> {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
