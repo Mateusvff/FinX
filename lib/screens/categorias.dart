@@ -24,36 +24,202 @@ class _CategoriasState extends State<Categorias> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-                child: ToggleButtons(
-              children: [
-                Container(
-                  height: 20,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      color: customPink,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          bottomLeft: Radius.circular(20))),
-                  child:
-                      Text('Receitas', style: TextStyle(color: Colors.white)),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 70.0),
+                child: Container(
+                    child: ToggleButtons(
+                  children: [
+                    Container(
+                      height: 40,
+                      width: 130,
+                      decoration: BoxDecoration(
+                          color: customPink,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20))),
+                      child: Center(
+                        child: Text('Receitas',
+                            style: TextStyle(color: Colors.white)),
+                      ),
+                    ),
+                    Container(
+                      height: 40,
+                      width: 130,
+                      decoration: BoxDecoration(
+                          color: customPurple,
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20),
+                              bottomRight: Radius.circular(20))),
+                      child: Center(
+                        child: Text('Despesas',
+                            style: TextStyle(color: Colors.white)),
+                      ),
+                    )
+                  ],
+                  isSelected: _selections,
+                )),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: Container(
+                width: 410,
+                height: 565,
+                decoration: BoxDecoration(
+                    color: customPurple,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(22.0),
+                      topLeft: Radius.circular(22.0),
+                    )),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40.0, left: 15.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.white,
+                            size: 45,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Alimentação',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.yellowAccent,
+                            size: 45,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Compras',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.orangeAccent,
+                            size: 45,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Educação',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.redAccent,
+                            size: 45,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Moradia',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.brown.shade800,
+                            size: 45,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Transporte',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.black,
+                            size: 45,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              'Saúde',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'NotoSans',
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 290.0),
+                      child: IconButton(
+                        icon: Icon(Icons.add_circle),
+                        color: customPink,
+                        iconSize: 70.0,
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 20,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      color: customPurple,
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          bottomRight: Radius.circular(20))),
-                  child:
-                      Text('Despesas', style: TextStyle(color: Colors.white)),
-                )
-              ],
-              isSelected: _selections,
-            )),
+              ),
+            )
           ],
         ),
       ),
