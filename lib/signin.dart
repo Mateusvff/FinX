@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Cores.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
 import 'package:flutter/services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SigninScreen extends StatefulWidget {
   @override
@@ -14,34 +14,31 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
-  FirebaseUser _currentUser;
+  User _currentUser;
 
   @override
   void initState() {
     super.initState();
-    FirebaseAuth.instance.onAuthStateChanged.listen((user) {
+    FirebaseAuth.instance.authStateChanges().listen((user) {
       setState(() {
-        _currentUser = user; // salvando o usario autual
+        _currentUser = user; // salvando o usuario atual
       });
     });
   }
 
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
-  Future<FirebaseUser> _getUser() async {
+  Future<User> _getUser() async {
     //Login com o Google
     if (_currentUser != null) return _currentUser;
     try {
-      final GoogleSignInAccount googleSignInAccount =
-          await googleSignIn.signIn();
-      final GoogleSignInAuthentication googleSignInAuthentication =
-          await googleSignInAccount.authentication;
-      final AuthCredential credential = GoogleAuthProvider.getCredential(
+      final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
           idToken: googleSignInAuthentication.idToken,
           accessToken: googleSignInAuthentication.accessToken);
-      final AuthResult authResult =
-          await FirebaseAuth.instance.signInWithCredential(credential);
-      final FirebaseUser user = authResult.user;
+      final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
+      final User user = authResult.user;
       return user;
     } catch (error) {
       return null;
@@ -66,6 +63,7 @@ class _SigninScreenState extends State<SigninScreen> {
           // Stack para imagens e afins...
 
           children: <Widget>[
+
             Image.asset(
               "assets/bg_login.png",
               fit: BoxFit.cover,
@@ -429,13 +427,15 @@ class _SigninScreenState extends State<SigninScreen> {
                                       Buttons.Google,
                                       text: "Cadastro com o Google",
                                       onPressed: () async {
-                                        final FirebaseUser user =
-                                            await _getUser();
+                                        final User user = await _getUser();
                                         Map<String, dynamic> data = {
                                           "uid": user.uid,
                                           "userName": user.displayName,
-                                          "UserPhotoUrl": user.photoUrl,
+                                          "UserPhotoUrl": user.photoURL,
                                         };
+
+                                        await FirebaseFirestore.instance.collection('users').doc(user.uid).set(data);
+
                                         if (user != null) {
                                           Navigator.push(
                                             context,
@@ -471,13 +471,15 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                   child: TextButton(
                                     onPressed: () async {
-                                      final FirebaseUser user =
-                                          await _getUser();
+                                      final User user = await _getUser();
                                       Map<String, dynamic> data = {
                                         "uid": user.uid,
                                         "userName": user.displayName,
-                                        "UserPhotoUrl": user.photoUrl,
+                                        "UserPhotoUrl": user.photoURL,
                                       };
+
+                                      await FirebaseFirestore.instance.collection('users').doc(user.uid).set(data);
+
                                       if (user != null) {
                                         print(data);
                                         Navigator.push(

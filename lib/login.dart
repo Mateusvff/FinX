@@ -13,12 +13,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  FirebaseUser _currentUser;
+  User _currentUser;
 
   @override
   void initState() {
     super.initState();
-    FirebaseAuth.instance.onAuthStateChanged.listen((user) {
+    FirebaseAuth.instance.authStateChanges().listen((user) {
       setState(() {
         _currentUser = user;
       });
@@ -27,19 +27,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
-  Future<FirebaseUser> _getUser() async {
+  Future<User> _getUser() async {
     if (_currentUser != null) return _currentUser;
     try {
       final GoogleSignInAccount googleSignInAccount =
           await googleSignIn.signIn();
       final GoogleSignInAuthentication googleSignInAuthentication =
           await googleSignInAccount.authentication;
-      final AuthCredential credential = GoogleAuthProvider.getCredential(
+      final AuthCredential credential = GoogleAuthProvider.credential(
           idToken: googleSignInAuthentication.idToken,
           accessToken: googleSignInAuthentication.accessToken);
-      final AuthResult authResult =
-          await FirebaseAuth.instance.signInWithCredential(credential);
-      final FirebaseUser user = authResult.user;
+      final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
+      final User user = authResult.user;
       return user;
     } catch (error) {
       return null;
@@ -300,12 +299,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Buttons.Google,
                                       text: "Entrar com o Google",
                                       onPressed: () async {
-                                        final FirebaseUser user =
+                                        final User user =
                                             await _getUser();
                                         Map<String, dynamic> data = {
                                           "uid": user.uid,
                                           "userName": user.displayName,
-                                          "UserPhotoUrl": user.photoUrl,
+                                          "UserPhotoUrl": user.photoURL,
                                         };
                                         if (user != null) {
                                           Navigator.push(
