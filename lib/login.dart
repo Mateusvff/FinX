@@ -59,7 +59,8 @@ class _LoginScreenState extends State<LoginScreen> {
     SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: SingleChildScrollView(
-        child: Stack( //Stack para imagem de fundo e afins...
+        child: Stack(
+          //Stack para imagem de fundo e afins...
           children: <Widget>[
             Image.asset("assets/bg_login.png", fit: BoxFit.cover, height: 500),
             Column(
@@ -168,7 +169,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                           child: Column(
                             children: [
-
                               //// Container para "Email" /////
 
                               Padding(
@@ -194,8 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: TextFormField(
                                       keyboardType: TextInputType.emailAddress,
                                       maxLength: 40,
-                                      validator: (value){
-
+                                      validator: (value) {},
                                       decoration: InputDecoration.collapsed(
                                         hintText: 'Email',
                                         hintStyle: TextStyle(
@@ -210,17 +209,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ),
 
-                             // Padding para o container "Senha" e "Show: Hide" //
+                              // Padding para o container "Senha" e "Show: Hide" //
 
                               Padding(
                                   padding: EdgeInsets.only(top: 30),
                                   child: Stack(
-
                                     // Stack para sobrepor o Show : Hide no
                                     // container senha
 
                                     children: <Widget>[
-
                                       //////// Container "senha" //////////
 
                                       Container(
@@ -367,8 +364,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
 
-              // Padding para o Icone branco no //
-  //        //centro do container principal roxo//
+            // Padding para o Icone branco no //
+            //        //centro do container principal roxo//
 
             Padding(
               padding: EdgeInsets.fromLTRB(160, 440, 0, 0),
