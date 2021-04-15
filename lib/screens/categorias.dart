@@ -13,6 +13,7 @@ class _CategoriasState extends State<Categorias> {
     return Scaffold(
       backgroundColor: customBg,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: customBg,
         title: Text(
           'Categorias',

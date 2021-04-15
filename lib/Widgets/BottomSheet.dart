@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/screens/categorias.dart';
 
 import '../Cores.dart';
 
@@ -29,7 +30,14 @@ class _BottomSheeState extends State<BottomShee> {
                   'Adicionar Receita',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => Categorias(),
+                    ),
+                  );
+                },
               ),
               decoration: BoxDecoration(
                   color: customPink,
@@ -46,7 +54,14 @@ class _BottomSheeState extends State<BottomShee> {
                   'Adicionar Despesa',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => Categorias(),
+                    ),
+                  );
+                },
               ),
               decoration: BoxDecoration(
                   color: customPink,

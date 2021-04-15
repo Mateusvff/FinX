@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Cores.dart';
+import 'package:projeto_flutter/screens/Cartao/Cartao_cadastro.dart';
+import '../../Cores.dart';
 
 class Cartoes extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class _CartoesState extends State<Cartoes> {
     return Scaffold(
       backgroundColor: customBg,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: customBg,
         title: Text(
           'Cartões',
@@ -40,7 +42,14 @@ class _CartoesState extends State<Cartoes> {
                         fontFamily: 'NotoSans',
                         color: Colors.white),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => CartaoCad(),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),

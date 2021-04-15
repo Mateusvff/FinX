@@ -13,6 +13,7 @@ class _ExtratoState extends State<Extrato> {
     return Scaffold(
       backgroundColor: customBg,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: customBg,
         title: Text(
           'Extrato',

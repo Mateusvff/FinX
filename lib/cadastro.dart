@@ -24,7 +24,7 @@ class _CadastroState extends State<Cadastro> {
             height: 735,
           ),
           Column(
-            children: [
+            children: <Widget>[
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 15, 0, 5),
                 child: Text(
@@ -66,7 +66,7 @@ class _CadastroState extends State<Cadastro> {
                   child: Padding(
                     padding: EdgeInsets.only(top: 30.0),
                     child: Column(
-                      children: [
+                      children: <Widget>[
                         Container(
                           width: 350.0,
                           height: 42.0,
