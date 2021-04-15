@@ -22,52 +22,52 @@ class _CartoesState extends State<Cartoes> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0),
-              child: Container(
-                width: 300,
-                decoration: BoxDecoration(
-                    color: customPurple,
-                    borderRadius: const BorderRadius.all(Radius.circular(18))),
-                child: TextButton(
-                  child: Text(
-                    'Adicionar cartão',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'NotoSans',
-                        color: Colors.white),
-                  ),
-                  onPressed: () {},
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 50.0),
+            child: Container(
+              width: 300,
+              decoration: BoxDecoration(
+                  color: customPurple,
+                  borderRadius: const BorderRadius.all(Radius.circular(18))),
+              child: TextButton(
+                child: Text(
+                  'Adicionar cartão',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'NotoSans',
+                      color: Colors.white),
                 ),
+                onPressed: () {},
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0),
-              child: Container(
-                width: 300,
-                decoration: BoxDecoration(
-                    color: customPurple,
-                    borderRadius: const BorderRadius.all(Radius.circular(18))),
-                child: TextButton(
-                  child: Text(
-                    'Remover cartão',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'NotoSans',
-                        color: Colors.white),
-                  ),
-                  onPressed: () {},
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 50.0),
+            child: Container(
+              width: 300,
+              decoration: BoxDecoration(
+                  color: customPurple,
+                  borderRadius: const BorderRadius.all(Radius.circular(18))),
+              child: TextButton(
+                child: Text(
+                  'Remover cartão',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'NotoSans',
+                      color: Colors.white),
                 ),
+                onPressed: () {},
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 150.0),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 150.0),
+            child: SingleChildScrollView(
               child: Container(
                 height: 440,
-                width: 400,
+                width: 410,
                 decoration: BoxDecoration(
                     color: customPurple,
                     borderRadius: const BorderRadius.only(
@@ -77,7 +77,7 @@ class _CartoesState extends State<Cartoes> {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(top: 50.0),
+                      padding: const EdgeInsets.only(top: 50.0, left: 15.0),
                       child: Row(
                         children: [
                           Icon(
@@ -98,7 +98,7 @@ class _CartoesState extends State<Cartoes> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
                       child: Row(
                         children: [
                           Icon(Icons.credit_card, color: customRed),
@@ -116,7 +116,7 @@ class _CartoesState extends State<Cartoes> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
                       child: Row(
                         children: [
                           Icon(Icons.credit_card, color: Colors.yellow),
@@ -134,7 +134,7 @@ class _CartoesState extends State<Cartoes> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
+                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
                       child: Row(
                         children: [
                           Icon(Icons.credit_card, color: Colors.white),
@@ -155,8 +155,8 @@ class _CartoesState extends State<Cartoes> {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
