@@ -213,7 +213,35 @@ class _CategoriasState extends State<Categorias> {
                         icon: Icon(Icons.add_circle),
                         color: customPink,
                         iconSize: 70.0,
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  height: 300,
+                                  decoration: BoxDecoration(
+                                      color: customPurple,
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(30),
+                                          topRight: Radius.circular(30))),
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 25.0, right: 120.0),
+                                        child: Text(
+                                          'Criar nova categoria',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontFamily: 'NotoSans',
+                                              fontSize: 18),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                        },
                       ),
                     ),
                   ],
