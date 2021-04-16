@@ -87,7 +87,7 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
+                            Icons.fastfood_sharp,
                             color: Colors.white,
                             size: 45,
                           ),
@@ -111,8 +111,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
-                            color: Colors.yellowAccent,
+                            Icons.shopping_bag_outlined,
+                            color: Colors.white,
                             size: 45,
                           ),
                           Padding(
@@ -135,8 +135,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
-                            color: Colors.orangeAccent,
+                            Icons.book,
+                            color: Colors.white,
                             size: 45,
                           ),
                           Padding(
