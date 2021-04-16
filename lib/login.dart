@@ -37,7 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
       final AuthCredential credential = GoogleAuthProvider.credential(
           idToken: googleSignInAuthentication.idToken,
           accessToken: googleSignInAuthentication.accessToken);
-      final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
+      final UserCredential authResult =
+          await FirebaseAuth.instance.signInWithCredential(credential);
       final User user = authResult.user;
       return user;
     } catch (error) {
@@ -299,8 +300,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Buttons.Google,
                                       text: "Entrar com o Google",
                                       onPressed: () async {
-                                        final User user =
-                                            await _getUser();
+                                        final User user = await _getUser();
                                         Map<String, dynamic> data = {
                                           "uid": user.uid,
                                           "userName": user.displayName,
