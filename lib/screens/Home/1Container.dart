@@ -8,6 +8,16 @@ class ExtratoMes extends StatefulWidget {
 }
 
 class _ExtratoMesState extends State<ExtratoMes> {
+  bool visualizarSaldo = true;
+  Icon visivel = Icon(Icons.visibility_outlined);
+  Icon naoVisivel = Icon(Icons.visibility_off_outlined);
+
+  void _toggle() {
+    setState(() {
+      visualizarSaldo = !visualizarSaldo;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,11 +68,14 @@ class _ExtratoMesState extends State<ExtratoMes> {
                 padding: EdgeInsets.only(top: 15.0),
                 child: IconButton(
                   alignment: Alignment.topRight,
-                  icon: Icon(Icons.remove_red_eye_sharp),
+                  icon: visualizarSaldo
+                      ? Icon(Icons.visibility_outlined)
+                      : Icon(Icons.visibility_off_outlined),
                   color: Colors.black,
                   iconSize: 18,
-                  onPressed:
-                      () {}, /* Tampar o saldo do usuario ou Mostrar o saldo do usuario*/
+                  onPressed: () =>
+                      setState(() => visualizarSaldo = !visualizarSaldo),
+                  /* Tampar o saldo do usuario ou Mostrar o saldo do usuario. Ao desativar vira visibility_off_outlined*/
                 ),
               ),
             ],
@@ -70,12 +83,20 @@ class _ExtratoMesState extends State<ExtratoMes> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('R\$10.000,00',
-                  /* Puxar do usuario de acordo com Receita - Despesa */
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold)),
+              visualizarSaldo
+                  ? Text('R\$10.000,00',
+                      /* Puxar do usuario de acordo com Receita - Despesa */
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold))
+                  : Container(
+                      width: 150,
+                      height: 35,
+                      decoration: BoxDecoration(
+                          color: Color(0xffebebeb),
+                          borderRadius: BorderRadius.all(Radius.circular(4))),
+                    ),
             ],
           ),
           Row(
@@ -102,21 +123,37 @@ class _ExtratoMesState extends State<ExtratoMes> {
             children: [
               Padding(
                 padding: EdgeInsets.only(right: 50.0, top: 5.0),
-                child: Text(
-                  'R\$15.000,00 ',
-                  /* Puxar do Add Receitas */
-                  style: TextStyle(
-                      color: Colors.green, fontWeight: FontWeight.bold),
-                ),
+                child: visualizarSaldo
+                    ? Text(
+                        'R\$15.000,00 ',
+                        /* Puxar do Add Receitas */
+                        style: TextStyle(
+                            color: Colors.green, fontWeight: FontWeight.bold),
+                      )
+                    : Container(
+                        width: 80,
+                        height: 15,
+                        decoration: BoxDecoration(
+                            color: Color(0xffebebeb),
+                            borderRadius: BorderRadius.all(Radius.circular(4))),
+                      ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 5.0, left: 50.0),
-                child: Text(
-                  'R\$5.000,00 ',
-                  /* Puxar do Add Despesas */
-                  style:
-                      TextStyle(color: customRed, fontWeight: FontWeight.bold),
-                ),
+                padding: EdgeInsets.only(top: 5.0, left: 65.0),
+                child: visualizarSaldo
+                    ? Text(
+                        'R\$5.000,00 ',
+                        /* Puxar do Add Despesas */
+                        style: TextStyle(
+                            color: customRed, fontWeight: FontWeight.bold),
+                      )
+                    : Container(
+                        width: 80,
+                        height: 15,
+                        decoration: BoxDecoration(
+                            color: Color(0xffebebeb),
+                            borderRadius: BorderRadius.all(Radius.circular(4))),
+                      ),
               ),
             ],
           )
