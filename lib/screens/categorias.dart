@@ -238,7 +238,7 @@ class _CategoriasState extends State<Categorias> {
                               builder: (BuildContext context) {
                                 return SingleChildScrollView(
                                   child: Container(
-                                    height: 300,
+                                    height: 390,
                                     decoration: BoxDecoration(
                                         color: customPurple,
                                         borderRadius: const BorderRadius.only(
@@ -298,6 +298,23 @@ class _CategoriasState extends State<Categorias> {
                                                   color: Colors.grey,
                                                   fontSize: 18
                                               ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                          child: Container(
+                                            height: 47,
+                                            width: 145,
+                                            child: RaisedButton(
+                                              onPressed: (){},
+                                              child: Text("Concluído",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 20,
+                                                      fontWeight: FontWeight.bold,
+                                                  )),
+                                              color: Colors.pinkAccent,
                                             ),
                                           ),
                                         ),
