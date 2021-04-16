@@ -46,8 +46,7 @@ class _CategoriasState extends State<Categorias> {
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                            )
-                        ),
+                            )),
                       ),
                     ),
                     Container(
@@ -60,8 +59,9 @@ class _CategoriasState extends State<Categorias> {
                               bottomRight: Radius.circular(20))),
                       child: Center(
                         child: Text('Despesas',
-                            style: TextStyle(color: Colors.white,
-                              fontWeight: FontWeight.bold)),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)),
                       ),
                     )
                   ],
@@ -96,10 +96,10 @@ class _CategoriasState extends State<Categorias> {
                             child: Text(
                               'Alimentação',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontFamily: 'NotoSans',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
@@ -120,10 +120,10 @@ class _CategoriasState extends State<Categorias> {
                             child: Text(
                               'Compras',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontFamily: 'NotoSans',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
@@ -144,10 +144,10 @@ class _CategoriasState extends State<Categorias> {
                             child: Text(
                               'Educação',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontFamily: 'NotoSans',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
@@ -168,10 +168,10 @@ class _CategoriasState extends State<Categorias> {
                             child: Text(
                               'Moradia',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontFamily: 'NotoSans',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
@@ -192,10 +192,10 @@ class _CategoriasState extends State<Categorias> {
                             child: Text(
                               'Transporte',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontFamily: 'NotoSans',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
@@ -216,10 +216,10 @@ class _CategoriasState extends State<Categorias> {
                             child: Text(
                               'Saúde',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontFamily: 'NotoSans',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
@@ -237,91 +237,108 @@ class _CategoriasState extends State<Categorias> {
                               context: context,
                               builder: (BuildContext context) {
                                 return SingleChildScrollView(
-                                  child: Container(
-                                    height: 390,
-                                    decoration: BoxDecoration(
-                                        color: customPurple,
-                                        borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(30),
-                                            topRight: Radius.circular(30))),
-                                    child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 25.0, right: 145.0),
-                                          child: Text(
-                                            'Criar nova categoria',
-                                            style: TextStyle(
+                                    child: Container(
+                                  height: 390,
+                                  decoration: BoxDecoration(
+                                      color: customPurple,
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(30),
+                                          topRight: Radius.circular(30))),
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 25.0, right: 145.0),
+                                        child: Text(
+                                          'Criar nova categoria',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: 'NotoSans',
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(10, 15, 10, 0),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.text,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
                                               color: Colors.white,
-                                              fontFamily: 'NotoSans',
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                              fontSize: 15),
+                                          decoration: InputDecoration(
+                                            labelText: "Descrição",
+                                            labelStyle: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 18),
                                           ),
                                         ),
-                                        Padding(padding:  EdgeInsets.fromLTRB(10, 15, 10, 0),
-                                          child: TextFormField(
-                                            keyboardType: TextInputType.text,
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(color: Colors.white, fontSize: 15),
-                                            decoration: InputDecoration(
-                                              labelText: "Descrição",
-                                              labelStyle: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 18
+                                      ),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(10, 5, 10, 10),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.text,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15),
+                                          decoration: InputDecoration(
+                                            labelText: "Cor",
+                                            labelStyle: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 18),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(10, 5, 10, 10),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.text,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15),
+                                          decoration: InputDecoration(
+                                            labelText: "Ícone",
+                                            labelStyle: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 18),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                        child: Container(
+                                          height: 47,
+                                          width: 145,
+                                          child: ElevatedButton(
+                                            onPressed: () {},
+                                            style: ElevatedButton.styleFrom(
+                                              primary: customPink,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              "Concluído",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
                                               ),
                                             ),
                                           ),
                                         ),
-                                        Padding(padding:  EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                          child: TextFormField(
-                                            keyboardType: TextInputType.text,
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(color: Colors.white, fontSize: 15),
-                                            decoration: InputDecoration(
-                                              labelText: "Cor",
-                                              labelStyle: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 18
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(padding:  EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                          child: TextFormField(
-                                            keyboardType: TextInputType.text,
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(color: Colors.white, fontSize: 15),
-                                            decoration: InputDecoration(
-                                              labelText: "Ícone",
-                                              labelStyle: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 18
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                                          child: Container(
-                                            height: 47,
-                                            width: 145,
-                                            child: RaisedButton(
-                                              onPressed: (){},
-                                              child: Text("Concluído",
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 20,
-                                                      fontWeight: FontWeight.bold,
-                                                  )),
-                                              color: Colors.pinkAccent,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                );
+                                      ),
+                                    ],
+                                  ),
+                                ));
                               });
                         },
                       ),
