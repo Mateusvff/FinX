@@ -3,14 +3,14 @@
 A personal finance management application, designed to help users organize their financial lives, using the framework Google Flutter and Google Firebase!
 
 ## Contributors:
-Arthur Gabriel
-Caio Berg
-Juan José
-Lucas de Padua
-Lucas Rodrigues
-Mateus de Almeida
-Mateus Vinícius
-Thiago Ribeiro
+Arthur Gabriel  
+Caio Berg  
+Juan José  
+Lucas de Padua  
+Lucas Rodrigues  
+Mateus de Almeida  
+Mateus Vinícius  
+Thiago Ribeiro  
 
 
 
