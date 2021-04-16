@@ -112,7 +112,7 @@ class _CategoriasState extends State<Categorias> {
                         children: [
                           Icon(
                             Icons.shopping_bag_outlined,
-                            color: Colors.white,
+                            color: Colors.yellow,
                             size: 45,
                           ),
                           Padding(
@@ -135,8 +135,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.book,
-                            color: Colors.white,
+                            Icons.school_outlined,
+                            color: Colors.blue,
                             size: 45,
                           ),
                           Padding(
@@ -159,8 +159,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
-                            color: Colors.redAccent,
+                            Icons.house_outlined,
+                            color: Colors.deepOrange,
                             size: 45,
                           ),
                           Padding(
@@ -183,8 +183,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
-                            color: Colors.brown.shade800,
+                            Icons.directions_car_outlined,
+                            color: Colors.green,
                             size: 45,
                           ),
                           Padding(
@@ -207,8 +207,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
-                            color: Colors.black,
+                            Icons.local_hospital_outlined,
+                            color: Colors.red,
                             size: 45,
                           ),
                           Padding(
@@ -236,30 +236,74 @@ class _CategoriasState extends State<Categorias> {
                           showModalBottomSheet(
                               context: context,
                               builder: (BuildContext context) {
-                                return Container(
-                                  height: 300,
-                                  decoration: BoxDecoration(
-                                      color: customPurple,
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(30),
-                                          topRight: Radius.circular(30))),
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 25.0, right: 120.0),
-                                        child: Text(
-                                          'Criar nova categoria',
-                                          style: TextStyle(
+                                return SingleChildScrollView(
+                                  child: Container(
+                                    height: 300,
+                                    decoration: BoxDecoration(
+                                        color: customPurple,
+                                        borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(30),
+                                            topRight: Radius.circular(30))),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 25.0, right: 145.0),
+                                          child: Text(
+                                            'Criar nova categoria',
+                                            style: TextStyle(
                                               color: Colors.white,
                                               fontFamily: 'NotoSans',
-                                              fontSize: 18,
+                                              fontSize: 20,
                                               fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                        Padding(padding:  EdgeInsets.fromLTRB(10, 15, 10, 0),
+                                          child: TextFormField(
+                                            keyboardType: TextInputType.text,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(color: Colors.white, fontSize: 15),
+                                            decoration: InputDecoration(
+                                              labelText: "Descrição",
+                                              labelStyle: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 18
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(padding:  EdgeInsets.fromLTRB(10, 5, 10, 10),
+                                          child: TextFormField(
+                                            keyboardType: TextInputType.text,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(color: Colors.white, fontSize: 15),
+                                            decoration: InputDecoration(
+                                              labelText: "Cor",
+                                              labelStyle: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 18
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(padding:  EdgeInsets.fromLTRB(10, 5, 10, 10),
+                                          child: TextFormField(
+                                            keyboardType: TextInputType.text,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(color: Colors.white, fontSize: 15),
+                                            decoration: InputDecoration(
+                                              labelText: "Ícone",
+                                              labelStyle: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 18
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
                                 );
                               });
                         },
