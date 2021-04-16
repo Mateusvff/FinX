@@ -227,122 +227,126 @@ class _CategoriasState extends State<Categorias> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 275.0),
-                      child: IconButton(
-                        icon: Icon(Icons.add_circle),
-                        color: customPink,
-                        iconSize: 70.0,
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return SingleChildScrollView(
-                                    child: Container(
-                                  height: 390,
-                                  decoration: BoxDecoration(
-                                      color: customPurple,
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(30),
-                                          topRight: Radius.circular(30))),
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 25.0, right: 145.0),
-                                        child: Text(
-                                          'Criar nova categoria',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: 'NotoSans',
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(10, 15, 10, 0),
-                                        child: TextFormField(
-                                          keyboardType: TextInputType.text,
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15),
-                                          decoration: InputDecoration(
-                                            labelText: "Descrição",
-                                            labelStyle: TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 18),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                        child: TextFormField(
-                                          keyboardType: TextInputType.text,
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15),
-                                          decoration: InputDecoration(
-                                            labelText: "Cor",
-                                            labelStyle: TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 18),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                        child: TextFormField(
-                                          keyboardType: TextInputType.text,
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15),
-                                          decoration: InputDecoration(
-                                            labelText: "Ícone",
-                                            labelStyle: TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 18),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 10, 0, 10),
+                        padding: const EdgeInsets.only(left: 275.0),
+                        child: CircleAvatar(
+                          backgroundColor: customPink,
+                          radius: 30.0,
+                          child: IconButton(
+                            icon: Icon(Icons.add),
+                            color: Colors.white,
+                            iconSize: 40.0,
+                            onPressed: () {
+                              showModalBottomSheet(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return SingleChildScrollView(
                                         child: Container(
-                                          height: 47,
-                                          width: 145,
-                                          child: ElevatedButton(
-                                            onPressed: () {},
-                                            style: ElevatedButton.styleFrom(
-                                              primary: customPink,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                              ),
-                                            ),
+                                      height: 390,
+                                      decoration: BoxDecoration(
+                                          color: customPurple,
+                                          borderRadius: const BorderRadius.only(
+                                              topLeft: Radius.circular(30),
+                                              topRight: Radius.circular(30))),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 25.0, right: 145.0),
                                             child: Text(
-                                              "Concluído",
+                                              'Criar nova categoria',
                                               style: TextStyle(
                                                 color: Colors.white,
+                                                fontFamily: 'NotoSans',
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
                                           ),
-                                        ),
+                                          Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                10, 15, 10, 0),
+                                            child: TextFormField(
+                                              keyboardType: TextInputType.text,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15),
+                                              decoration: InputDecoration(
+                                                labelText: "Descrição",
+                                                labelStyle: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 18),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                10, 5, 10, 10),
+                                            child: TextFormField(
+                                              keyboardType: TextInputType.text,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15),
+                                              decoration: InputDecoration(
+                                                labelText: "Cor",
+                                                labelStyle: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 18),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                10, 5, 10, 10),
+                                            child: TextFormField(
+                                              keyboardType: TextInputType.text,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15),
+                                              decoration: InputDecoration(
+                                                labelText: "Ícone",
+                                                labelStyle: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 18),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                0, 10, 0, 10),
+                                            child: Container(
+                                              height: 47,
+                                              width: 145,
+                                              child: ElevatedButton(
+                                                onPressed: () {},
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: customPink,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                ),
+                                                child: Text(
+                                                  "Concluído",
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
-                                ));
-                              });
-                        },
-                      ),
-                    ),
+                                    ));
+                                  });
+                            },
+                          ),
+                        )),
                   ],
                 ),
               ),
