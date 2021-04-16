@@ -71,36 +71,53 @@ class _ExtratoState extends State<Extrato> {
 
                   Row(
                     children: [
-                      Padding(padding: EdgeInsets.only(left: 40.0,top: 40.0),
-                      child: Text(
-                        "Tipo de despesa",
-                        style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
-                      ),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 40.0, left: 60.0),
-                        child: Text(
-                          "R\$1.000,00",
-                          style: TextStyle(color: Colors.red, fontSize: 20.0, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      ]
-                  ),
-                  Row(
-                    children: [
-                      Padding(padding: EdgeInsets.only(left: 40.0,top: 40.0),
+                      Container(
+                        child: Align(alignment: Alignment.bottomLeft ,
+                        child: Padding(padding: EdgeInsets.only(left: 20.0, top: 40.0),
                         child: Text(
                           "Tipo de despesa",
                           style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
                         ),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 40.0, left: 60.0),
-                        child: Text(
-                          "R\$1.000,00",
-                          style: TextStyle(color: Colors.green, fontSize: 20.0 , fontWeight: FontWeight.bold),
+                        ),
                         ),
                       ),
-                    ],
-                  )
+                      Container(
+                        child: Align(alignment: Alignment.bottomLeft ,
+                          child: Padding(padding: EdgeInsets.only(left: 40.0, top: 40.0),
+                            child: Text(
+                              "R\$ 1.000,00",
+                              style: TextStyle(color: Colors.red, fontSize: 20.0, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]
+                  ),
+
+                  Row(
+                      children: [
+                        Container(
+                          child: Align(alignment: Alignment.bottomLeft ,
+                            child: Padding(padding: EdgeInsets.only(left: 20.0, top: 40.0),
+                              child: Text(
+                                "Tipo de despesa",
+                                style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Align(alignment: Alignment.bottomLeft ,
+                            child: Padding(padding: EdgeInsets.only(left: 40.0, top: 40.0),
+                              child: Text(
+                                "R\$ 1.000,00",
+                                style: TextStyle(color: Colors.green, fontSize: 20.0, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ]
+                  ),
                 ],
               ),
             ),
