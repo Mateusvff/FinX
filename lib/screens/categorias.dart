@@ -209,7 +209,7 @@ class _CategoriasState extends State<Categorias> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 290.0),
+                      padding: const EdgeInsets.only(left: 275.0),
                       child: IconButton(
                         icon: Icon(Icons.add_circle),
                         color: customPink,
