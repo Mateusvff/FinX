@@ -43,7 +43,11 @@ class _CategoriasState extends State<Categorias> {
                               bottomLeft: Radius.circular(20))),
                       child: Center(
                         child: Text('Receitas',
-                            style: TextStyle(color: Colors.white)),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            )
+                        ),
                       ),
                     ),
                     Container(
@@ -56,7 +60,8 @@ class _CategoriasState extends State<Categorias> {
                               bottomRight: Radius.circular(20))),
                       child: Center(
                         child: Text('Despesas',
-                            style: TextStyle(color: Colors.white)),
+                            style: TextStyle(color: Colors.white,
+                              fontWeight: FontWeight.bold)),
                       ),
                     )
                   ],
