@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../Cores.dart';
 
-class Sobre extends StatelessWidget {
+class RelatarProblema extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +11,7 @@ class Sobre extends StatelessWidget {
         elevation: 0,
         backgroundColor: customBg,
         title: Text(
-          'Sobre',
+          'Relatar Problemas',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -33,7 +33,7 @@ class Sobre extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 18.0),
                     child: Text(
-                      'Informações sobre nós:',
+                      'Fale conosco:',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontFamily: 'NotoSans',
@@ -45,7 +45,7 @@ class Sobre extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 30.0, right: 8.0, left: 20.0),
                     child: Text(
-                      'Este aplicativo é um projeto para matéria de desenvolvimento de software, brota no pix: 07959979146',
+                      'Caso encontre erros e bugs por favor mande um email para nós em: caioberg09@gmail.com',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontFamily: 'NotoSans',
