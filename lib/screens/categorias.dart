@@ -29,13 +29,13 @@ class _CategoriasState extends State<Categorias> {
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 70.0),
+                padding: const EdgeInsets.only(top: 60.0),
                 child: Container(
                     child: ToggleButtons(
                   children: [
                     Container(
-                      height: 40,
-                      width: 130,
+                      height: 50,
+                      width: 140,
                       decoration: BoxDecoration(
                           color: customPink,
                           borderRadius: BorderRadius.only(
@@ -51,8 +51,8 @@ class _CategoriasState extends State<Categorias> {
                       ),
                     ),
                     Container(
-                      height: 40,
-                      width: 130,
+                      height: 50,
+                      width: 140,
                       decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -253,7 +253,9 @@ class _CategoriasState extends State<Categorias> {
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontFamily: 'NotoSans',
-                                              fontSize: 18),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ),
                                     ],
