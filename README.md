@@ -2,6 +2,18 @@
 
 A personal finance management application, designed to help users organize their financial lives, using the framework Google Flutter and Google Firebase!
 
+## Contributors:
+Arthur Gabriel
+Caio Berg
+Juan José
+Lucas de Padua
+Lucas Rodrigues
+Mateus de Almeida
+Mateus Vinícius
+Thiago Ribeiro
+
+
+
 ## Project Description and Getting Started with Google Flutter
 
 This project is a group project from our University, with the intent of developing our skills in the area and our understanding about software development and working as a group.
