@@ -83,15 +83,20 @@ class _ExtratoMesState extends State<ExtratoMes> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Visibility(
-                visible: visualizarSaldo,
-                child: Text('R\$10.000,00',
-                    /* Puxar do usuario de acordo com Receita - Despesa */
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold)),
-              )
+              visualizarSaldo
+                  ? Text('R\$10.000,00',
+                      /* Puxar do usuario de acordo com Receita - Despesa */
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold))
+                  : Container(
+                      width: 150,
+                      height: 35,
+                      decoration: BoxDecoration(
+                          color: Color(0xffebebeb),
+                          borderRadius: BorderRadius.all(Radius.circular(4))),
+                    ),
             ],
           ),
           Row(
@@ -117,27 +122,39 @@ class _ExtratoMesState extends State<ExtratoMes> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                  padding: EdgeInsets.only(right: 50.0, top: 5.0),
-                  child: Visibility(
-                    visible: visualizarSaldo,
-                    child: Text(
-                      'R\$15.000,00 ',
-                      /* Puxar do Add Receitas */
-                      style: TextStyle(
-                          color: Colors.green, fontWeight: FontWeight.bold),
-                    ),
-                  )),
+                padding: EdgeInsets.only(right: 50.0, top: 5.0),
+                child: visualizarSaldo
+                    ? Text(
+                        'R\$15.000,00 ',
+                        /* Puxar do Add Receitas */
+                        style: TextStyle(
+                            color: Colors.green, fontWeight: FontWeight.bold),
+                      )
+                    : Container(
+                        width: 80,
+                        height: 15,
+                        decoration: BoxDecoration(
+                            color: Color(0xffebebeb),
+                            borderRadius: BorderRadius.all(Radius.circular(4))),
+                      ),
+              ),
               Padding(
-                  padding: EdgeInsets.only(top: 5.0, left: 50.0),
-                  child: Visibility(
-                    visible: visualizarSaldo,
-                    child: Text(
-                      'R\$5.000,00 ',
-                      /* Puxar do Add Despesas */
-                      style: TextStyle(
-                          color: customRed, fontWeight: FontWeight.bold),
-                    ),
-                  )),
+                padding: EdgeInsets.only(top: 5.0, left: 65.0),
+                child: visualizarSaldo
+                    ? Text(
+                        'R\$5.000,00 ',
+                        /* Puxar do Add Despesas */
+                        style: TextStyle(
+                            color: customRed, fontWeight: FontWeight.bold),
+                      )
+                    : Container(
+                        width: 80,
+                        height: 15,
+                        decoration: BoxDecoration(
+                            color: Color(0xffebebeb),
+                            borderRadius: BorderRadius.all(Radius.circular(4))),
+                      ),
+              ),
             ],
           )
         ],
