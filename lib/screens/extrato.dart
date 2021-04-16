@@ -38,7 +38,7 @@ class _ExtratoState extends State<Extrato> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 70.0),
+            padding: const EdgeInsets.only(top: 70.0, left: 10.0, right: 10.0),
             child: Container(
               width: 410,
               height: 485,
@@ -47,6 +47,8 @@ class _ExtratoState extends State<Extrato> {
                   borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(22.0),
                     topLeft: Radius.circular(22.0),
+                    bottomLeft: Radius.circular(22.0),
+                    bottomRight: Radius.circular(22.0),
                   )),
               child: Column(
                 children: [
@@ -66,7 +68,7 @@ class _ExtratoState extends State<Extrato> {
                         color: Colors.white,
                         fontSize: 30),
                   ),
-                  
+
                   Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 40.0,top: 40.0),
