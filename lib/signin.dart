@@ -471,14 +471,14 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                   child: TextButton(
                                     onPressed: () async {
-                                      final User user = await _getUser();
+                                      final User user = await _getUser(); // função Firebase
                                       Map<String, dynamic> data = {
                                         "uid": user.uid,
                                         "userName": user.displayName,
                                         "UserPhotoUrl": user.photoURL,
                                       };
 
-                                      await FirebaseFirestore.instance.collection('users').doc(user.uid).set(data);
+                                      await FirebaseFirestore.instance.collection('users').doc(user.uid).set(data); // criar campo dentro do usuário
 
                                       if (user != null) {
                                         print(data);

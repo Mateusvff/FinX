@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../Cores.dart';
 
@@ -28,13 +29,13 @@ class _CategoriasState extends State<Categorias> {
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 70.0),
+                padding: const EdgeInsets.only(top: 60.0),
                 child: Container(
                     child: ToggleButtons(
                   children: [
                     Container(
-                      height: 40,
-                      width: 130,
+                      height: 50,
+                      width: 140,
                       decoration: BoxDecoration(
                           color: customPink,
                           borderRadius: BorderRadius.only(
@@ -42,12 +43,16 @@ class _CategoriasState extends State<Categorias> {
                               bottomLeft: Radius.circular(20))),
                       child: Center(
                         child: Text('Receitas',
-                            style: TextStyle(color: Colors.white)),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            )
+                        ),
                       ),
                     ),
                     Container(
-                      height: 40,
-                      width: 130,
+                      height: 50,
+                      width: 140,
                       decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -55,7 +60,8 @@ class _CategoriasState extends State<Categorias> {
                               bottomRight: Radius.circular(20))),
                       child: Center(
                         child: Text('Despesas',
-                            style: TextStyle(color: Colors.white)),
+                            style: TextStyle(color: Colors.white,
+                              fontWeight: FontWeight.bold)),
                       ),
                     )
                   ],
@@ -81,7 +87,7 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
+                            Icons.fastfood_sharp,
                             color: Colors.white,
                             size: 45,
                           ),
@@ -92,7 +98,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -103,8 +111,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
-                            color: Colors.yellowAccent,
+                            Icons.shopping_bag_outlined,
+                            color: Colors.white,
                             size: 45,
                           ),
                           Padding(
@@ -114,7 +122,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -125,8 +135,8 @@ class _CategoriasState extends State<Categorias> {
                       child: Row(
                         children: [
                           Icon(
-                            Icons.circle,
-                            color: Colors.orangeAccent,
+                            Icons.book,
+                            color: Colors.white,
                             size: 45,
                           ),
                           Padding(
@@ -136,7 +146,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -158,7 +170,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -180,7 +194,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -202,14 +218,16 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 290.0),
+                      padding: const EdgeInsets.only(left: 275.0),
                       child: IconButton(
                         icon: Icon(Icons.add_circle),
                         color: customPink,
@@ -235,7 +253,9 @@ class _CategoriasState extends State<Categorias> {
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontFamily: 'NotoSans',
-                                              fontSize: 18),
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ),
                                     ],
