@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../Cores.dart';
 
@@ -92,7 +93,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -114,7 +117,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -136,7 +141,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -158,7 +165,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -180,7 +189,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -202,7 +213,9 @@ class _CategoriasState extends State<Categorias> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'NotoSans',
-                                  fontSize: 18),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
