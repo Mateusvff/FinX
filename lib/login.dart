@@ -191,10 +191,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                   child: TextButton(
                                     onPressed: () {},
-                                    child: TextFormField(
+                                    child: TextField(
                                       keyboardType: TextInputType.emailAddress,
-                                      maxLength: 40,
-                                      validator: (value) {},
                                       decoration: InputDecoration.collapsed(
                                         hintText: 'Email',
                                         hintStyle: TextStyle(
