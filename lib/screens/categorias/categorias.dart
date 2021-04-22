@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/toggleButtons.dart';
 import '../../Cores.dart';
+import 'cadastro_despesa.dart';
 import 'cadastro_receita.dart';
 
 class Categorias extends StatefulWidget {
@@ -88,11 +89,21 @@ class _CategoriasState extends State<Categorias> {
                       padding: const EdgeInsets.only(top: 30.0, left: 15.0),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.shopping_bag_outlined,
-                            color: Colors.yellow,
-                            size: 45,
-                          ),
+                          IconButton(
+                              icon: Icon(
+                                Icons.shopping_bag_outlined,
+                                color: Colors.yellow,
+                                size: 45,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        CadastroDespesa(),
+                                  ),
+                                );
+                              }),
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
                             child: Text(
