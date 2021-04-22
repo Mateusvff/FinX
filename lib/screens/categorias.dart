@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/Widgets/toggleButtons.dart';
 import '../Cores.dart';
 
 class Categorias extends StatefulWidget {
@@ -8,7 +9,7 @@ class Categorias extends StatefulWidget {
 }
 
 class _CategoriasState extends State<Categorias> {
-  List<bool> _selections = [false, true];
+  List<bool> _selections = [true, false];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,42 +32,8 @@ class _CategoriasState extends State<Categorias> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 60.0),
                 child: Container(
-                    child: ToggleButtons(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 140,
-                      decoration: BoxDecoration(
-                          color: customPink,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomLeft: Radius.circular(20))),
-                      child: Center(
-                        child: Text('Receitas',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            )),
-                      ),
-                    ),
-                    Container(
-                      height: 50,
-                      width: 140,
-                      decoration: BoxDecoration(
-                          color: customPurple,
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              bottomRight: Radius.circular(20))),
-                      child: Center(
-                        child: Text('Despesas',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                    )
-                  ],
-                  isSelected: _selections,
-                )),
+                  child: ToggleButton(),
+                ),
               ),
             ),
             Padding(
