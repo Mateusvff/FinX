@@ -54,21 +54,10 @@ class _CategoriasState extends State<Categorias> {
                       padding: const EdgeInsets.only(top: 40.0, left: 15.0),
                       child: Row(
                         children: [
-                          IconButton(
-                            icon: Icon(
-                              Icons.fastfood_sharp,
-                              color: Colors.white,
-                              size: 45,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      CadastroReceita(),
-                                ),
-                              );
-                            },
+                          Icon(
+                            Icons.fastfood_sharp,
+                            color: Colors.white,
+                            size: 45,
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
@@ -89,21 +78,11 @@ class _CategoriasState extends State<Categorias> {
                       padding: const EdgeInsets.only(top: 30.0, left: 15.0),
                       child: Row(
                         children: [
-                          IconButton(
-                              icon: Icon(
-                                Icons.shopping_bag_outlined,
-                                color: Colors.yellow,
-                                size: 45,
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        CadastroDespesa(),
-                                  ),
-                                );
-                              }),
+                          Icon(
+                            Icons.shopping_bag_outlined,
+                            color: Colors.yellow,
+                            size: 45,
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
                             child: Text(

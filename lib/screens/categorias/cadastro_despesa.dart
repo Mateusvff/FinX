@@ -16,7 +16,7 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
         elevation: 0,
         backgroundColor: customBg,
         title: Text(
-          'Adicionar gasto',
+          'Adicionar despesa',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
