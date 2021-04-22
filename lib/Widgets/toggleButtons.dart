@@ -12,7 +12,9 @@ class _ToggleButtonState extends State<ToggleButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: customPurple,
+      decoration: BoxDecoration(
+          color: customPurple,
+          borderRadius: const BorderRadius.all(Radius.circular(30.0))),
       child: ToggleButtons(
         isSelected: _isSelected,
         fillColor: customPink,
