@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/toggleButtons.dart';
 import '../../Cores.dart';
-import 'cadastro_despesa.dart';
-import 'cadastro_receita.dart';
 
 class Categorias extends StatefulWidget {
   @override

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/screens/categorias/cadastro_despesa.dart';
 import 'package:projeto_flutter/screens/categorias/cadastro_receita.dart';
-import 'package:projeto_flutter/screens/categorias/categorias.dart';
 
 import '../Cores.dart';
 
