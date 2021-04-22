@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
               child: ExtratoBanco(),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 16.0),
+              padding: const EdgeInsets.fromLTRB(16.0, 0.0, 14.0, 16.0),
               child: CartaoHome(),
             ),
           ],
