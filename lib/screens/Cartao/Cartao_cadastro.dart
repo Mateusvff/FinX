@@ -64,7 +64,7 @@ class _CartaoCadState extends State<CartaoCad> {
               ),
             ),
             Container(
-              height: 440,
+              height: 350,
               width: 410,
               decoration: BoxDecoration(
                   color: customPurple,
