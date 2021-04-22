@@ -23,11 +23,13 @@ class _ToggleButtonState extends State<ToggleButton> {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35.0),
-            child: Text('Receitas',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                )),
+            child: Text(
+              'Receitas',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35.0),
