@@ -202,7 +202,8 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 220.0, left: 35.0),
+                    padding: const EdgeInsets.only(
+                        right: 220.0, left: 35.0, bottom: 30.0),
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
@@ -221,6 +222,18 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                       ),
                     ),
                   ),
+                  CircleAvatar(
+                    radius: 25.0,
+                    backgroundColor: customPink,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 30.0,
+                      ),
+                      onPressed: () {},
+                    ),
+                  )
                 ],
               ),
             ),
