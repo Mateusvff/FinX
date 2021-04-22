@@ -11,40 +11,43 @@ class _ToggleButtonState extends State<ToggleButton> {
   List<bool> _isSelected = [true, false];
   @override
   Widget build(BuildContext context) {
-    return ToggleButtons(
-      isSelected: _isSelected,
-      fillColor: customPink,
-      borderWidth: 4,
-      borderRadius: BorderRadius.circular(30),
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 35.0),
-          child: Text('Receitas',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              )),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 35.0),
-          child: Text('Despesas',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              )),
-        ),
-      ],
-      onPressed: (int newIndex) {
-        setState(() {
-          for (int index = 0; index < _isSelected.length; index++) {
-            if (index == newIndex) {
-              _isSelected[index] = true;
-            } else {
-              _isSelected[index] = false;
+    return Container(
+      color: customPurple,
+      child: ToggleButtons(
+        isSelected: _isSelected,
+        fillColor: customPink,
+        borderWidth: 4,
+        borderRadius: BorderRadius.circular(30),
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 35.0),
+            child: Text('Receitas',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                )),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 35.0),
+            child: Text('Despesas',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                )),
+          ),
+        ],
+        onPressed: (int newIndex) {
+          setState(() {
+            for (int index = 0; index < _isSelected.length; index++) {
+              if (index == newIndex) {
+                _isSelected[index] = true;
+              } else {
+                _isSelected[index] = false;
+              }
             }
-          }
-        });
-      },
+          });
+        },
+      ),
     );
   }
 }
