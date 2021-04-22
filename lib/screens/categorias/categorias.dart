@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/toggleButtons.dart';
-import '../Cores.dart';
+import '../../Cores.dart';
+import 'cadastro_receita.dart';
 
 class Categorias extends StatefulWidget {
   @override
@@ -9,7 +10,6 @@ class Categorias extends StatefulWidget {
 }
 
 class _CategoriasState extends State<Categorias> {
-  List<bool> _selections = [true, false];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,10 +53,21 @@ class _CategoriasState extends State<Categorias> {
                       padding: const EdgeInsets.only(top: 40.0, left: 15.0),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.fastfood_sharp,
-                            color: Colors.white,
-                            size: 45,
+                          IconButton(
+                            icon: Icon(
+                              Icons.fastfood_sharp,
+                              color: Colors.white,
+                              size: 45,
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      CadastroReceita(),
+                                ),
+                              );
+                            },
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),

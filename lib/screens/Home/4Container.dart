@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Cartao/cartoes.dart';
-import '../categorias.dart';
+import '../categorias/categorias.dart';
 import '../extrato.dart';
 
 class CartaoHome extends StatefulWidget {

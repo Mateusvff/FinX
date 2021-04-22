@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_flutter/screens/categorias.dart';
+import 'package:projeto_flutter/screens/categorias/categorias.dart';
 
 import '../Cores.dart';
 
