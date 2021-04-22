@@ -27,7 +27,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 220.0, right: 180.0),
+              padding: const EdgeInsets.only(top: 170.0, right: 180.0),
               child: Text(
                 'Valor recebido',
                 style: TextStyle(
@@ -50,7 +50,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
             ),
             Container(
               width: 410,
-              height: 440,
+              height: 490,
               decoration: BoxDecoration(
                 color: customPurple,
                 borderRadius: const BorderRadius.only(
