@@ -27,24 +27,29 @@ class _CadastroReceitaState extends State<CadastroReceita> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 170.0, right: 180.0),
-              child: Text(
-                'Valor recebido',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 130.0),
-              child: Text(
-                'R\$1000',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 60,
+              padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                textAlign: TextAlign.left,
+                style: TextStyle(color: Colors.white, fontSize: 15),
+                decoration: InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.pink,
+                    ),
+                  ),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                  ),
+                  labelText: "Valor Recebido (R\$)",
+                  labelStyle: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
               ),
             ),
@@ -113,23 +118,20 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 100.0),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22),
-                            ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(22),
                           ),
-                          child: Text(
-                            "Outro",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        ),
+                        child: Text(
+                          "Outro",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
@@ -202,7 +204,8 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 220.0, left: 35.0, bottom: 30.0),
+                    padding: const EdgeInsets.only(
+                        right: 220.0, left: 35.0, bottom: 30.0),
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(

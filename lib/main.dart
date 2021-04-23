@@ -24,11 +24,3 @@ void main() async {
     ),
   );
 }
-
-/*height: 50,
-          width: 140,
-          decoration: BoxDecoration(
-              color: customPink,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20))),*/

@@ -27,24 +27,29 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 170.0, right: 240.0),
-              child: Text(
-                'Valor gasto',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 200.0),
-              child: Text(
-                'R\$300',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 60,
+              padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
+              child: TextFormField(
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                textAlign: TextAlign.left,
+                style: TextStyle(color: Colors.white, fontSize: 15),
+                decoration: InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.pink,
+                    ),
+                  ),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ),
+                  ),
+                  labelText: "Valor Gasto (R\$)",
+                  labelStyle: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
               ),
             ),
@@ -113,23 +118,20 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 100.0),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22),
-                            ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(22),
                           ),
-                          child: Text(
-                            "Outro",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        ),
+                        child: Text(
+                          "Outro",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
