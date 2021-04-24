@@ -30,7 +30,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 5, top: 140, bottom: 20),
+              padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
               child: TextFormField(
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 controller: receita,
@@ -62,7 +62,10 @@ class _CadastroReceitaState extends State<CadastroReceita> {
               height: 490,
               decoration: BoxDecoration(
                 color: customPurple,
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(22.0),
+                  topLeft: Radius.circular(22.0),
+                ),
               ),
               child: Column(
                 children: [
