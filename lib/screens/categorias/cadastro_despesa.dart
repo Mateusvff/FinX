@@ -224,18 +224,15 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                       ),
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 25.0,
+                  FloatingActionButton(
                     backgroundColor: customPink,
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 30.0,
-                      ),
-                      onPressed: () {},
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 30.0,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
