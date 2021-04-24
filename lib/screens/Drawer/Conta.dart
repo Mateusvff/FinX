@@ -35,20 +35,29 @@ class _DrawerContaState extends State<DrawerConta> {
           child: Column(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            child: CircleAvatar(
-              backgroundColor:
-                  customGrey, // Adicionar Foto do Usuario (Firebase)
-              radius: 90.0,
-              backgroundImage: (data['UserPhotoUrl'] == null)
-                  ? AssetImage('images/user-avatar.png')
-                  : NetworkImage(data['UserPhotoUrl']),
+            padding: EdgeInsets.only(top: 20),
+            child: Center(
+              child: CircleAvatar(
+                backgroundColor:
+                customGrey, // Adicionar Foto do Usuario (Firebase)
+                radius: 80.0,
+                backgroundImage: (data['UserPhotoUrl'] == null)
+                    ? AssetImage('images/user-avatar.png')
+                    : NetworkImage(data['UserPhotoUrl']),
+              ),
             ),
           ),
           Padding(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            child: Text(
-              'Seja Bem Vindo, ${data['userName']}',
+              padding: EdgeInsets.only(top: 30),
+            child: Center(
+              child: Text(
+                'Seja Bem Vindo, ${data['userName']}',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
             ),
           )
         ],
