@@ -58,10 +58,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
               height: 490,
               decoration: BoxDecoration(
                 color: customPurple,
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(22.0),
-                  topLeft: Radius.circular(22.0),
-                ),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
               child: Column(
                 children: [
