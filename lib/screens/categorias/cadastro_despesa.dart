@@ -53,7 +53,7 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                       color: Colors.black,
                     ),
                   ),
-                  labelText: "Valor Gasto (R\$)",
+                  labelText: "Valor Gasto",
                   labelStyle: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
               ),

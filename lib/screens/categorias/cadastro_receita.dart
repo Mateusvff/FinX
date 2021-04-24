@@ -54,7 +54,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                       color: Colors.black,
                     ),
                   ),
-                  labelText: "Valor Recebido (R\$)",
+                  labelText: "Valor Recebido",
                   labelStyle: TextStyle(color: Colors.grey, fontSize: 30),
                 ),
               ),
