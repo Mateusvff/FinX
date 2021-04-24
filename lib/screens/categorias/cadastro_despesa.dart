@@ -27,7 +27,7 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
+              padding: EdgeInsets.only(left: 5, top: 140, bottom: 20),
               child: TextFormField(
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
