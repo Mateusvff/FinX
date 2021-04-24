@@ -83,16 +83,6 @@ class CustomDrawer extends StatelessWidget {
 
                       ), // Tem que mudar a função
                 DrawerTitle(
-                  icon: Icons.lock_outlined,
-                  text: 'Privacidade',
-                  sair: false,
-                ), // Tem que mudar a função
-                DrawerTitle(
-                  icon: Icons.notifications_none_rounded,
-                  text: 'Notificações',
-                  sair: false,
-                ), // Tem que mudar a função
-                DrawerTitle(
                   icon: Icons.person_add_outlined,
                   text: 'Convidar Amigos',
                   sair: false,
