@@ -9,7 +9,7 @@ class CadastroReceita extends StatefulWidget {
 
 class _CadastroReceitaState extends State<CadastroReceita> {
   final receita =
-      MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
+      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +35,10 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 controller: receita,
                 textAlign: TextAlign.left,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+                style: TextStyle(color: Colors.white, fontSize: 18),
                 decoration: InputDecoration(
+                  prefix: Text("R\$"),
+                  prefixStyle: TextStyle(color: Colors.white, fontSize: 18),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.white,
