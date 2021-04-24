@@ -36,6 +36,7 @@ dependencies:
   percent_indicator: ^2.1.7+2
   firebase_core: ^1.0.3
   material_design_icons_flutter: ^4.0.5955
+  flutter_masked_text: ^0.7.0
 
 
 dev_dependencies:

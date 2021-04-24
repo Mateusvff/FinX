@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_masked_text/flutter_masked_text.dart';
 import '../../Cores.dart';
 
 class CadastroDespesa extends StatefulWidget {
@@ -8,6 +8,8 @@ class CadastroDespesa extends StatefulWidget {
 }
 
 class _CadastroDespesaState extends State<CadastroDespesa> {
+  final despesa =
+      MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +31,7 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
             Padding(
               padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
               child: TextFormField(
+                controller: despesa,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 15),
