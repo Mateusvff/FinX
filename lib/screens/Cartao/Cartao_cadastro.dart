@@ -64,14 +64,12 @@ class _CartaoCadState extends State<CartaoCad> {
               ),
             ),
             Container(
-              height: 350,
+              height: 370,
               width: 410,
               decoration: BoxDecoration(
-                  color: customPurple,
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(22.0),
-                    topLeft: Radius.circular(22.0),
-                  )),
+                color: customPurple,
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+              ),
               child: Column(
                 children: <Widget>[
                   Align(

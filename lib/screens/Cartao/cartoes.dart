@@ -75,14 +75,12 @@ class _CartoesState extends State<Cartoes> {
             Padding(
               padding: const EdgeInsets.only(top: 150.0),
               child: Container(
-                height: 440,
+                height: 400,
                 width: 410,
                 decoration: BoxDecoration(
-                    color: customPurple,
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(22.0),
-                      topLeft: Radius.circular(22.0),
-                    )),
+                  color: customPurple,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
                 child: Column(
                   children: <Widget>[
                     Padding(

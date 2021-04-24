@@ -39,13 +39,11 @@ class _CategoriasState extends State<Categorias> {
               padding: const EdgeInsets.only(top: 100.0),
               child: Container(
                 width: 410,
-                height: 565,
+                height: 540,
                 decoration: BoxDecoration(
-                    color: customPurple,
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(22.0),
-                      topLeft: Radius.circular(22.0),
-                    )),
+                  color: customPurple,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
                 child: Column(
                   children: [
                     Padding(
