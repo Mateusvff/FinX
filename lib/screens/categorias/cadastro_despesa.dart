@@ -29,7 +29,7 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
+              padding: EdgeInsets.only(left: 5, top: 140, bottom: 20),
               child: TextFormField(
                 controller: despesa,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
@@ -61,10 +61,7 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
               height: 490,
               decoration: BoxDecoration(
                 color: customPurple,
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(22.0),
-                  topLeft: Radius.circular(22.0),
-                ),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
               child: Column(
                 children: [
