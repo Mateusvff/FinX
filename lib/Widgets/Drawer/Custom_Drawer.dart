@@ -4,6 +4,7 @@ import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Drawer/convidar_amigos.dart';
 import 'package:projeto_flutter/screens/Drawer/relatar_problema.dart';
 import 'package:projeto_flutter/screens/Drawer/sobre.dart';
+import 'package:projeto_flutter/screens/Drawer/Conta.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
 import '../../Cores.dart';
 
@@ -78,9 +79,9 @@ class CustomDrawer extends StatelessWidget {
                     icon: Icons.person_outline_outlined,
                     text: 'Conta',
                     sair: false,
-                    page: (Home(
-                      data: data,
-                    ))), // Tem que mudar a função
+                    page: DrawerConta(data: data,),
+
+                      ), // Tem que mudar a função
                 DrawerTitle(
                   icon: Icons.lock_outlined,
                   text: 'Privacidade',
