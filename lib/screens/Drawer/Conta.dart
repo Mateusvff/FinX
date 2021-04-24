@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../Cores.dart';
 
@@ -11,7 +12,6 @@ class DrawerConta extends StatefulWidget {
 }
 
 class _DrawerContaState extends State<DrawerConta> {
-
   final Map<String, dynamic> data;
 
   _DrawerContaState(this.data);
@@ -39,7 +39,7 @@ class _DrawerContaState extends State<DrawerConta> {
             child: Center(
               child: CircleAvatar(
                 backgroundColor:
-                customGrey, // Adicionar Foto do Usuario (Firebase)
+                    customGrey, // Adicionar Foto do Usuario (Firebase)
                 radius: 80.0,
                 backgroundImage: (data['UserPhotoUrl'] == null)
                     ? AssetImage('images/user-avatar.png')
@@ -48,12 +48,40 @@ class _DrawerContaState extends State<DrawerConta> {
             ),
           ),
           Padding(
-              padding: EdgeInsets.only(top: 30),
+            padding: EdgeInsets.only(top: 30),
             child: Center(
               child: Text(
                 'Seja Bem Vindo, ${data['userName']}',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+              child: Text(
+                "Informações pessoais:",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+              child: Text(
+                "Email:  ${data['UserEmail']}",
+                style: TextStyle(
+                  fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),

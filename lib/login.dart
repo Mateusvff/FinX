@@ -303,6 +303,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           "uid": user.uid,
                                           "userName": user.displayName,
                                           "UserPhotoUrl": user.photoURL,
+                                          "UserEmail" : user.email,
                                         };
                                         if (user != null) {
                                           Navigator.push(
