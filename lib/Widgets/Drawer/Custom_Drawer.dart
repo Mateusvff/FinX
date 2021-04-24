@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/Drawer/title.dart';
 import 'package:projeto_flutter/cadastro.dart';
+import 'package:projeto_flutter/screens/Drawer/ajuda.dart';
 import 'package:projeto_flutter/screens/Drawer/convidar_amigos.dart';
 import 'package:projeto_flutter/screens/Drawer/relatar_problema.dart';
 import 'package:projeto_flutter/screens/Drawer/sobre.dart';
@@ -76,12 +77,13 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 Divider(),
                 DrawerTitle(
-                    icon: Icons.person_outline_outlined,
-                    text: 'Conta',
-                    sair: false,
-                    page: DrawerConta(data: data,),
-
-                      ), // Tem que mudar a função
+                  icon: Icons.person_outline_outlined,
+                  text: 'Conta',
+                  sair: false,
+                  page: DrawerConta(
+                    data: data,
+                  ),
+                ), // Tem que mudar a função
                 DrawerTitle(
                   icon: Icons.person_add_outlined,
                   text: 'Convidar Amigos',
@@ -98,6 +100,7 @@ class CustomDrawer extends StatelessWidget {
                   icon: Icons.help_outline_outlined,
                   text: 'Ajuda',
                   sair: false,
+                  page: Ajuda(),
                 ), // Tem que mudar a função
                 DrawerTitle(
                   icon: Icons.bug_report_outlined,
