@@ -433,6 +433,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                           "userName": user.displayName,
                                           "UserPhotoUrl": user.photoURL,
                                           "UserEmail" : user.email,
+                                          "UserPhone" : user.phoneNumber,
                                         };
 
                                         await FirebaseFirestore.instance.collection('users').doc(user.uid).set(data);

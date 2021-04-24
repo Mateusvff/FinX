@@ -87,7 +87,21 @@ class _DrawerContaState extends State<DrawerConta> {
                 ),
               ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+              child: Text(
+                "Telefone:  ${data['UserPhone']}",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
         ],
       )),
     );
