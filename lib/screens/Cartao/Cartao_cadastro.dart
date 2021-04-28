@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +12,11 @@ class CartaoCad extends StatefulWidget {
 }
 
 class _CartaoCadState extends State<CartaoCad> {
-  TextEditingController cont_limite = TextEditingController();
-  TextEditingController cont_venc =  TextEditingController();
-  TextEditingController cont_nome =  TextEditingController();
+  final cartao =
+      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
+  TextEditingController contLimite = TextEditingController();
+  TextEditingController contVenc = TextEditingController();
+  TextEditingController contNome = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,31 +34,25 @@ class _CartaoCadState extends State<CartaoCad> {
         ),
       ),
       body: SingleChildScrollView(
-
         child: Column(
           children: <Widget>[
-
             Padding(
               padding: const EdgeInsets.only(left: 0, bottom: 0),
-
               child: Container(
-
-                child: Icon(
-                  MdiIcons.creditCardPlusOutline,
-                  color: Colors.white,
-                  size: 215
-                ),
+                child: Icon(MdiIcons.creditCardPlusOutline,
+                    color: Colors.white, size: 215),
               ),
             ),
             Padding(
               padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
               child: TextFormField(
-                controller: cont_limite,
+                controller: cartao,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+                style: TextStyle(color: Colors.white, fontSize: 18),
                 decoration: InputDecoration(
-                  prefixText: "R\$",
+                  prefix: Text("R\$"),
+                  prefixStyle: TextStyle(color: Colors.white, fontSize: 18),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.white,
@@ -122,7 +119,7 @@ class _CartaoCadState extends State<CartaoCad> {
                             backgroundColor: MaterialStateProperty.resolveWith(
                                 (states) => customBg)),
                         child: TextFormField(
-                          controller: cont_venc,
+                          controller: contVenc,
                           style: TextStyle(color: Colors.white),
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration.collapsed(
@@ -174,9 +171,8 @@ class _CartaoCadState extends State<CartaoCad> {
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.resolveWith(
                                 (states) => customBg)),
-
                         child: TextFormField(
-                          controller: cont_nome,
+                          controller: contNome,
                           style: TextStyle(color: Colors.white),
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration.collapsed(
@@ -194,29 +190,32 @@ class _CartaoCadState extends State<CartaoCad> {
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
-
                     child: Padding(
                       padding: const EdgeInsets.only(top: 35.0),
                       child: CircleAvatar(
                         backgroundColor: customPink,
                         radius: 30.0,
-
                         child: IconButton(
                             icon: Icon(Icons.check),
                             color: Colors.white,
                             iconSize: 40.0,
                             onPressed: () async {
-                              String limite = cont_limite.text;
-                              String venc = cont_venc.text;
-                              String nome = cont_nome.text;
+                              String limite = contLimite.text;
+                              String venc = contVenc.text;
+                              String nome = contNome.text;
 
                               Map<String, dynamic> data = {
-                                "limite" : limite,
-                                "venc" : venc,
-                                "nome" : nome
+                                "limite": limite,
+                                "venc": venc,
+                                "nome": nome
                               };
 
-                              await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('cartoes').doc().set(data);
+                              await FirebaseFirestore.instance
+                                  .collection('users')
+                                  .doc(FirebaseAuth.instance.currentUser.uid)
+                                  .collection('cartoes')
+                                  .doc()
+                                  .set(data);
                             }),
                       ),
                     ),
