@@ -15,53 +15,59 @@ class _CadastroState extends State<Cadastro> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Stack(
-        children: <Widget>[
-          Image.asset(
-            'assets/fundo.jpg',
-            fit: BoxFit.cover,
-            height: 735,
-          ),
-          Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 15, 0, 5),
-                child: Text(
-                  "FinX,",
-                  style: TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'NotoSans',
-                    color: customPurple,
-                    decoration: TextDecoration.none,
+      body: Container(
+        child: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: new DecorationImage(
+                  fit: BoxFit.cover,
+                  image: new ExactAssetImage(
+                    'assets/fundo.jpg',
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: Text(
-                  "Escolhas inteligentes para o seu bolso",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'NotoSans',
-                    color: Colors.white,
-                    decoration: TextDecoration.none,
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 15, 0, 5),
+                  child: Text(
+                    "FinX,",
+                    style: TextStyle(
+                      fontSize: 45.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'NotoSans',
+                      color: customPurple,
+                      decoration: TextDecoration.none,
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 485.0),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: Text(
+                    "Escolhas inteligentes para o seu bolso",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'NotoSans',
+                      color: Colors.white,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Positioned(
+              child: new Align(
+                alignment: FractionalOffset.bottomCenter,
                 child: Container(
-                  width: 500.0,
-                  height: 215.0,
+                  width: MediaQuery.of(context).size.width,
+                  height: 140,
                   decoration: BoxDecoration(
                     color: customPurple,
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(22.0),
-                        topLeft: Radius.circular(22.0)),
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(22.0), topLeft: Radius.circular(22.0)),
                   ),
                   child: Padding(
                     padding: EdgeInsets.only(top: 30.0),
@@ -75,8 +81,7 @@ class _CadastroState extends State<Cadastro> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      SigninScreen(),
+                                  builder: (BuildContext context) => SigninScreen(),
                                 ),
                               );
                             },
@@ -98,29 +103,21 @@ class _CadastroState extends State<Cadastro> {
                         ),
                         TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (BuildContext context) =>
-                                          LoginScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
                             },
                             child: Text(
                               'Já sou cadastrado',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 19),
+                              style: TextStyle(color: Colors.white, fontFamily: 'NotoSans', fontWeight: FontWeight.bold, fontSize: 19),
                             ))
                       ],
                     ),
                   ),
                 ),
-              )
-            ],
-          )
-        ],
+              ),
+            ),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
