@@ -17,10 +17,18 @@ class _CartaoCadState extends State<CartaoCad> {
   TextEditingController contLimite = TextEditingController();
   TextEditingController contVenc = TextEditingController();
   TextEditingController contNome = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void _reset() {
+    contLimite.clear();
+    contVenc.clear();
+    contNome.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: customBg,
       appBar: AppBar(
         elevation: 0,
@@ -200,22 +208,33 @@ class _CartaoCadState extends State<CartaoCad> {
                             color: Colors.white,
                             iconSize: 40.0,
                             onPressed: () async {
-                              String limite = contLimite.text;
-                              String venc = contVenc.text;
-                              String nome = contNome.text;
+                              if (contLimite.text.isNotEmpty &&
+                                  contNome.text.isNotEmpty &&
+                                  contVenc.text.isNotEmpty) {
+                                String limite = contLimite.text;
+                                String venc = contVenc.text;
+                                String nome = contNome.text;
 
-                              Map<String, dynamic> data = {
-                                "limite": limite,
-                                "venc": venc,
-                                "nome": nome
-                              };
+                                Map<String, dynamic> data = {
+                                  "limite": limite,
+                                  "venc": venc,
+                                  "nome": nome
+                                };
 
-                              await FirebaseFirestore.instance
-                                  .collection('users')
-                                  .doc(FirebaseAuth.instance.currentUser.uid)
-                                  .collection('cartoes')
-                                  .doc()
-                                  .set(data);
+                                await FirebaseFirestore.instance
+                                    .collection('users')
+                                    .doc(FirebaseAuth.instance.currentUser.uid)
+                                    .collection('cartoes')
+                                    .doc()
+                                    .set(data);
+                                _reset();
+                              } else {
+                                _scaffoldKey.currentState.showSnackBar(SnackBar(
+                                  content: Text(
+                                      'Não foi possível fazer o login. Tente novamente!'),
+                                  backgroundColor: Colors.red,
+                                ));
+                              }
                             }),
                       ),
                     ),
