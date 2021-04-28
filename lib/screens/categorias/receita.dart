@@ -11,7 +11,9 @@ class Receita extends StatefulWidget {
 
 class _ReceitaState extends State<Receita> {
 
-  TextEditingController cont_receita = TextEditingController();
+  TextEditingController cont_desc = TextEditingController();
+  TextEditingController cont_cor = TextEditingController();
+  TextEditingController cont_icone = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -208,8 +210,9 @@ class _ReceitaState extends State<Receita> {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(10, 15, 10, 0),
+
                                     child: TextFormField(
-                                      controller: cont_receita,
+                                      controller: cont_desc,
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -224,6 +227,7 @@ class _ReceitaState extends State<Receita> {
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
                                     child: TextFormField(
+                                      controller: cont_cor,
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -238,6 +242,7 @@ class _ReceitaState extends State<Receita> {
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
                                     child: TextFormField(
+                                      controller: cont_icone,
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -256,10 +261,15 @@ class _ReceitaState extends State<Receita> {
                                       width: 145,
                                       child: ElevatedButton(
                                         onPressed: () async {
-                                          String desc = cont_receita.text;
+                                          String desc = cont_desc.text;
+                                          String cor = cont_cor.text;
+                                          String icone = cont_icone.text;
+
 
                                           Map<String, dynamic> data = {
-                                            "nome" : desc
+                                            "descricao" : desc,
+                                            "cor" : cor,
+                                            "icone" : icone
                                           };
 
                                           await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('categorias').doc().set(data);
