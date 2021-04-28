@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Cores.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -8,6 +11,10 @@ class CartaoCad extends StatefulWidget {
 }
 
 class _CartaoCadState extends State<CartaoCad> {
+  TextEditingController cont_limite = TextEditingController();
+  TextEditingController cont_venc =  TextEditingController();
+  TextEditingController cont_nome =  TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +46,7 @@ class _CartaoCadState extends State<CartaoCad> {
             Padding(
               padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
               child: TextFormField(
+                controller: cont_limite,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 15),
@@ -109,6 +117,7 @@ class _CartaoCadState extends State<CartaoCad> {
                             backgroundColor: MaterialStateProperty.resolveWith(
                                 (states) => customBg)),
                         child: TextFormField(
+                          controller: cont_venc,
                           style: TextStyle(color: Colors.white),
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration.collapsed(
@@ -161,6 +170,7 @@ class _CartaoCadState extends State<CartaoCad> {
                             backgroundColor: MaterialStateProperty.resolveWith(
                                 (states) => customBg)),
                         child: TextFormField(
+                          controller: cont_nome,
                           style: TextStyle(color: Colors.white),
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration.collapsed(
@@ -187,7 +197,19 @@ class _CartaoCadState extends State<CartaoCad> {
                             icon: Icon(Icons.check),
                             color: Colors.white,
                             iconSize: 40.0,
-                            onPressed: () {}),
+                            onPressed: () async {
+                              String limite = cont_limite.text;
+                              String venc = cont_venc.text;
+                              String nome = cont_nome.text;
+                              
+                              Map<String, dynamic> data = {
+                                "limite" : limite, 
+                                "venc" : venc,
+                                "nome" : nome
+                              };
+                              
+                              await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('cartoes').doc().set(data);
+                            }),
                       ),
                     ),
                   ),

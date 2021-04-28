@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../Cores.dart';
@@ -8,6 +10,9 @@ class Receita extends StatefulWidget {
 }
 
 class _ReceitaState extends State<Receita> {
+
+  TextEditingController controller_desc = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -204,6 +209,7 @@ class _ReceitaState extends State<Receita> {
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(10, 15, 10, 0),
                                     child: TextFormField(
+                                      controller: controller_desc,
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -249,7 +255,15 @@ class _ReceitaState extends State<Receita> {
                                       height: 47,
                                       width: 145,
                                       child: ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () async {
+                                          String desc = controller_desc.text;
+
+                                          Map<String, dynamic> data = {
+                                            "nome" : desc
+                                          };
+
+                                          await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('categorias').doc().set(data);
+                                        },
                                         style: ElevatedButton.styleFrom(
                                           primary: customPink,
                                           shape: RoundedRectangleBorder(
