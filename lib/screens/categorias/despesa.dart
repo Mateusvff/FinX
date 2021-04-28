@@ -8,6 +8,8 @@ class Despesas extends StatefulWidget {
 }
 
 class _DespesasState extends State<Despesas> {
+  TextEditingController cont_desp = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(

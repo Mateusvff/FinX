@@ -31,15 +31,19 @@ class _CartaoCadState extends State<CartaoCad> {
         ),
       ),
       body: SingleChildScrollView(
+
         child: Column(
           children: <Widget>[
+
             Padding(
-              padding: const EdgeInsets.only(left: 30, bottom: 8),
+              padding: const EdgeInsets.only(left: 0, bottom: 0),
+
               child: Container(
+
                 child: Icon(
                   MdiIcons.creditCardPlusOutline,
-                  color: Colors.grey,
-                  size: 250,
+                  color: Colors.white,
+                  size: 215
                 ),
               ),
             ),
@@ -51,6 +55,7 @@ class _CartaoCadState extends State<CartaoCad> {
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 15),
                 decoration: InputDecoration(
+                  prefixText: "R\$",
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.white,
@@ -169,6 +174,7 @@ class _CartaoCadState extends State<CartaoCad> {
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.resolveWith(
                                 (states) => customBg)),
+
                         child: TextFormField(
                           controller: cont_nome,
                           style: TextStyle(color: Colors.white),
@@ -188,11 +194,13 @@ class _CartaoCadState extends State<CartaoCad> {
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
+
                     child: Padding(
                       padding: const EdgeInsets.only(top: 35.0),
                       child: CircleAvatar(
                         backgroundColor: customPink,
                         radius: 30.0,
+
                         child: IconButton(
                             icon: Icon(Icons.check),
                             color: Colors.white,
@@ -201,13 +209,13 @@ class _CartaoCadState extends State<CartaoCad> {
                               String limite = cont_limite.text;
                               String venc = cont_venc.text;
                               String nome = cont_nome.text;
-                              
+
                               Map<String, dynamic> data = {
-                                "limite" : limite, 
+                                "limite" : limite,
                                 "venc" : venc,
                                 "nome" : nome
                               };
-                              
+
                               await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('cartoes').doc().set(data);
                             }),
                       ),

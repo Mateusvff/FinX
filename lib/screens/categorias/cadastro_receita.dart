@@ -8,8 +8,7 @@ class CadastroReceita extends StatefulWidget {
 }
 
 class _CadastroReceitaState extends State<CadastroReceita> {
-  final receita =
-      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
+  final cont_receita = MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
               padding: EdgeInsets.only(left: 5, top: 140, bottom: 20),
               child: TextFormField(
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
-                controller: receita,
+                controller: cont_receita,
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 18),
                 decoration: InputDecoration(

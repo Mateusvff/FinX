@@ -11,7 +11,7 @@ class Receita extends StatefulWidget {
 
 class _ReceitaState extends State<Receita> {
 
-  TextEditingController controller_desc = TextEditingController();
+  TextEditingController cont_receita = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -209,7 +209,7 @@ class _ReceitaState extends State<Receita> {
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(10, 15, 10, 0),
                                     child: TextFormField(
-                                      controller: controller_desc,
+                                      controller: cont_receita,
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -256,7 +256,7 @@ class _ReceitaState extends State<Receita> {
                                       width: 145,
                                       child: ElevatedButton(
                                         onPressed: () async {
-                                          String desc = controller_desc.text;
+                                          String desc = cont_receita.text;
 
                                           Map<String, dynamic> data = {
                                             "nome" : desc
