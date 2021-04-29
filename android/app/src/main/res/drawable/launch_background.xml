@@ -8,5 +8,5 @@
         <bitmap
             android:gravity="center"
             android:src="@drawable/launch_image" />
-    </item> -->
+    </item> 
 </layer-list>

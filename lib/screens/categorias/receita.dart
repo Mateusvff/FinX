@@ -10,7 +10,6 @@ class Receita extends StatefulWidget {
 }
 
 class _ReceitaState extends State<Receita> {
-
   TextEditingController cont_receita = TextEditingController();
 
   @override
@@ -207,7 +206,7 @@ class _ReceitaState extends State<Receita> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 15, 10, 0),
+                                    padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
                                     child: TextFormField(
                                       controller: cont_receita,
                                       keyboardType: TextInputType.text,
@@ -222,7 +221,8 @@ class _ReceitaState extends State<Receita> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
+                                    padding:
+                                        EdgeInsets.fromLTRB(10, 15, 10, 10),
                                     child: TextFormField(
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
@@ -236,21 +236,7 @@ class _ReceitaState extends State<Receita> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                    child: TextFormField(
-                                      keyboardType: TextInputType.text,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                      decoration: InputDecoration(
-                                        labelText: "Ícone",
-                                        labelStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 18),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                    padding: EdgeInsets.only(top: 50),
                                     child: Container(
                                       height: 47,
                                       width: 145,
@@ -259,10 +245,16 @@ class _ReceitaState extends State<Receita> {
                                           String desc = cont_receita.text;
 
                                           Map<String, dynamic> data = {
-                                            "nome" : desc
+                                            "nome": desc
                                           };
 
-                                          await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('categorias').doc().set(data);
+                                          await FirebaseFirestore.instance
+                                              .collection('users')
+                                              .doc(FirebaseAuth
+                                                  .instance.currentUser.uid)
+                                              .collection('categorias')
+                                              .doc()
+                                              .set(data);
                                         },
                                         style: ElevatedButton.styleFrom(
                                           primary: customPink,
