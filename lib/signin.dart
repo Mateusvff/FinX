@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:projeto_flutter/login.dart';
 import 'Cores.dart';
 import 'package:projeto_flutter/cadastro.dart';
 import 'package:projeto_flutter/screens/Home/home.dart';
@@ -32,12 +33,15 @@ class _SigninScreenState extends State<SigninScreen> {
     //Login com o Google
     if (_currentUser != null) return _currentUser;
     try {
-      final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
-      final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
+      final GoogleSignInAccount googleSignInAccount =
+          await googleSignIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
           idToken: googleSignInAuthentication.idToken,
           accessToken: googleSignInAuthentication.accessToken);
-      final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
+      final UserCredential authResult =
+          await FirebaseAuth.instance.signInWithCredential(credential);
       final User user = authResult.user;
       return user;
     } catch (error) {
@@ -59,11 +63,9 @@ class _SigninScreenState extends State<SigninScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
-
           // Stack para imagens e afins...
 
           children: <Widget>[
-
             Image.asset(
               "assets/bg_login.png",
               fit: BoxFit.cover,
@@ -74,7 +76,6 @@ class _SigninScreenState extends State<SigninScreen> {
 
             Column(
               children: [
-
                 ///// Posição do botão voltar /////
 
                 Padding(
@@ -150,7 +151,6 @@ class _SigninScreenState extends State<SigninScreen> {
                 Padding(
                   padding: EdgeInsets.only(top: 150.0),
                   child: Stack(
-
                     // Stack para o container roxo e todos os container brancos
 
                     alignment: Alignment.center,
@@ -158,7 +158,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 530.0,
+                        height: 570.0,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -268,7 +268,6 @@ class _SigninScreenState extends State<SigninScreen> {
                               Padding(
                                   padding: EdgeInsets.only(top: 30),
                                   child: Stack(
-
                                     // stack para senha e Show : Hide //
 
                                     children: <Widget>[
@@ -321,29 +320,29 @@ class _SigninScreenState extends State<SigninScreen> {
                                               Radius.circular(22.0),
                                             ),
                                           ),
-                                          child: TextButton(
-                                            onPressed: _toggle,
-                                            child: Text(
-                                              _obscureText ? "Show" : "Hide",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'NotoSans',
-                                              ),
-                                            ),
+                                          child: IconButton(
+                                            alignment: Alignment.centerRight,
+                                            icon: _obscureText
+                                                ? Icon(
+                                                    Icons.visibility_outlined)
+                                                : Icon(Icons
+                                                    .visibility_off_outlined),
+                                            color: Colors.black,
+                                            iconSize: 18,
+                                            onPressed: () => setState(() =>
+                                                _obscureText = !_obscureText),
+                                            /* Tampar o saldo do usuario ou Mostrar o saldo do usuario. Ao desativar vira visibility_off_outlined*/
                                           ),
                                         ),
                                       ),
                                     ],
                                   )),
 
-                            //// Container "Confirmação Senha" ////
+                              //// Container "Confirmação Senha" ////
 
                               Padding(
                                   padding: EdgeInsets.only(top: 30),
                                   child: Stack(
-
                                     // stack confirmação e Show : Hide
 
                                     children: <Widget>[
@@ -396,17 +395,18 @@ class _SigninScreenState extends State<SigninScreen> {
                                               Radius.circular(22.0),
                                             ),
                                           ),
-                                          child: TextButton(
-                                            onPressed: _toggle,
-                                            child: Text(
-                                              _obscureText ? "Show" : "Hide",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'NotoSans',
-                                              ),
-                                            ),
+                                          child: IconButton(
+                                            alignment: Alignment.centerRight,
+                                            icon: _obscureText
+                                                ? Icon(
+                                                    Icons.visibility_outlined)
+                                                : Icon(Icons
+                                                    .visibility_off_outlined),
+                                            color: Colors.black,
+                                            iconSize: 18,
+                                            onPressed: () => setState(() =>
+                                                _obscureText = !_obscureText),
+                                            /* Tampar o saldo do usuario ou Mostrar o saldo do usuario. Ao desativar vira visibility_off_outlined*/
                                           ),
                                         ),
                                       ),
@@ -432,11 +432,14 @@ class _SigninScreenState extends State<SigninScreen> {
                                           "uid": user.uid,
                                           "userName": user.displayName,
                                           "UserPhotoUrl": user.photoURL,
-                                          "UserEmail" : user.email,
-                                          "UserPhone" : user.phoneNumber,
+                                          "UserEmail": user.email,
+                                          "UserPhone": user.phoneNumber,
                                         };
 
-                                        await FirebaseFirestore.instance.collection('users').doc(user.uid).set(data);
+                                        await FirebaseFirestore.instance
+                                            .collection('users')
+                                            .doc(user.uid)
+                                            .set(data);
 
                                         if (user != null) {
                                           Navigator.push(
@@ -473,14 +476,19 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                   child: TextButton(
                                     onPressed: () async {
-                                      final User user = await _getUser(); // função Firebase
+                                      final User user =
+                                          await _getUser(); // função Firebase
                                       Map<String, dynamic> data = {
                                         "uid": user.uid,
                                         "userName": user.displayName,
                                         "UserPhotoUrl": user.photoURL,
                                       };
 
-                                      await FirebaseFirestore.instance.collection('users').doc(user.uid).set(data); // criar campo dentro do usuário
+                                      await FirebaseFirestore.instance
+                                          .collection('users')
+                                          .doc(user.uid)
+                                          .set(
+                                              data); // criar campo dentro do usuário
 
                                       if (user != null) {
                                         print(data);
@@ -503,6 +511,26 @@ class _SigninScreenState extends State<SigninScreen> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'NotoSans',
                                       ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 10),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                LoginScreen()));
+                                  },
+                                  child: Text(
+                                    "Já tenho uma conta!",
+                                    style: TextStyle(
+                                      color: customGrey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'NotoSans',
                                     ),
                                   ),
                                 ),

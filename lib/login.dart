@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:projeto_flutter/signin.dart';
 import 'Cores.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:projeto_flutter/cadastro.dart';
@@ -149,7 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 355.0,
+                        height: 385.0,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -267,17 +268,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                               Radius.circular(22.0),
                                             ),
                                           ),
-                                          child: TextButton(
-                                            onPressed: _toggle,
-                                            child: Text(
-                                              _obscureText ? "Show" : "Hide",
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'NotoSans',
-                                              ),
-                                            ),
+                                          child: IconButton(
+                                            alignment: Alignment.centerRight,
+                                            icon: _obscureText
+                                                ? Icon(
+                                                    Icons.visibility_outlined)
+                                                : Icon(Icons
+                                                    .visibility_off_outlined),
+                                            color: Colors.black,
+                                            iconSize: 18,
+                                            onPressed: () => setState(() =>
+                                                _obscureText = !_obscureText),
+                                            /* Tampar o saldo do usuario ou Mostrar o saldo do usuario. Ao desativar vira visibility_off_outlined*/
                                           ),
                                         ),
                                       ),
@@ -303,8 +305,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           "uid": user.uid,
                                           "userName": user.displayName,
                                           "UserPhotoUrl": user.photoURL,
-                                          "UserEmail" : user.email,
-                                          "UserPhone" : user.phoneNumber,
+                                          "UserEmail": user.email,
+                                          "UserPhone": user.phoneNumber,
                                         };
                                         if (user != null) {
                                           Navigator.push(
@@ -349,6 +351,27 @@ class _LoginScreenState extends State<LoginScreen> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'NotoSans',
                                       ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              Padding(
+                                padding: EdgeInsets.only(top: 10),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                SigninScreen()));
+                                  },
+                                  child: Text(
+                                    "Ainda não tenho uma conta!",
+                                    style: TextStyle(
+                                      color: customGrey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'NotoSans',
                                     ),
                                   ),
                                 ),
