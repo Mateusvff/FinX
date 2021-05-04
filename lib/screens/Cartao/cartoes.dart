@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/screens/Cartao/Cartao_cadastro.dart';
 import '../../Cores.dart';
@@ -83,81 +85,35 @@ class _CartoesState extends State<Cartoes> {
                 ),
                 child: Column(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 50.0, left: 15.0),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.credit_card,
-                            color: customCyan,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              'Visa black (Banco do Brasil)',
-                              style: TextStyle(
-                                  color: customCyan,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.credit_card, color: customRed),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              'MasterCard (Banco do Brasil)',
-                              style: TextStyle(
-                                  color: customRed,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.credit_card, color: Colors.yellow),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              'Visa Platinum (Santander)',
-                              style: TextStyle(
-                                  color: Colors.yellowAccent,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.credit_card, color: Colors.white),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Text(
-                              'Crédito Universitário (Nubank)',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'NotoSans',
-                                  fontSize: 18),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    Expanded(
+                        child: StreamBuilder<QuerySnapshot>(
+                      stream: FirebaseFirestore.instance
+                          .collection('users')
+                          .doc(FirebaseAuth.instance.currentUser.uid)
+                          .collection('cartoes')
+                          .snapshots(),
+                      builder: (context, snapshot) {
+                        switch (snapshot.connectionState) {
+                          case ConnectionState.none:
+                          case ConnectionState.waiting:
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          default:
+                            List<DocumentSnapshot> documents =
+                                snapshot.data.docs;
+
+                            return ListView.builder(
+                                itemCount: documents.length,
+                                itemBuilder: (context, index) {
+                                  return ListTile(
+                                    title:
+                                        Text(documents[index].data()['nome']),
+                                  );
+                                });
+                        }
+                      },
+                    )),
                   ],
                 ),
               ),

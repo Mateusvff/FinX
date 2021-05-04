@@ -54,7 +54,7 @@ class _CartaoCadState extends State<CartaoCad> {
             Padding(
               padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
               child: TextFormField(
-                controller: cartao,
+                controller: contLimite,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 18),
