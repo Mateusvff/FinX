@@ -45,7 +45,7 @@ class Ajuda extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 30.0, right: 8.0, left: 20.0),
                     child: Text(
-                      'Este aplicativo é um projeto para matéria de desenvolvimento de software, brota no pix: 07959979146',
+                      'Este aplicativo é um projeto para matéria de desenvolvimento de software',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontFamily: 'NotoSans',
