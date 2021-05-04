@@ -204,7 +204,7 @@ class _DespesasState extends State<Despesas> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 15, 10, 0),
+                                    padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
                                     child: TextFormField(
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
@@ -218,7 +218,8 @@ class _DespesasState extends State<Despesas> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
+                                    padding:
+                                        EdgeInsets.fromLTRB(10, 15, 10, 10),
                                     child: TextFormField(
                                       keyboardType: TextInputType.text,
                                       textAlign: TextAlign.center,
@@ -232,21 +233,7 @@ class _DespesasState extends State<Despesas> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                    child: TextFormField(
-                                      keyboardType: TextInputType.text,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                      decoration: InputDecoration(
-                                        labelText: "Ícone",
-                                        labelStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 18),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                    padding: EdgeInsets.only(top: 50),
                                     child: Container(
                                       height: 47,
                                       width: 145,

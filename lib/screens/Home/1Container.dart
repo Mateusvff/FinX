@@ -94,7 +94,7 @@ class _ExtratoMesState extends State<ExtratoMes> {
                       width: 150,
                       height: 35,
                       decoration: BoxDecoration(
-                          color: Color(0xffebebeb),
+                          color: customGrey,
                           borderRadius: BorderRadius.all(Radius.circular(4))),
                     ),
             ],
@@ -134,7 +134,7 @@ class _ExtratoMesState extends State<ExtratoMes> {
                         width: 80,
                         height: 15,
                         decoration: BoxDecoration(
-                            color: Color(0xffebebeb),
+                            color: customGrey,
                             borderRadius: BorderRadius.all(Radius.circular(4))),
                       ),
               ),
@@ -151,7 +151,7 @@ class _ExtratoMesState extends State<ExtratoMes> {
                         width: 80,
                         height: 15,
                         decoration: BoxDecoration(
-                            color: Color(0xffebebeb),
+                            color: customGrey,
                             borderRadius: BorderRadius.all(Radius.circular(4))),
                       ),
               ),
