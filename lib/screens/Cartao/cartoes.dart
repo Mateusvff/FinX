@@ -118,13 +118,25 @@ class _CartoesState extends State<Cartoes> {
                                 itemCount: documents.length,
                                 itemBuilder: (context, index) {
                                   return ListTile(
-                                    title: Text(
-                                      documents[index].data()['nome'],
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
+                                    title: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.credit_card,
+                                          color: Colors.white,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10.0),
+                                          child: Text(
+                                            documents[index].data()['nome'],
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   );
                                 });
