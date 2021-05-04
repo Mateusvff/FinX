@@ -132,6 +132,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                           "data" : dia,
                           "conta": conta,
                           "desc" : desc
+                          
                         };
 
                         await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('receitas').doc().set(data);
