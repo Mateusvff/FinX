@@ -28,16 +28,16 @@ dependencies:
   cloud_firestore: ^1.0.5
   cupertino_icons: ^1.0.2
   firebase_auth: ^1.1.0
+  firebase_core: ^1.0.3
   firebase_storage: ^8.0.3
+  flutter_colorpicker: ^0.4.0
+  flutter_masked_text: ^0.7.0
   flutter_signin_button: ^2.0.0
   google_sign_in: ^4.1.1
   image_picker: ^0.6.2+3
   intl: ^0.17.0
-  percent_indicator: ^2.1.7+2
-  firebase_core: ^1.0.3
   material_design_icons_flutter: ^4.0.5955
-  flutter_masked_text: ^0.7.0
-
+  percent_indicator: ^2.1.7+2
 
 dev_dependencies:
   flutter_test:

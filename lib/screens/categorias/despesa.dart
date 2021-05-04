@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../Cores.dart';
+import 'color_picker.dart';
 
 class Despesas extends StatefulWidget {
   @override
@@ -219,18 +220,8 @@ class _DespesasState extends State<Despesas> {
                                   ),
                                   Padding(
                                     padding:
-                                        EdgeInsets.fromLTRB(10, 15, 10, 10),
-                                    child: TextFormField(
-                                      keyboardType: TextInputType.text,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                      decoration: InputDecoration(
-                                        labelText: "Cor",
-                                        labelStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 18),
-                                      ),
-                                    ),
+                                        EdgeInsets.fromLTRB(10, 20, 10, 10),
+                                    child: ColorP(),
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(top: 50),
