@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import '../../Cores.dart';
 
 class CadastroDespesa extends StatefulWidget {
@@ -31,7 +32,13 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
             Padding(
               padding: EdgeInsets.only(left: 5, top: 140, bottom: 20),
               child: TextFormField(
-                controller: despesa,
+                inputFormatters: [
+                  CurrencyTextInputFormatter(
+                    locale: 'br',
+                    decimalDigits: 2,
+                    symbol: '',
+                  )
+                ],
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 18),

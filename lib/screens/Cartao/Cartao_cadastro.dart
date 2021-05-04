@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +12,6 @@ class CartaoCad extends StatefulWidget {
 }
 
 class _CartaoCadState extends State<CartaoCad> {
-  final cartao =
-      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
   TextEditingController contLimite = TextEditingController();
   TextEditingController contVenc = TextEditingController();
   TextEditingController contNome = TextEditingController();
@@ -54,6 +52,13 @@ class _CartaoCadState extends State<CartaoCad> {
             Padding(
               padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
               child: TextFormField(
+                inputFormatters: [
+                  CurrencyTextInputFormatter(
+                    locale: 'br',
+                    decimalDigits: 2,
+                    symbol: '',
+                  )
+                ],
                 controller: contLimite,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
