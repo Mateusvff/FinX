@@ -61,7 +61,7 @@ class _ExtratoMesState extends State<ExtratoMes> {
                 padding: const EdgeInsets.only(left: 50.0),
                 child: Text(
                   'Saldo em conta',
-                  style: TextStyle(color: Colors.black, fontSize: 14),
+                  style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
