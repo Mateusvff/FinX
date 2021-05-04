@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/lilia/Documents/projeto_flutter/lib/screens/Home/cadastro_despesa.dart';
-import 'file:///C:/Users/lilia/Documents/projeto_flutter/lib/screens/Home/cadastro_receita.dart';
+import 'package:projeto_flutter/screens/Home/cadastro_despesa.dart';
+import 'package:projeto_flutter/screens/Home/cadastro_receita.dart';
 
 import '../Cores.dart';
 
