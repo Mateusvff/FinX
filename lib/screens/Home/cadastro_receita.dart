@@ -11,11 +11,11 @@ class CadastroReceita extends StatefulWidget {
 }
 
 class _CadastroReceitaState extends State<CadastroReceita> {
-  final cont_receita =
+  final contReceita =
       MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
-  TextEditingController cont_data = TextEditingController();
-  TextEditingController cont_conta = TextEditingController();
-  TextEditingController cont_desc = TextEditingController();
+  TextEditingController contData = TextEditingController();
+  TextEditingController contConta = TextEditingController();
+  TextEditingController contDesc = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +39,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
               padding:
                   EdgeInsets.only(left: 15, top: 140, bottom: 20, right: 15),
               child: TextFormField(
-                inputFormatters: [
-                  CurrencyTextInputFormatter(
-                    locale: 'br',
-                    decimalDigits: 2,
-                    symbol: '',
-                  )
-                ],
+                controller: contReceita,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 18),
@@ -89,7 +83,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                     Padding(
                       padding: EdgeInsets.all(15),
                       child: TextField(
-                        controller: cont_data,
+                        controller: contData,
                         keyboardType: TextInputType.datetime,
                         decoration: InputDecoration(
                           labelText: "Data ",
@@ -102,7 +96,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                     Padding(
                       padding: EdgeInsets.all(15),
                       child: TextField(
-                        controller: cont_conta,
+                        controller: contConta,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                           labelText: "Dinheiro ou cartão ",
@@ -115,7 +109,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                     Padding(
                       padding: EdgeInsets.all(15),
                       child: TextField(
-                        controller: cont_desc,
+                        controller: contDesc,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                           labelText: "Descrição",
@@ -133,10 +127,10 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                         ),
                       ),
                       onPressed: () async {
-                        String receita = cont_receita.text;
-                        String dia = cont_data.text;
-                        String conta = cont_conta.text;
-                        String desc = cont_desc.text;
+                        String receita = contReceita.text;
+                        String dia = contData.text;
+                        String conta = contConta.text;
+                        String desc = contDesc.text;
 
                         Map<String, dynamic> data = {
                           "valor": receita,

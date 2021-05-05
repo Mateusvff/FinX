@@ -3,6 +3,7 @@ import 'package:currency_text_input_formatter/currency_text_input_formatter.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:projeto_flutter/Cores.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -12,7 +13,8 @@ class CartaoCad extends StatefulWidget {
 }
 
 class _CartaoCadState extends State<CartaoCad> {
-  TextEditingController contLimite = TextEditingController();
+  final contLimite =
+      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
   TextEditingController contVenc = TextEditingController();
   TextEditingController contNome = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -52,13 +54,6 @@ class _CartaoCadState extends State<CartaoCad> {
             Padding(
               padding: EdgeInsets.only(left: 5, top: 30, bottom: 20),
               child: TextFormField(
-                inputFormatters: [
-                  CurrencyTextInputFormatter(
-                    locale: 'br',
-                    decimalDigits: 2,
-                    symbol: '',
-                  )
-                ],
                 controller: contLimite,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
@@ -230,7 +225,7 @@ class _CartaoCadState extends State<CartaoCad> {
                                     .collection('users')
                                     .doc(FirebaseAuth.instance.currentUser.uid)
                                     .collection('cartoes')
-                                    .doc()
+                                    .doc(nome)
                                     .set(data);
                                 _reset();
                               } else {
