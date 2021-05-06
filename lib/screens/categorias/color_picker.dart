@@ -7,7 +7,7 @@ class ColorP extends StatefulWidget {
 }
 
 class ColorPState extends State<ColorP> {
-  Color currentColor = Colors.limeAccent;
+  Color currentColor = Color(0xfffc00e3);
 
   void changeColor(Color color) => setState(() => currentColor = color);
 
@@ -46,7 +46,7 @@ class ColorPState extends State<ColorP> {
                   },
                 );
               },
-              child: const Text('Change me'),
+              child: const Text('Selecionar cor'),
             ),
           ],
         ),
