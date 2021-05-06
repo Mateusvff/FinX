@@ -210,7 +210,7 @@ class _CartaoCadState extends State<CartaoCad> {
                               if (contLimite.text.isNotEmpty &&
                                   contNome.text.isNotEmpty &&
                                   contVenc.text.isNotEmpty) {
-                                String limite = contLimite.text;
+                                double limite = contLimite.numberValue;
                                 String venc = contVenc.text;
                                 String nome = contNome.text;
 

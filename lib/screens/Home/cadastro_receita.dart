@@ -199,7 +199,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                                 .doc(FirebaseAuth.instance.currentUser.uid)
                                 .collection('receitas')
                                 .doc(DateTime.now().year.toString())
-                                .collection(contData)
+                                .collection(DateTime.now().month.toString())
                                 .doc(nome)
                                 .set(data);
                             _reset();
