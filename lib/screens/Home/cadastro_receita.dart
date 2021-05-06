@@ -183,7 +183,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                           if (contReceita.text.isNotEmpty &&
                               contNome.text.isNotEmpty &&
                               contDesc.text.isNotEmpty) {
-                            String receita = contReceita.text;
+                            double receita = contReceita.numberValue;
                             String nome = contNome.text;
                             String desc = contDesc.text;
 
@@ -191,7 +191,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                               "valor": receita,
                               "data": contData,
                               "nome": nome,
-                              "desc": desc
+                              "desc": desc,
                             };
 
                             await FirebaseFirestore.instance
