@@ -88,7 +88,7 @@ class _CartoesState extends State<Cartoes> {
                     Padding(
                       padding: const EdgeInsets.only(top: 15.0, bottom: 8.0),
                       child: Text(
-                        'Lista de cartões',
+                        'Cartões cadastrados',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
