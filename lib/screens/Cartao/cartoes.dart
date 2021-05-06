@@ -12,6 +12,7 @@ class Cartoes extends StatefulWidget {
 class _CartoesState extends State<Cartoes> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: customBg,
       appBar: AppBar(
@@ -119,25 +120,51 @@ class _CartoesState extends State<Cartoes> {
                                 itemBuilder: (context, index) {
                                   return ListTile(
                                     title: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.credit_card,
-                                          color: Colors.white,
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10.0),
-                                          child: Text(
-                                            documents[index].data()['nome'],
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                        children: [
+                                          Icon(
+                                            Icons.credit_card,
+                                            color: Colors.white,
+                                          ),
+                                          Padding(
+                                            padding:
+                                            const EdgeInsets.only(left: 10.0),
+                                            child: Text(
+                                              documents[index].data()['nome'],
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
+                                          IconButton(
+                                            icon: Icon(Icons.delete),
+                                            color: Colors.red,
+                                            onPressed: (){
+                                              showDialog(
+                                                  context: context,
+                                                  builder: (ctx) => AlertDialog(
+                                                    title: Text("Excluir cartão"),
+                                                    content: Text("Tem certeza que deseja excluir esse cartão?"),
+                                                    actions: [
+                                                      FlatButton(onPressed: () {
+                                                        Navigator.of(context).pop();
+                                                      },
+                                                          child: Text("Não")
+                                                      ),
+                                                      FlatButton(onPressed: () {},
+                                                          child: Text("Sim")
+                                                      )
+                                                    ],
+                                                  ),
+                                              );
+                                            }
+
+                                          ),
+                                        ],
+                                      ),
+
+
                                   );
                                 });
                         }
