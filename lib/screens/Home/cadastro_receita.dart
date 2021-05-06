@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 import '../../Cores.dart';
 
 class CadastroReceita extends StatefulWidget {
@@ -13,15 +13,15 @@ class CadastroReceita extends StatefulWidget {
 class _CadastroReceitaState extends State<CadastroReceita> {
   final contReceita =
       MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
-  TextEditingController contData = TextEditingController();
-  TextEditingController contConta = TextEditingController();
+  TextEditingController contNome = TextEditingController();
   TextEditingController contDesc = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  String contData;
+
   void _reset() {
     contReceita.clear();
-    contData.clear();
-    contConta.clear();
+    contNome.clear();
     contDesc.clear();
   }
 
@@ -46,7 +46,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
           children: [
             Padding(
               padding:
-                  EdgeInsets.only(left: 15, top: 140, bottom: 20, right: 15),
+                  EdgeInsets.only(left: 15, top: 140, bottom: 5, right: 15),
               child: TextFormField(
                 controller: contReceita,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
@@ -76,39 +76,82 @@ class _CadastroReceitaState extends State<CadastroReceita> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 95),
+              padding: EdgeInsets.only(top: 75),
               child: Container(
                 width: 410,
                 height: 350,
                 decoration: BoxDecoration(
                   color: customPurple,
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(22.0),
-                    topLeft: Radius.circular(22.0),
-                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(22)),
                 ),
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(15),
-                      child: TextField(
-                        controller: contData,
-                        keyboardType: TextInputType.datetime,
-                        decoration: InputDecoration(
-                          labelText: "Data ",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.white),
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                    ),
+                        padding: EdgeInsets.all(15),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 12.0),
+                              child: TextButton(
+                                child: Text(
+                                  'Seleciona a data',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'NotoSans',
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  final data = await showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime(2018),
+                                    lastDate: DateTime(2022),
+                                    locale: Locale("pt", "BR"),
+                                  );
+                                  if (data != null) {
+                                    final datapt = //colocando data no padrão br
+                                        DateFormat(DateFormat.YEAR_MONTH_DAY,
+                                                'pt_Br')
+                                            .format(data);
+                                    print(datapt);
+                                    contData = datapt;
+                                  }
+                                },
+                              ),
+                            ),
+                            IconButton(
+                              icon: Icon(
+                                Icons.date_range,
+                                color: Colors.white,
+                              ),
+                              onPressed: () async {
+                                final data = await showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  firstDate: DateTime(2018),
+                                  lastDate: DateTime(2022),
+                                  locale: Locale("pt", "BR"),
+                                );
+                                if (data != null) {
+                                  final datapt = //colocando data no padrão br
+                                      DateFormat(DateFormat.YEAR_MONTH_DAY,
+                                              'pt_Br')
+                                          .format(data);
+                                  print(datapt);
+                                  contData = datapt;
+                                }
+                              },
+                            ),
+                          ],
+                        )),
                     Padding(
                       padding: EdgeInsets.all(15),
                       child: TextField(
-                        controller: contConta,
+                        controller: contNome,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                          labelText: "Dinheiro ou cartão ",
+                          labelText: "Nome",
                           labelStyle:
                               TextStyle(fontSize: 20, color: Colors.white),
                           border: OutlineInputBorder(),
@@ -136,39 +179,37 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                         ),
                       ),
                       onPressed: () async {
-                        if (contReceita.text.isNotEmpty &&
-                            contData.text.isNotEmpty &&
-                            contConta.text.isNotEmpty &&
-                            contDesc.text.isNotEmpty) {
-                          String receita = contReceita.text;
-                          String dia = contData.text;
-                          String conta = contConta.text;
-                          String desc = contDesc.text;
+                        if (true) {
+                          if (contReceita.text.isNotEmpty &&
+                              contNome.text.isNotEmpty &&
+                              contDesc.text.isNotEmpty) {
+                            String receita = contReceita.text;
+                            String nome = contNome.text;
+                            String desc = contDesc.text;
 
-                          Map<String, dynamic> data = {
-                            "valor": receita,
-                            "data": dia,
-                            "conta": conta,
-                            "desc": desc
-                          };
+                            Map<String, dynamic> data = {
+                              "valor": receita,
+                              "data": contData,
+                              "nome": nome,
+                              "desc": desc
+                            };
 
-                          await FirebaseFirestore.instance
-                              .collection('users')
-                              .doc(FirebaseAuth.instance.currentUser.uid)
-                              .collection('receitas')
-                              .doc(DateTime.now().year.toString())
-                              .collection(DateTime.now().day.toString() +
-                                  '-' +
-                                  DateTime.now().month.toString())
-                              .doc(desc)
-                              .set(data);
-                          _reset();
-                        } else {
-                          _scaffoldKey.currentState.showSnackBar(SnackBar(
-                            content: Text(
-                                'Certifique que todos os espaços estão preenchidos'),
-                            backgroundColor: Colors.red,
-                          ));
+                            await FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(FirebaseAuth.instance.currentUser.uid)
+                                .collection('receitas')
+                                .doc(DateTime.now().year.toString())
+                                .collection(contData)
+                                .doc(nome)
+                                .set(data);
+                            _reset();
+                          } else {
+                            _scaffoldKey.currentState.showSnackBar(SnackBar(
+                              content: Text(
+                                  'Certifique que todos os espaços estão preenchidos'),
+                              backgroundColor: Colors.red,
+                            ));
+                          }
                         }
                       },
                       child: Text(
