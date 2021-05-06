@@ -220,7 +220,7 @@ class _DespesasState extends State<Despesas> {
                                   ),
                                   Padding(
                                     padding:
-                                        EdgeInsets.fromLTRB(10, 20, 10, 10),
+                                        EdgeInsets.fromLTRB(10, 30, 10, 10),
                                     child: ColorP(),
                                   ),
                                   Padding(

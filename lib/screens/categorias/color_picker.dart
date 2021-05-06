@@ -16,37 +16,56 @@ class ColorPState extends State<ColorP> {
     return Container(
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      titlePadding: const EdgeInsets.all(0.0),
-                      contentPadding: const EdgeInsets.all(0.0),
-                      content: SingleChildScrollView(
-                        child: ColorPicker(
-                          pickerColor: currentColor,
-                          onColorChanged: changeColor,
-                          colorPickerWidth: 300.0,
-                          pickerAreaHeightPercent: 0.7,
-                          enableAlpha: true,
-                          displayThumbColor: true,
-                          showLabel: true,
-                          paletteType: PaletteType.hsv,
-                          pickerAreaBorderRadius: const BorderRadius.only(
-                            topLeft: const Radius.circular(2.0),
-                            topRight: const Radius.circular(2.0),
+            ConstrainedBox(
+              constraints: BoxConstraints.tightFor(width: 400, height: 45),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: currentColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Center(
+                          child: Text(
+                            'Selecione uma cor',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'NotoSans',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                );
-              },
-              child: const Text('Selecionar cor'),
+                        titlePadding: const EdgeInsets.all(10.0),
+                        contentPadding: const EdgeInsets.all(0.0),
+                        content: SingleChildScrollView(
+                          child: ColorPicker(
+                            pickerColor: currentColor,
+                            onColorChanged: changeColor,
+                            colorPickerWidth: 350.0,
+                            pickerAreaHeightPercent: 0.8,
+                            enableAlpha: false,
+                            displayThumbColor: true,
+                            showLabel: false,
+                            paletteType: PaletteType.hsv,
+                            pickerAreaBorderRadius: const BorderRadius.only(
+                              topLeft: const Radius.circular(0.0),
+                              topRight: const Radius.circular(0.0),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: const Text('Selecionar cor'),
+              ),
             ),
           ],
         ),
