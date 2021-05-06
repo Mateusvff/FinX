@@ -49,12 +49,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   bool _obscureText = true;
 
-  void _toggle() {
-    setState(() {
-      _obscureText = !_obscureText;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);

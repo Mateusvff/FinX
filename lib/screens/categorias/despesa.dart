@@ -9,7 +9,7 @@ class Despesas extends StatefulWidget {
 }
 
 class _DespesasState extends State<Despesas> {
-  TextEditingController cont_desp = TextEditingController();
+  TextEditingController contDesp = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

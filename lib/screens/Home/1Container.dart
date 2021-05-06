@@ -12,12 +12,6 @@ class _ExtratoMesState extends State<ExtratoMes> {
   Icon visivel = Icon(Icons.visibility_outlined);
   Icon naoVisivel = Icon(Icons.visibility_off_outlined);
 
-  void _toggle() {
-    setState(() {
-      visualizarSaldo = !visualizarSaldo;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -61,7 +55,10 @@ class _ExtratoMesState extends State<ExtratoMes> {
                 padding: const EdgeInsets.only(left: 50.0),
                 child: Text(
                   'Saldo em conta',
-                  style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
