@@ -8,7 +8,6 @@ class ColorP extends StatefulWidget {
 
 class ColorPState extends State<ColorP> {
   Color currentColor = Color(0xff131b26);
-  Color pickerColor = Color(0xff131b26);
 
   void changeColor(Color color) => setState(() => currentColor = color);
 
@@ -72,7 +71,6 @@ class ColorPState extends State<ColorP> {
                             ),
                             child: const Text('Pronto'),
                             onPressed: () {
-                              setState(() => currentColor = pickerColor);
                               Navigator.of(context).pop();
                             },
                           ),
