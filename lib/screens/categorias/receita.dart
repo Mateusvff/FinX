@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/screens/categorias/color_picker.dart';
 
 import '../../Cores.dart';
 
@@ -10,7 +11,6 @@ class Receita extends StatefulWidget {
 }
 
 class _ReceitaState extends State<Receita> {
-
   TextEditingController contReceita = TextEditingController();
 
   @override
@@ -222,35 +222,12 @@ class _ReceitaState extends State<Receita> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                    child: TextFormField(
-                                      keyboardType: TextInputType.text,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                      decoration: InputDecoration(
-                                        labelText: "Cor",
-                                        labelStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 18),
-                                      ),
-                                    ),
+                                    padding:
+                                        EdgeInsets.fromLTRB(10, 30, 10, 10),
+                                    child: ColorP(),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                    child: TextFormField(
-                                      keyboardType: TextInputType.text,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                      decoration: InputDecoration(
-                                        labelText: "Ícone",
-                                        labelStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 18),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                    padding: EdgeInsets.fromLTRB(0, 15, 0, 5),
                                     child: Container(
                                       height: 47,
                                       width: 145,
@@ -259,10 +236,16 @@ class _ReceitaState extends State<Receita> {
                                           String desc = contReceita.text;
 
                                           Map<String, dynamic> data = {
-                                            "nome" : desc
+                                            "nome": desc
                                           };
 
-                                          await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('categorias').doc().set(data);
+                                          await FirebaseFirestore.instance
+                                              .collection('users')
+                                              .doc(FirebaseAuth
+                                                  .instance.currentUser.uid)
+                                              .collection('categorias')
+                                              .doc()
+                                              .set(data);
                                         },
                                         style: ElevatedButton.styleFrom(
                                           primary: customPink,

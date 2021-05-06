@@ -219,12 +219,11 @@ class _DespesasState extends State<Despesas> {
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                        EdgeInsets.fromLTRB(10, 30, 10, 10),
+                                    padding: EdgeInsets.fromLTRB(10, 20, 10, 5),
                                     child: ColorP(),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(top: 50),
+                                    padding: EdgeInsets.only(top: 15),
                                     child: Container(
                                       height: 47,
                                       width: 145,

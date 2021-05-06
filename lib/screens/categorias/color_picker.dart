@@ -7,7 +7,7 @@ class ColorP extends StatefulWidget {
 }
 
 class ColorPState extends State<ColorP> {
-  Color currentColor = Color(0xfffc00e3);
+  Color currentColor = Color(0xff131b26);
 
   void changeColor(Color color) => setState(() => currentColor = color);
 
@@ -18,10 +18,10 @@ class ColorPState extends State<ColorP> {
         child: Column(
           children: <Widget>[
             ConstrainedBox(
-              constraints: BoxConstraints.tightFor(width: 400, height: 45),
+              constraints: BoxConstraints.tightFor(width: 200, height: 40),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: currentColor,
+                  primary: Color(0xfffc00e3),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -35,21 +35,22 @@ class ColorPState extends State<ColorP> {
                           child: Text(
                             'Selecione uma cor',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontFamily: 'NotoSans',
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
+                        backgroundColor: Color(0xff6725D6),
                         titlePadding: const EdgeInsets.all(10.0),
-                        contentPadding: const EdgeInsets.all(0.0),
+                        contentPadding: const EdgeInsets.all(2.0),
                         content: SingleChildScrollView(
                           child: ColorPicker(
                             pickerColor: currentColor,
                             onColorChanged: changeColor,
                             colorPickerWidth: 350.0,
-                            pickerAreaHeightPercent: 0.8,
+                            pickerAreaHeightPercent: 0.9,
                             enableAlpha: false,
                             displayThumbColor: true,
                             showLabel: false,
@@ -66,6 +67,10 @@ class ColorPState extends State<ColorP> {
                 },
                 child: const Text('Selecionar cor'),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 17.0),
+              child: CircleAvatar(backgroundColor: currentColor, radius: 30.0),
             ),
           ],
         ),
