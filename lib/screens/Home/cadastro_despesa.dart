@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 import '../../Cores.dart';
 
 class CadastroDespesa extends StatefulWidget {
@@ -8,11 +11,24 @@ class CadastroDespesa extends StatefulWidget {
 }
 
 class _CadastroDespesaState extends State<CadastroDespesa> {
-  final despesa =
+  final contDespesa =
       MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
+  TextEditingController contNome = TextEditingController();
+  TextEditingController contDesc = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  String contData;
+
+  void _reset() {
+    contDespesa.clear();
+    contNome.clear();
+    contDesc.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: customBg,
       appBar: AppBar(
         elevation: 0,
@@ -29,9 +45,10 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 5, top: 140, bottom: 20),
+              padding:
+                  EdgeInsets.only(left: 15, top: 140, bottom: 5, right: 15),
               child: TextFormField(
-                controller: despesa,
+                controller: contDespesa,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 18),
@@ -58,188 +75,155 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                 ),
               ),
             ),
-            Container(
-              width: 410,
-              height: 490,
-              decoration: BoxDecoration(
-                color: customPurple,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 60.0, right: 290.0),
-                    child: Text(
-                      'Data',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+            Padding(
+              padding: EdgeInsets.only(top: 75),
+              child: Container(
+                width: 410,
+                height: 350,
+                decoration: BoxDecoration(
+                  color: customPurple,
+                  borderRadius: const BorderRadius.all(Radius.circular(22)),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                        padding: EdgeInsets.all(15),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 12.0),
+                              child: TextButton(
+                                child: Text(
+                                  'Seleciona a data',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'NotoSans',
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  final data = await showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime(2018),
+                                    lastDate: DateTime(2022),
+                                    locale: Locale("pt", "BR"),
+                                  );
+                                  if (data != null) {
+                                    final datapt = //colocando data no padrão br
+                                        DateFormat(DateFormat.YEAR_MONTH_DAY,
+                                                'pt_Br')
+                                            .format(data);
+                                    print(datapt);
+                                    contData = datapt;
+                                  }
+                                },
+                              ),
+                            ),
+                            IconButton(
+                              icon: Icon(
+                                Icons.date_range,
+                                color: Colors.white,
+                              ),
+                              onPressed: () async {
+                                final data = await showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  firstDate: DateTime(2018),
+                                  lastDate: DateTime(2022),
+                                  locale: Locale("pt", "BR"),
+                                );
+                                if (data != null) {
+                                  final datapt = //colocando data no padrão br
+                                      DateFormat(DateFormat.YEAR_MONTH_DAY,
+                                              'pt_Br')
+                                          .format(data);
+                                  print(datapt);
+                                  contData = datapt;
+                                }
+                              },
+                            ),
+                          ],
+                        )),
+                    Padding(
+                      padding: EdgeInsets.all(15),
+                      child: TextField(
+                        controller: contNome,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          labelText: "Nome",
+                          labelStyle:
+                              TextStyle(fontSize: 20, color: Colors.white),
+                          border: OutlineInputBorder(),
+                        ),
                       ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0, left: 35.0),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22),
-                            ),
-                          ),
-                          child: Text(
-                            "Hoje",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                    Padding(
+                      padding: EdgeInsets.all(15),
+                      child: TextField(
+                        controller: contDesc,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          labelText: "Descrição",
+                          labelStyle:
+                              TextStyle(fontSize: 20, color: Colors.white),
+                          border: OutlineInputBorder(),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22),
-                            ),
-                          ),
-                          child: Text(
-                            "Ontem",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(22),
-                          ),
-                        ),
-                        child: Text(
-                          "Outro",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 40.0, right: 290.0),
-                    child: Text(
-                      'Conta',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
                       ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0, left: 35.0),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22),
-                            ),
-                          ),
-                          child: Text(
-                            "Din.",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(22),
-                            ),
-                          ),
-                          child: Text(
-                            "Cartão",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 40.0, right: 255.0),
-                    child: Text(
-                      'Descrição',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        right: 220.0, left: 35.0, bottom: 30.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
+                    ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.black,
+                        primary: customPink,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(22),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                       ),
+                      onPressed: () async {
+                        if (true) {
+                          if (contDespesa.text.isNotEmpty &&
+                              contNome.text.isNotEmpty &&
+                              contDesc.text.isNotEmpty) {
+                            double despesa = contDespesa.numberValue;
+                            String nome = contNome.text;
+                            String desc = contDesc.text;
+
+                            Map<String, dynamic> data = {
+                              "valor": despesa,
+                              "data": contData,
+                              "nome": nome,
+                              "desc": desc,
+                            };
+
+                            await FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(FirebaseAuth.instance.currentUser.uid)
+                                .collection('despesas')
+                                .doc(DateTime.now().year.toString())
+                                .collection(DateTime.now().month.toString())
+                                .doc(nome)
+                                .set(data);
+                            _reset();
+                          } else {
+                            _scaffoldKey.currentState.showSnackBar(SnackBar(
+                              content: Text(
+                                  'Certifique que todos os espaços estão preenchidos'),
+                              backgroundColor: Colors.red,
+                            ));
+                          }
+                        }
+                      },
                       child: Text(
-                        "descrição aqui",
+                        "Concluído",
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
-                    ),
-                  ),
-                  FloatingActionButton(
-                    backgroundColor: customPink,
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.check,
-                      color: Colors.white,
-                      size: 30.0,
-                    ),
-                  ),
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),
+            )
           ],
         ),
       ),
