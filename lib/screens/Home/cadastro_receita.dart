@@ -16,10 +16,12 @@ class _CadastroReceitaState extends State<CadastroReceita> {
   TextEditingController contData = TextEditingController();
   TextEditingController contConta = TextEditingController();
   TextEditingController contDesc = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: customBg,
       appBar: AppBar(
         elevation: 0,
@@ -127,26 +129,39 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                         ),
                       ),
                       onPressed: () async {
-                        String receita = contReceita.text;
-                        String dia = contData.text;
-                        String conta = contConta.text;
-                        String desc = contDesc.text;
+                        if (contReceita.text.isNotEmpty &&
+                            contData.text.isNotEmpty &&
+                            contConta.text.isNotEmpty &&
+                            contDesc.text.isNotEmpty) {
+                          String receita = contReceita.text;
+                          String dia = contData.text;
+                          String conta = contConta.text;
+                          String desc = contDesc.text;
 
-                        Map<String, dynamic> data = {
-                          "valor": receita,
-                          "data": dia,
-                          "conta": conta,
-                          "desc": desc
-                        };
+                          Map<String, dynamic> data = {
+                            "valor": receita,
+                            "data": dia,
+                            "conta": conta,
+                            "desc": desc
+                          };
 
-                        await FirebaseFirestore.instance
-                            .collection('users')
-                            .doc(FirebaseAuth.instance.currentUser.uid)
-                            .collection('receitas')
-                            .doc(DateTime.now().year.toString())
-                            .collection(FirebaseAuth.instance.currentUser.uid)
-                            .doc(desc)
-                            .set(data);
+                          await FirebaseFirestore.instance
+                              .collection('users')
+                              .doc(FirebaseAuth.instance.currentUser.uid)
+                              .collection('receitas')
+                              .doc(DateTime.now().year.toString())
+                              .collection(DateTime.now().day.toString() +
+                                  '-' +
+                                  DateTime.now().month.toString())
+                              .doc(desc)
+                              .set(data);
+                        } else {
+                          _scaffoldKey.currentState.showSnackBar(SnackBar(
+                            content: Text(
+                                'Certifique que todos os espaços estão preenchidos'),
+                            backgroundColor: Colors.red,
+                          ));
+                        }
                       },
                       child: Text(
                         "Concluído",

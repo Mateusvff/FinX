@@ -231,7 +231,7 @@ class _CartaoCadState extends State<CartaoCad> {
                               } else {
                                 _scaffoldKey.currentState.showSnackBar(SnackBar(
                                   content: Text(
-                                      'Não foi possível fazer o login. Tente novamente!'),
+                                      'Certifique que todos os espaços estão preenchidos'),
                                   backgroundColor: Colors.red,
                                 ));
                               }
