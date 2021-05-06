@@ -18,6 +18,13 @@ class _CadastroReceitaState extends State<CadastroReceita> {
   TextEditingController contDesc = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  void _reset() {
+    contReceita.clear();
+    contData.clear();
+    contConta.clear();
+    contDesc.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,6 +162,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                                   DateTime.now().month.toString())
                               .doc(desc)
                               .set(data);
+                          _reset();
                         } else {
                           _scaffoldKey.currentState.showSnackBar(SnackBar(
                             content: Text(
