@@ -8,6 +8,7 @@ class ColorP extends StatefulWidget {
 
 class ColorPState extends State<ColorP> {
   Color currentColor = Color(0xff131b26);
+  Color pickerColor = Color(0xff131b26);
 
   void changeColor(Color color) => setState(() => currentColor = color);
 
@@ -61,6 +62,21 @@ class ColorPState extends State<ColorP> {
                             ),
                           ),
                         ),
+                        actions: <Widget>[
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xfffc00e3),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            child: const Text('Pronto'),
+                            onPressed: () {
+                              setState(() => currentColor = pickerColor);
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
                       );
                     },
                   );
