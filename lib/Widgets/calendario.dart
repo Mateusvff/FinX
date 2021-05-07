@@ -25,21 +25,24 @@ class _CalendarioState extends State<Calendario> {
             ),
             onPressed: () async {
               final data = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(2018),
-                  lastDate: DateTime(2022),
-                  locale: Locale("pt", "BR"),
-                  builder: (BuildContext context, Widget child) {
-                    return Theme(
-                      data: ThemeData.light().copyWith(
-                        colorScheme: ColorScheme.light().copyWith(
-                          primary: customPurple,
-                        ),
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(2000),
+                lastDate: DateTime(2040),
+                locale: Locale("pt", "BR"),
+                fieldLabelText: 'Insira uma data!',
+                fieldHintText: 'Dia/Mês/Ano',
+                builder: (BuildContext context, Widget child) {
+                  return Theme(
+                    data: ThemeData.light().copyWith(
+                      colorScheme: ColorScheme.light().copyWith(
+                        primary: customPurple,
                       ),
-                      child: child,
-                    );
-                  });
+                    ),
+                    child: child,
+                  );
+                },
+              );
               if (data != null) {
                 final datapt = //colocando data no padrão br
                     DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
@@ -55,21 +58,24 @@ class _CalendarioState extends State<Calendario> {
           ),
           onPressed: () async {
             final data = await showDatePicker(
-                context: context,
-                initialDate: DateTime.now(),
-                firstDate: DateTime(2018),
-                lastDate: DateTime(2022),
-                locale: Locale("pt", "BR"),
-                builder: (BuildContext context, Widget child) {
-                  return Theme(
-                    data: ThemeData.light().copyWith(
-                      colorScheme: ColorScheme.light().copyWith(
-                        primary: customPurple,
-                      ),
+              context: context,
+              initialDate: DateTime.now(),
+              firstDate: DateTime(2000),
+              lastDate: DateTime(2040),
+              locale: Locale("pt", "BR"),
+              fieldLabelText: 'Insira uma data!',
+              fieldHintText: 'Dia/Mês/Ano',
+              builder: (BuildContext context, Widget child) {
+                return Theme(
+                  data: ThemeData.light().copyWith(
+                    colorScheme: ColorScheme.light().copyWith(
+                      primary: customPurple,
                     ),
-                    child: child,
-                  );
-                });
+                  ),
+                  child: child,
+                );
+              },
+            );
             if (data != null) {
               final datapt = //colocando data no padrão br
                   DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
