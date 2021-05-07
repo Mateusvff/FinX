@@ -55,31 +55,20 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                 decoration: InputDecoration(
                   prefix: Text("R\$"),
                   prefixStyle: TextStyle(color: Colors.white, fontSize: 18),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                    ),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.pink,
-                    ),
-                  ),
-                  border: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
+                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red)
                   ),
                   labelText: "Valor Gasto",
-                  labelStyle: TextStyle(color: Colors.grey, fontSize: 30),
+                  labelStyle: TextStyle(color: Colors.red, fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 75),
+              padding: EdgeInsets.only(top: 110),
               child: Container(
                 width: 410,
-                height: 350,
+                height: 355,
                 decoration: BoxDecoration(
                   color: customPurple,
                   borderRadius: const BorderRadius.all(Radius.circular(22)),
@@ -91,7 +80,7 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                         child: Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 12.0),
+                              padding: const EdgeInsets.only(left: 100.0),
                               child: TextButton(
                                 child: Text(
                                   'Seleciona a data',
@@ -155,7 +144,11 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                           labelStyle:
                               TextStyle(fontSize: 20, color: Colors.white),
                           border: OutlineInputBorder(),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.red)
+                            )
                         ),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                     Padding(
@@ -168,7 +161,11 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                           labelStyle:
                               TextStyle(fontSize: 20, color: Colors.white),
                           border: OutlineInputBorder(),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.red)
+                            )
                         ),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                     ElevatedButton(

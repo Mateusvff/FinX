@@ -11,24 +11,14 @@ class CadastroReceita extends StatefulWidget {
 }
 
 class _CadastroReceitaState extends State<CadastroReceita> {
-  final contReceita =
-      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
-  TextEditingController contNome = TextEditingController();
-  TextEditingController contDesc = TextEditingController();
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  String contData;
-
-  void _reset() {
-    contReceita.clear();
-    contNome.clear();
-    contDesc.clear();
-  }
+  final cont_receita = MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
+  TextEditingController cont_data = TextEditingController();
+  TextEditingController cont_nome = TextEditingController();
+  TextEditingController cont_desc = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       backgroundColor: customBg,
       appBar: AppBar(
         elevation: 0,
@@ -45,53 +35,44 @@ class _CadastroReceitaState extends State<CadastroReceita> {
         child: Column(
           children: [
             Padding(
-              padding:
-                  EdgeInsets.only(left: 15, top: 140, bottom: 5, right: 15),
+              padding: EdgeInsets.only(left: 15, top: 140, bottom: 20, right: 15),
               child: TextFormField(
-                controller: contReceita,
+                controller: cont_receita,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 18),
                 decoration: InputDecoration(
                   prefix: Text("R\$"),
                   prefixStyle: TextStyle(color: Colors.white, fontSize: 18),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                    ),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.pink,
-                    ),
-                  ),
-                  border: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                    ),
-                  ),
                   labelText: "Valor Recebido",
-                  labelStyle: TextStyle(color: Colors.grey, fontSize: 30),
+                  labelStyle: TextStyle(color: Colors.green, fontSize: 30, fontWeight: FontWeight.bold),
+                  border: OutlineInputBorder(),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green)
+                    )
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 75),
-              child: Container(
-                width: 410,
-                height: 350,
-                decoration: BoxDecoration(
-                  color: customPurple,
-                  borderRadius: const BorderRadius.all(Radius.circular(22)),
+                padding: EdgeInsets.only(top: 95),
+            child:             Container(
+              width: 410,
+              height: 355,
+              decoration: BoxDecoration(
+                color: customPurple,
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(22.0),
+                  topLeft: Radius.circular(22.0),
                 ),
-                child: Column(
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.all(15),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 12.0),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                      padding: EdgeInsets.all(15),
+                      child: Row(
+                        children: [
+                          Padding(
+                              padding: const EdgeInsets.only(left: 100.0),
                               child: TextButton(
                                 child: Text(
                                   'Seleciona a data',
@@ -110,120 +91,105 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                                     locale: Locale("pt", "BR"),
                                   );
                                   if (data != null) {
-                                    final datapt = //colocando data no padrão br
-                                        DateFormat(DateFormat.YEAR_MONTH_DAY,
-                                                'pt_Br')
-                                            .format(data);
-                                    print(datapt);
-                                    contData = datapt;
+                                    final abobora = //colocando data no padrão br
+                                    DateFormat (DateFormat.YEAR_MONTH_DAY,
+                                        'pt_Br')
+                                        .format(data);
+                                    print(abobora);
+                                    cont_data = abobora as TextEditingController;
                                   }
                                 },
-                              ),
+                              )
+                          ),
+                          IconButton(
+                            icon: Icon(
+                              Icons.date_range,
+                              color: Colors.white,
                             ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.date_range,
-                                color: Colors.white,
-                              ),
-                              onPressed: () async {
-                                final data = await showDatePicker(
-                                  context: context,
-                                  initialDate: DateTime.now(),
-                                  firstDate: DateTime(2018),
-                                  lastDate: DateTime(2022),
-                                  locale: Locale("pt", "BR"),
-                                );
-                                if (data != null) {
-                                  final datapt = //colocando data no padrão br
-                                      DateFormat(DateFormat.YEAR_MONTH_DAY,
-                                              'pt_Br')
-                                          .format(data);
-                                  print(datapt);
-                                  contData = datapt;
-                                }
-                              },
-                            ),
-                          ],
-                        )),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: TextField(
-                        controller: contNome,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: "Nome",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.white),
-                          border: OutlineInputBorder(),
-                        ),
+                            onPressed: () async {
+                              final data = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(2018),
+                                lastDate: DateTime(2022),
+                                locale: Locale("pt", "BR"),
+                              );
+                              if (data != null) {
+                                final abobora = //colocando data no padrão br
+                                DateFormat(DateFormat.YEAR_MONTH_DAY,
+                                    'pt_Br')
+                                    .format(data);
+                                print(abobora);
+                                cont_data = abobora as TextEditingController;
+                              }
+                            },
+                          )
+                        ],
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: TextField(
-                        controller: contDesc,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: "Descrição",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.white),
-                          border: OutlineInputBorder(),
-                        ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: TextField(
+                      controller: cont_nome,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        labelText: "Nome",
+                        labelStyle: TextStyle(fontSize: 20, color: Colors.white),
+                        border: OutlineInputBorder(),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.green)
+                          )
                       ),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    ElevatedButton(
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: TextField(
+                      controller: cont_desc,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        labelText: "Descrição",
+                        labelStyle: TextStyle(fontSize: 20, color: Colors.white),
+                        border: OutlineInputBorder(),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.green)
+                          )
+                      ),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ),
+                  ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: customPink,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius:
+                          BorderRadius.circular(30),
                         ),
                       ),
                       onPressed: () async {
-                        if (true) {
-                          if (contReceita.text.isNotEmpty &&
-                              contNome.text.isNotEmpty &&
-                              contDesc.text.isNotEmpty) {
-                            double receita = contReceita.numberValue;
-                            String nome = contNome.text;
-                            String desc = contDesc.text;
+                        String receita = cont_receita.text;
+                        String dia = cont_data.text;
+                        String conta = cont_nome.text;
+                        String desc = cont_desc.text;
 
-                            Map<String, dynamic> data = {
-                              "valor": receita,
-                              "data": contData,
-                              "nome": nome,
-                              "desc": desc,
-                            };
+                        Map<String, dynamic> data = {
+                          "valor" : receita,
+                          "data" : dia,
+                          "conta": conta,
+                          "desc" : desc
+                          
+                        };
 
-                            await FirebaseFirestore.instance
-                                .collection('users')
-                                .doc(FirebaseAuth.instance.currentUser.uid)
-                                .collection('receitas')
-                                .doc(DateTime.now().year.toString())
-                                .collection(DateTime.now().month.toString())
-                                .doc(nome)
-                                .set(data);
-                            _reset();
-                          } else {
-                            _scaffoldKey.currentState.showSnackBar(SnackBar(
-                              content: Text(
-                                  'Certifique que todos os espaços estão preenchidos'),
-                              backgroundColor: Colors.red,
-                            ));
-                          }
-                        }
+                        await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('receitas').doc().set(data);
                       },
-                      child: Text(
-                        "Concluído",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                      child: Text("Concluído",
+                        style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
-            )
+            ),)
           ],
         ),
       ),
