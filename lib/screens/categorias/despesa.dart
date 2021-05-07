@@ -228,7 +228,9 @@ class _DespesasState extends State<Despesas> {
                                       height: 47,
                                       width: 145,
                                       child: ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
                                         style: ElevatedButton.styleFrom(
                                           primary: customPink,
                                           shape: RoundedRectangleBorder(

@@ -246,6 +246,7 @@ class _ReceitaState extends State<Receita> {
                                               .collection('categorias')
                                               .doc()
                                               .set(data);
+                                          Navigator.of(context).pop();
                                         },
                                         style: ElevatedButton.styleFrom(
                                           primary: customPink,
