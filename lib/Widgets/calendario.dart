@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:projeto_flutter/Cores.dart';
 
 class Calendario extends StatefulWidget {
   @override
@@ -24,12 +25,21 @@ class _CalendarioState extends State<Calendario> {
             ),
             onPressed: () async {
               final data = await showDatePicker(
-                context: context,
-                initialDate: DateTime.now(),
-                firstDate: DateTime(2018),
-                lastDate: DateTime(2022),
-                locale: Locale("pt", "BR"),
-              );
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2018),
+                  lastDate: DateTime(2022),
+                  locale: Locale("pt", "BR"),
+                  builder: (BuildContext context, Widget child) {
+                    return Theme(
+                      data: ThemeData.light().copyWith(
+                        colorScheme: ColorScheme.light().copyWith(
+                          primary: customPurple,
+                        ),
+                      ),
+                      child: child,
+                    );
+                  });
               if (data != null) {
                 final datapt = //colocando data no padrão br
                     DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
@@ -45,12 +55,21 @@ class _CalendarioState extends State<Calendario> {
           ),
           onPressed: () async {
             final data = await showDatePicker(
-              context: context,
-              initialDate: DateTime.now(),
-              firstDate: DateTime(2018),
-              lastDate: DateTime(2022),
-              locale: Locale("pt", "BR"),
-            );
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(2018),
+                lastDate: DateTime(2022),
+                locale: Locale("pt", "BR"),
+                builder: (BuildContext context, Widget child) {
+                  return Theme(
+                    data: ThemeData.light().copyWith(
+                      colorScheme: ColorScheme.light().copyWith(
+                        primary: customPurple,
+                      ),
+                    ),
+                    child: child,
+                  );
+                });
             if (data != null) {
               final datapt = //colocando data no padrão br
                   DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(data);
