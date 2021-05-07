@@ -137,6 +137,20 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                                   firstDate: DateTime(2018),
                                   lastDate: DateTime(2022),
                                   locale: Locale("pt", "BR"),
+                                  fieldLabelText: 'Insira uma data!',
+                                  fieldHintText: 'Dia/Mês/Ano',
+                                  builder:
+                                      (BuildContext context, Widget child) {
+                                    return Theme(
+                                      data: ThemeData.light().copyWith(
+                                        colorScheme:
+                                            ColorScheme.light().copyWith(
+                                          primary: customPurple,
+                                        ),
+                                      ),
+                                      child: child,
+                                    );
+                                  },
                                 );
                                 if (data != null) {
                                   final datapt = //colocando data no padrão br
