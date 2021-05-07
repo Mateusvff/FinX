@@ -11,7 +11,8 @@ class CadastroReceita extends StatefulWidget {
 }
 
 class _CadastroReceitaState extends State<CadastroReceita> {
-  final cont_receita = MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
+  final cont_receita =
+      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
   TextEditingController cont_data = TextEditingController();
   TextEditingController cont_nome = TextEditingController();
   TextEditingController cont_desc = TextEditingController();
@@ -35,39 +36,41 @@ class _CadastroReceitaState extends State<CadastroReceita> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 15, top: 140, bottom: 20, right: 15),
+              padding:
+                  EdgeInsets.only(left: 15, top: 140, bottom: 20, right: 15),
               child: TextFormField(
                 controller: cont_receita,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.white, fontSize: 18),
                 decoration: InputDecoration(
-                  prefix: Text("R\$"),
-                  prefixStyle: TextStyle(color: Colors.white, fontSize: 18),
-                  labelText: "Valor Recebido",
-                  labelStyle: TextStyle(color: Colors.green, fontSize: 30, fontWeight: FontWeight.bold),
-                  border: OutlineInputBorder(),
+                    prefix: Text("R\$"),
+                    prefixStyle: TextStyle(color: Colors.white, fontSize: 18),
+                    labelText: "Valor Recebido",
+                    labelStyle: TextStyle(
+                        color: Colors.green,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                    border: OutlineInputBorder(),
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green)
-                    )
-                ),
+                        borderSide: BorderSide(color: Colors.green))),
               ),
             ),
             Padding(
-                padding: EdgeInsets.only(top: 95),
-            child:             Container(
-              width: 410,
-              height: 355,
-              decoration: BoxDecoration(
-                color: customPurple,
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(22.0),
-                  topLeft: Radius.circular(22.0),
+              padding: EdgeInsets.only(top: 95),
+              child: Container(
+                width: 410,
+                height: 355,
+                decoration: BoxDecoration(
+                  color: customPurple,
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(22.0),
+                    topLeft: Radius.circular(22.0),
+                  ),
                 ),
-              ),
-              child: Column(
-                children: [
-                  Padding(
+                child: Column(
+                  children: [
+                    Padding(
                       padding: EdgeInsets.all(15),
                       child: Row(
                         children: [
@@ -89,18 +92,32 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                                     firstDate: DateTime(2018),
                                     lastDate: DateTime(2022),
                                     locale: Locale("pt", "BR"),
+                                    fieldLabelText: 'Insira uma data!',
+                                    fieldHintText: 'Dia/Mês/Ano',
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return Theme(
+                                        data: ThemeData.light().copyWith(
+                                          colorScheme:
+                                              ColorScheme.light().copyWith(
+                                            primary: customPurple,
+                                          ),
+                                        ),
+                                        child: child,
+                                      );
+                                    },
                                   );
                                   if (data != null) {
                                     final abobora = //colocando data no padrão br
-                                    DateFormat (DateFormat.YEAR_MONTH_DAY,
-                                        'pt_Br')
-                                        .format(data);
+                                        DateFormat(DateFormat.YEAR_MONTH_DAY,
+                                                'pt_Br')
+                                            .format(data);
                                     print(abobora);
-                                    cont_data = abobora as TextEditingController;
+                                    cont_data =
+                                        abobora as TextEditingController;
                                   }
                                 },
-                              )
-                          ),
+                              )),
                           IconButton(
                             icon: Icon(
                               Icons.date_range,
@@ -116,9 +133,9 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                               );
                               if (data != null) {
                                 final abobora = //colocando data no padrão br
-                                DateFormat(DateFormat.YEAR_MONTH_DAY,
-                                    'pt_Br')
-                                    .format(data);
+                                    DateFormat(
+                                            DateFormat.YEAR_MONTH_DAY, 'pt_Br')
+                                        .format(data);
                                 print(abobora);
                                 cont_data = abobora as TextEditingController;
                               }
@@ -126,45 +143,42 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                           )
                         ],
                       ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(15),
-                    child: TextField(
-                      controller: cont_nome,
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        labelText: "Nome",
-                        labelStyle: TextStyle(fontSize: 20, color: Colors.white),
-                        border: OutlineInputBorder(),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green)
-                          )
-                      ),
-                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(15),
-                    child: TextField(
-                      controller: cont_desc,
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        labelText: "Descrição",
-                        labelStyle: TextStyle(fontSize: 20, color: Colors.white),
-                        border: OutlineInputBorder(),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green)
-                          )
+                    Padding(
+                      padding: EdgeInsets.all(15),
+                      child: TextField(
+                        controller: cont_nome,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                            labelText: "Nome",
+                            labelStyle:
+                                TextStyle(fontSize: 20, color: Colors.white),
+                            border: OutlineInputBorder(),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.green))),
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
-                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                  ),
-                  ElevatedButton(
+                    Padding(
+                      padding: EdgeInsets.all(15),
+                      child: TextField(
+                        controller: cont_desc,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                            labelText: "Descrição",
+                            labelStyle:
+                                TextStyle(fontSize: 20, color: Colors.white),
+                            border: OutlineInputBorder(),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.green))),
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ),
+                    ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: customPink,
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                          BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                       ),
                       onPressed: () async {
@@ -174,22 +188,31 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                         String desc = cont_desc.text;
 
                         Map<String, dynamic> data = {
-                          "valor" : receita,
-                          "data" : dia,
+                          "valor": receita,
+                          "data": dia,
                           "conta": conta,
-                          "desc" : desc
-                          
+                          "desc": desc
                         };
 
-                        await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser.uid).collection('receitas').doc().set(data);
+                        await FirebaseFirestore.instance
+                            .collection('users')
+                            .doc(FirebaseAuth.instance.currentUser.uid)
+                            .collection('receitas')
+                            .doc()
+                            .set(data);
                       },
-                      child: Text("Concluído",
-                        style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      child: Text(
+                        "Concluído",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),)
+            )
           ],
         ),
       ),

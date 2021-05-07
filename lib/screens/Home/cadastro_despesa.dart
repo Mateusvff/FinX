@@ -57,10 +57,12 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                   prefixStyle: TextStyle(color: Colors.white, fontSize: 18),
                   border: OutlineInputBorder(),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red)
-                  ),
+                      borderSide: BorderSide(color: Colors.red)),
                   labelText: "Valor Gasto",
-                  labelStyle: TextStyle(color: Colors.red, fontSize: 30, fontWeight: FontWeight.bold),
+                  labelStyle: TextStyle(
+                      color: Colors.red,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -97,6 +99,20 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                                     firstDate: DateTime(2018),
                                     lastDate: DateTime(2022),
                                     locale: Locale("pt", "BR"),
+                                    fieldLabelText: 'Insira uma data!',
+                                    fieldHintText: 'Dia/Mês/Ano',
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return Theme(
+                                        data: ThemeData.light().copyWith(
+                                          colorScheme:
+                                              ColorScheme.light().copyWith(
+                                            primary: customPurple,
+                                          ),
+                                        ),
+                                        child: child,
+                                      );
+                                    },
                                   );
                                   if (data != null) {
                                     final datapt = //colocando data no padrão br
@@ -140,14 +156,12 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                         controller: contNome,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                          labelText: "Nome",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.white),
-                          border: OutlineInputBorder(),
+                            labelText: "Nome",
+                            labelStyle:
+                                TextStyle(fontSize: 20, color: Colors.white),
+                            border: OutlineInputBorder(),
                             enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red)
-                            )
-                        ),
+                                borderSide: BorderSide(color: Colors.red))),
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -157,14 +171,12 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                         controller: contDesc,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                          labelText: "Descrição",
-                          labelStyle:
-                              TextStyle(fontSize: 20, color: Colors.white),
-                          border: OutlineInputBorder(),
+                            labelText: "Descrição",
+                            labelStyle:
+                                TextStyle(fontSize: 20, color: Colors.white),
+                            border: OutlineInputBorder(),
                             enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red)
-                            )
-                        ),
+                                borderSide: BorderSide(color: Colors.red))),
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
