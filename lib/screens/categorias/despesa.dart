@@ -11,6 +11,35 @@ class Despesas extends StatefulWidget {
 class _DespesasState extends State<Despesas> {
   TextEditingController contDesp = TextEditingController();
 
+  // ignore: non_constant_identifier_names
+  Widget BuildPadding(menu, colors, String cat) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 30.0, left: 15.0),
+      child: Row(
+        children: [
+          Icon(
+            Icons.menu,
+            color: colors,
+            size: 45,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: Text(
+              cat,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'NotoSans',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,150 +53,12 @@ class _DespesasState extends State<Despesas> {
         ),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 40.0, left: 15.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.fastfood_sharp,
-                    color: Colors.white,
-                    size: 45,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      'Alimentação',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'NotoSans',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.shopping_bag_outlined,
-                    color: Colors.yellow,
-                    size: 45,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      'Compras',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'NotoSans',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.school_outlined,
-                    color: Colors.blue,
-                    size: 45,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      'Educação',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'NotoSans',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.house_outlined,
-                    color: Colors.deepOrange,
-                    size: 45,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      'Moradia',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'NotoSans',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.directions_car_outlined,
-                    color: Colors.green,
-                    size: 45,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      'Transporte',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'NotoSans',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 30.0, left: 15.0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.local_hospital_outlined,
-                    color: Colors.red,
-                    size: 45,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      'Saúde',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'NotoSans',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            BuildPadding(Icons.fastfood_sharp, Colors.white, "Alimentação"),
+            BuildPadding(Icons.shopping_bag_outlined, Colors.yellow, "Compras"),
+            BuildPadding(Icons.school_outlined, Colors.blue, "Educação"),
+            BuildPadding(Icons.house_outlined, Colors.deepOrange, "Moradia"),
+            BuildPadding(Icons.directions_car_outlined, Colors.green, "Transporte"),
+            BuildPadding(Icons.local_hospital_outlined, Colors.red, "Saúde"),
             Padding(
                 padding: const EdgeInsets.only(left: 275.0),
                 child: CircleAvatar(

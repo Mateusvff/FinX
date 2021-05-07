@@ -15,6 +15,44 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
+  // ignore: non_constant_identifier_names
+  Widget BuildPadding(String nome){
+    return                               Padding(
+      padding: EdgeInsets.only(top: 15.0),
+      child: Container(
+        width: 350,
+        height: 42,
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black54,
+              blurRadius: 5.0,
+              offset: Offset(0.0, 0.75),
+            ),
+          ],
+          color: Colors.white,
+          borderRadius: BorderRadius.all(
+            Radius.circular(22.0),
+          ),
+        ),
+        child: TextButton(
+          onPressed: () {},
+          child: TextField(
+            keyboardType: TextInputType.name,
+            decoration: InputDecoration.collapsed(
+              hintText: nome,
+              hintStyle: TextStyle(
+                color: Colors.black,
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'NotoSans',
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
   User _currentUser;
 
   @override
@@ -152,7 +190,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       Container(
                         margin: const EdgeInsets.only(top: 10.0),
                         width: 500.0,
-                        height: 570.0,
+                        height: 520,
                         decoration: BoxDecoration(
                           color: customPurple,
                           borderRadius: BorderRadius.only(
@@ -180,235 +218,12 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                 ),
                               ),
-
-                              ////// Container Nome completo /////
-
-                              Padding(
-                                padding: EdgeInsets.only(top: 15.0),
-                                child: Container(
-                                  width: 350,
-                                  height: 42,
-                                  decoration: BoxDecoration(
-                                    boxShadow: <BoxShadow>[
-                                      BoxShadow(
-                                        color: Colors.black54,
-                                        blurRadius: 5.0,
-                                        offset: Offset(0.0, 0.75),
-                                      ),
-                                    ],
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(22.0),
-                                    ),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: TextField(
-                                      keyboardType: TextInputType.name,
-                                      decoration: InputDecoration.collapsed(
-                                        hintText: 'Nome Completo',
-                                        hintStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'NotoSans',
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-
-                              ////// Container "Email" ////////
-
-                              Padding(
-                                padding: EdgeInsets.only(top: 30.0),
-                                child: Container(
-                                  width: 350,
-                                  height: 42,
-                                  decoration: BoxDecoration(
-                                    boxShadow: <BoxShadow>[
-                                      BoxShadow(
-                                        color: Colors.black54,
-                                        blurRadius: 5.0,
-                                        offset: Offset(0.0, 0.75),
-                                      ),
-                                    ],
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(22.0),
-                                    ),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: TextField(
-                                      keyboardType: TextInputType.emailAddress,
-                                      decoration: InputDecoration.collapsed(
-                                        hintText: 'Email',
-                                        hintStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'NotoSans',
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-
-                              ///// Container "Senha" //////
-
-                              Padding(
-                                  padding: EdgeInsets.only(top: 30),
-                                  child: Stack(
-                                    // stack para senha e Show : Hide //
-
-                                    children: <Widget>[
-                                      Container(
-                                        width: 350,
-                                        height: 42,
-                                        decoration: BoxDecoration(
-                                          boxShadow: <BoxShadow>[
-                                            BoxShadow(
-                                              color: Colors.black54,
-                                              blurRadius: 5.0,
-                                              offset: Offset(0.0, 0.75),
-                                            ),
-                                          ],
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(22.0),
-                                          ),
-                                        ),
-                                        child: TextButton(
-                                          onPressed: () {},
-                                          child: TextField(
-                                            keyboardType:
-                                                TextInputType.visiblePassword,
-                                            decoration:
-                                                InputDecoration.collapsed(
-                                              hintText: 'Senha',
-                                              hintStyle: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 17,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'NotoSans',
-                                              ),
-                                            ),
-                                            obscureText: _obscureText,
-                                          ),
-                                        ),
-                                      ),
-
-                                      ///// Container Show : Hide //////
-
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 270),
-                                        child: Container(
-                                          width: 80,
-                                          height: 42,
-                                          decoration: BoxDecoration(
-                                            color: Colors.transparent,
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(22.0),
-                                            ),
-                                          ),
-                                          child: IconButton(
-                                            alignment: Alignment.centerRight,
-                                            icon: _obscureText
-                                                ? Icon(
-                                                    Icons.visibility_outlined)
-                                                : Icon(Icons
-                                                    .visibility_off_outlined),
-                                            color: Colors.black,
-                                            iconSize: 18,
-                                            onPressed: () => setState(() =>
-                                                _obscureText = !_obscureText),
-                                            /* Tampar o saldo do usuario ou Mostrar o saldo do usuario. Ao desativar vira visibility_off_outlined*/
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  )),
-
-                              //// Container "Confirmação Senha" ////
-
-                              Padding(
-                                  padding: EdgeInsets.only(top: 30),
-                                  child: Stack(
-                                    // stack confirmação e Show : Hide
-
-                                    children: <Widget>[
-                                      Container(
-                                        width: 350,
-                                        height: 42,
-                                        decoration: BoxDecoration(
-                                          boxShadow: <BoxShadow>[
-                                            BoxShadow(
-                                              color: Colors.black54,
-                                              blurRadius: 5.0,
-                                              offset: Offset(0.0, 0.75),
-                                            ),
-                                          ],
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(22.0),
-                                          ),
-                                        ),
-                                        child: TextButton(
-                                          onPressed: () {},
-                                          child: TextField(
-                                            keyboardType:
-                                                TextInputType.visiblePassword,
-                                            decoration:
-                                                InputDecoration.collapsed(
-                                              hintText: 'Confirmação de senha',
-                                              hintStyle: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 17,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'NotoSans',
-                                              ),
-                                            ),
-                                            obscureText: _obscureText,
-                                          ),
-                                        ),
-                                      ),
-
-                                      ///// Container "Show : Hide" /////
-
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 270),
-                                        child: Container(
-                                          width: 80,
-                                          height: 42,
-                                          decoration: BoxDecoration(
-                                            color: Colors.transparent,
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(22.0),
-                                            ),
-                                          ),
-                                          child: IconButton(
-                                            alignment: Alignment.centerRight,
-                                            icon: _obscureText
-                                                ? Icon(
-                                                    Icons.visibility_outlined)
-                                                : Icon(Icons
-                                                    .visibility_off_outlined),
-                                            color: Colors.black,
-                                            iconSize: 18,
-                                            onPressed: () => setState(() =>
-                                                _obscureText = !_obscureText),
-                                            /* Tampar o saldo do usuario ou Mostrar o saldo do usuario. Ao desativar vira visibility_off_outlined*/
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  )),
+                              BuildPadding("Nome Completo"),
+                              BuildPadding("Email"),
+                              BuildPadding("Senha"),
+                              BuildPadding("Confirmação de senha"),
 
                               ///////// Container Google ///////
-
                               Padding(
                                 padding: EdgeInsets.only(top: 30),
                                 child: Container(

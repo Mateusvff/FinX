@@ -164,36 +164,10 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                             ),
                           ],
                         )),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: TextField(
-                        controller: contNome,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                            labelText: "Nome",
-                            labelStyle:
-                                TextStyle(fontSize: 20, color: Colors.white),
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red))),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: TextField(
-                        controller: contDesc,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                            labelText: "Descrição",
-                            labelStyle:
-                                TextStyle(fontSize: 20, color: Colors.white),
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red))),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
+
+                    BuildPadding(contNome, "Nome"),
+                    BuildPadding(contDesc, "Descrição"),
+
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: customPink,
@@ -252,4 +226,22 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
       ),
     );
   }
+}
+
+// ignore: non_constant_identifier_names
+Widget BuildPadding(controller, String label) {
+  return Padding(
+    padding: EdgeInsets.all(15.0),
+    child: TextField(
+      controller: controller,
+      keyboardType: TextInputType.text,
+      decoration: InputDecoration(
+          labelText: label,
+          labelStyle: TextStyle(fontSize: 20, color: Colors.white),
+          border: OutlineInputBorder(),
+          enabledBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Colors.red))),
+      style: TextStyle(color: Colors.white),
+    ),
+  );
 }

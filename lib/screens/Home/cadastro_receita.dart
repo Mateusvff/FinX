@@ -11,8 +11,26 @@ class CadastroReceita extends StatefulWidget {
 }
 
 class _CadastroReceitaState extends State<CadastroReceita> {
-  final cont_receita =
-      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
+  Widget BuildPadding(controller, String label) {
+    return Padding(
+      padding: EdgeInsets.all(15.0),
+      child: TextField(
+        controller: controller,
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+            labelText: label,
+            labelStyle: TextStyle(fontSize: 20, color: Colors.white),
+            border: OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.green)
+            )
+        ),
+        style: TextStyle(color: Colors.white),
+      ),
+    );
+  }
+
+  final cont_receita = MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
   TextEditingController cont_data = TextEditingController();
   TextEditingController cont_nome = TextEditingController();
   TextEditingController cont_desc = TextEditingController();
@@ -156,36 +174,10 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: TextField(
-                        controller: cont_nome,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                            labelText: "Nome",
-                            labelStyle:
-                                TextStyle(fontSize: 20, color: Colors.white),
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.green))),
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: TextField(
-                        controller: cont_desc,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                            labelText: "Descrição",
-                            labelStyle:
-                                TextStyle(fontSize: 20, color: Colors.white),
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.green))),
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
+
+                    BuildPadding(cont_nome, "Nome"),
+                    BuildPadding(cont_desc, "Descrição"),
+
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: customPink,
