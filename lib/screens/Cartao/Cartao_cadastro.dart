@@ -210,7 +210,7 @@ class _CartaoCadState extends State<CartaoCad> {
                               if (contLimite.text.isNotEmpty &&
                                   contNome.text.isNotEmpty &&
                                   contVenc.text.isNotEmpty) {
-                                double limite = contLimite.numberValue;
+                                String limite = contLimite.text;
                                 String venc = contVenc.text;
                                 String nome = contNome.text;
 
@@ -224,7 +224,7 @@ class _CartaoCadState extends State<CartaoCad> {
                                     .collection('users')
                                     .doc(FirebaseAuth.instance.currentUser.uid)
                                     .collection('cartoes')
-                                    .doc(nome)
+                                    .doc()
                                     .set(data);
                                 _reset();
                               } else {

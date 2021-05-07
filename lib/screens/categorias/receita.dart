@@ -11,13 +11,13 @@ class Receita extends StatefulWidget {
 }
 
 class _ReceitaState extends State<Receita> {
-  Widget BuildPadding(menu, colors, String cat) {
+  Widget BuildPadding(IconData menu, colors, String cat) {
     return Padding(
       padding: const EdgeInsets.only(top: 30.0, left: 15.0),
       child: Row(
         children: [
           Icon(
-            Icons.menu,
+           menu,
             color: colors,
             size: 45,
           ),

@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../../Cores.dart';
 
 class ExtratoMes extends StatefulWidget {
@@ -14,6 +17,10 @@ class _ExtratoMesState extends State<ExtratoMes> {
 
   @override
   Widget build(BuildContext context) {
+    final formatter = NumberFormat.simpleCurrency(locale: "pt_BR");
+
+    setState(() {});
+
     return Container(
       width: 383.0,
       height: 226.0,
@@ -81,12 +88,23 @@ class _ExtratoMesState extends State<ExtratoMes> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               visualizarSaldo
-                  ? Text('R\$10.000,00',
-                      /* Puxar do usuario de acordo com Receita - Despesa */
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold))
+                  ? FutureBuilder<double>(
+                      future: getTotal(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            '${formatter.format(snapshot.data)}',
+                            /* Puxar do usuario de acordo com Receita - Despesa */
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 26,
+                                fontWeight: FontWeight.bold),
+                          );
+                        } else {
+                          return Center(child: CircularProgressIndicator());
+                        }
+                      },
+                    )
                   : Container(
                       width: 150,
                       height: 35,
@@ -121,11 +139,23 @@ class _ExtratoMesState extends State<ExtratoMes> {
               Padding(
                 padding: EdgeInsets.only(right: 50.0, top: 5.0),
                 child: visualizarSaldo
-                    ? Text(
-                        'R\$15.000,00 ',
-                        /* Puxar do Add Receitas */
-                        style: TextStyle(
-                            color: Colors.green, fontWeight: FontWeight.bold),
+                    ? FutureBuilder<double>(
+                        future: getReceitas(),
+                        builder: (context, snapshot) {
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          } else {
+                            return Text(
+                              '${formatter.format(snapshot.data)}',
+                              /* Puxar do Add Despesas */
+                              style: TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold),
+                            );
+                          }
+                        },
                       )
                     : Container(
                         width: 80,
@@ -138,11 +168,23 @@ class _ExtratoMesState extends State<ExtratoMes> {
               Padding(
                 padding: EdgeInsets.only(top: 5.0, left: 65.0),
                 child: visualizarSaldo
-                    ? Text(
-                        'R\$5.000,00 ',
-                        /* Puxar do Add Despesas */
-                        style: TextStyle(
-                            color: customRed, fontWeight: FontWeight.bold),
+                    ? FutureBuilder<double>(
+                        future: getDespesas(),
+                        builder: (context, snapshot) {
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          } else {
+                            return Text(
+                              '${formatter.format(snapshot.data)}',
+                              /* Puxar do Add Despesas */
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            );
+                          }
+                        },
                       )
                     : Container(
                         width: 80,
@@ -157,5 +199,65 @@ class _ExtratoMesState extends State<ExtratoMes> {
         ],
       ),
     );
+  }
+
+  Future<double> getReceitas() async {
+    QuerySnapshot snapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser.uid)
+        .collection('receitas')
+        .get();
+
+    final documents = snapshot.docs;
+    double somatoria = 0.0;
+
+    for (var message in documents) {
+      String valorNaoFormatado = message.data()['valor'];
+      valorNaoFormatado =
+          valorNaoFormatado.replaceAll(",", "").replaceAll(".", "");
+
+      int tamanhoValor = valorNaoFormatado.length;
+
+      String valorFormatado =
+          "${valorNaoFormatado.substring(0, tamanhoValor - 2)}.${valorNaoFormatado.substring(tamanhoValor - 2, tamanhoValor)}";
+
+      num valor = double.parse(valorFormatado);
+      somatoria += valor;
+    }
+
+    return somatoria;
+  }
+
+  Future<double> getDespesas() async {
+    QuerySnapshot snapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser.uid)
+        .collection('despesas')
+        .get();
+
+    final documents = snapshot.docs;
+    double somatoria = 0.0;
+
+    for (var message in documents) {
+      String valorNaoFormatado = message.data()['valor'];
+      valorNaoFormatado = valorNaoFormatado.replaceAll(",", "").replaceAll(".", "");
+
+      int tamanhoValor = valorNaoFormatado.length;
+
+      String valorFormatado =
+          "${valorNaoFormatado.substring(0, tamanhoValor - 2)}.${valorNaoFormatado.substring(tamanhoValor - 2, tamanhoValor)}";
+
+      num valor = double.parse(valorFormatado);
+      somatoria += valor;
+    }
+
+    return somatoria;
+  }
+
+  Future<double> getTotal() async {
+    double receitas = await getReceitas();
+    double despesas = await getDespesas();
+
+    return receitas - despesas;
   }
 }

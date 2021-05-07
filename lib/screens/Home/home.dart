@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
           ),
         ],
         title: Text(
-          'Seja Bem Vindo,\n ${data['userName']}',
+          'Seja Bem Vindo,\n${data['userName']}',
           /* Adicionar Nome do Usuario (Firebase) */
           style: TextStyle(
             fontSize: 16.0,

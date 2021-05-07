@@ -11,8 +11,7 @@ class CadastroDespesa extends StatefulWidget {
 }
 
 class _CadastroDespesaState extends State<CadastroDespesa> {
-  final contDespesa =
-      MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
+  final contDespesa = MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
   TextEditingController contNome = TextEditingController();
   TextEditingController contDesc = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -176,37 +175,33 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                         ),
                       ),
                       onPressed: () async {
-                        if (true) {
-                          if (contDespesa.text.isNotEmpty &&
-                              contNome.text.isNotEmpty &&
-                              contDesc.text.isNotEmpty) {
-                            double despesa = contDespesa.numberValue;
-                            String nome = contNome.text;
-                            String desc = contDesc.text;
+                        if (contDespesa.text.isNotEmpty &&
+                            contNome.text.isNotEmpty &&
+                            contDesc.text.isNotEmpty) {
+                          String despesa = contDespesa.text;
+                          String nome = contNome.text;
+                          String desc = contDesc.text;
 
-                            Map<String, dynamic> data = {
-                              "valor": despesa,
-                              "data": contData,
-                              "nome": nome,
-                              "desc": desc,
-                            };
+                          Map<String, dynamic> data = {
+                            "valor": despesa,
+                            "data": contData,
+                            "nome": nome,
+                            "desc": desc,
+                          };
 
-                            await FirebaseFirestore.instance
-                                .collection('users')
-                                .doc(FirebaseAuth.instance.currentUser.uid)
-                                .collection('despesas')
-                                .doc(DateTime.now().year.toString())
-                                .collection(DateTime.now().month.toString())
-                                .doc(nome)
-                                .set(data);
-                            _reset();
-                          } else {
-                            _scaffoldKey.currentState.showSnackBar(SnackBar(
-                              content: Text(
-                                  'Certifique que todos os espaços estão preenchidos'),
-                              backgroundColor: Colors.red,
-                            ));
-                          }
+                          await FirebaseFirestore.instance
+                              .collection('users')
+                              .doc(FirebaseAuth.instance.currentUser.uid)
+                              .collection('despesas')
+                              .doc()
+                              .set(data);
+                          _reset();
+                        } else {
+                          _scaffoldKey.currentState.showSnackBar(SnackBar(
+                            content: Text(
+                                'Certifique que todos os espaços estão preenchidos'),
+                            backgroundColor: Colors.red,
+                          ));
                         }
                       },
                       child: Text(
