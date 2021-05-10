@@ -3,6 +3,7 @@ import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
+import 'package:projeto_flutter/screens/Home/home.dart';
 import '../../Cores.dart';
 
 class CadastroReceita extends StatefulWidget {
@@ -192,6 +193,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                         ),
                       ),
                       onPressed: () async {
+
                         String receita = cont_receita.text;
                         String dia = cont_data.text;
                         String conta = cont_nome.text;
@@ -211,6 +213,17 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                             .doc()
                             .set(data);
                         _reset();
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                Home(
+                                  data: data,
+                                ),
+                          ),
+                        );
+
                       },
                       child: Text(
                         "Concluído",

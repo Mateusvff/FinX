@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import '../../Cores.dart';
+import 'package:projeto_flutter/screens/Home/home.dart';
 
 class CadastroDespesa extends StatefulWidget {
   @override
@@ -196,6 +197,15 @@ class _CadastroDespesaState extends State<CadastroDespesa> {
                               .doc()
                               .set(data);
                           _reset();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  Home(
+                                    data: data,
+                                  ),
+                            ),
+                          );
                         } else {
                           _scaffoldKey.currentState.showSnackBar(SnackBar(
                             content: Text(
