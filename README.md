@@ -1,10 +1,22 @@
-# projeto_flutter
+# FinX
 
-A new Flutter application.
+A personal finance management application, designed to help users organize their financial lives, using the framework Google Flutter and Google Firebase!
 
-## Getting Started
+## Contributors
+Arthur Gabriel  
+Caio Berg  
+Juan José  
+Lucas de Padua  
+Lucas Rodrigues  
+Mateus de Almeida  
+Mateus Vinícius  
+Thiago Ribeiro  
 
-This project is a starting point for a Flutter application.
+
+
+## Project Description and Getting Started with Google Flutter
+
+This project is a group project from our University, with the intent of developing our skills in the area and our understanding about software development and working as a group.
 
 A few resources to get you started if this is your first Flutter project:
 
