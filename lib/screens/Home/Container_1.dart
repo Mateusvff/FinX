@@ -23,8 +23,7 @@ class _ExtratoMesState extends State<ExtratoMes> {
 
     return Container(
       width: 383.0,
-      height: 226.0,
-      /*------------PRIMEIRO CONTAINER (Extrato MÊS)------------------*/
+      height: 220,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: const BorderRadius.all(Radius.circular(25))),
@@ -33,24 +32,19 @@ class _ExtratoMesState extends State<ExtratoMes> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.arrow_back_ios_rounded),
-                color: Colors.black,
-                iconSize: 18,
-                onPressed: () {}, /* Mes Passado */
-              ),
+              Padding(padding: EdgeInsets.only(left: 30)),
               Text(
-                'Mês atual',
-                /* Puxar de acordo com o mes atual */
+                'Balanço atual',
                 style: TextStyle(
+                    fontFamily: 'NotoSans',
                     color: Colors.black,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
               IconButton(
-                icon: Icon(Icons.arrow_forward_ios_rounded),
+                icon: Icon(Icons.attach_money),
                 color: Colors.black,
-                iconSize: 18,
+                iconSize: 24,
                 onPressed: () {}, /* Proximo Mes */
               ),
             ],
@@ -59,12 +53,12 @@ class _ExtratoMesState extends State<ExtratoMes> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 50.0),
+                padding: const EdgeInsets.only(left: 25.0),
                 child: Text(
                   'Saldo em conta',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 14,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -97,7 +91,7 @@ class _ExtratoMesState extends State<ExtratoMes> {
                             /* Puxar do usuario de acordo com Receita - Despesa */
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 26,
+                                fontSize: 25,
                                 fontWeight: FontWeight.bold),
                           );
                         } else {

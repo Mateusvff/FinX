@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/Widgets/BottomSheet.dart';
 import 'package:projeto_flutter/Widgets/Drawer/Custom_Drawer.dart';
-import 'package:projeto_flutter/screens/Home/4Container.dart';
-import 'package:projeto_flutter/screens/Home/3Container.dart';
-import 'package:projeto_flutter/screens/Home/1Container.dart';
+import 'package:projeto_flutter/screens/Home/Container_3.dart';
+import 'package:projeto_flutter/screens/Home/container_2.dart';
+import 'package:projeto_flutter/screens/Home/Container_1.dart';
 import '../../Cores.dart';
-import '2Container.dart';
 
 class Home extends StatefulWidget {
   final Map<String, dynamic> data;
@@ -98,18 +97,14 @@ class _HomeState extends State<Home> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 50.0),
-              child: InfoCart(),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(14.0, 0.0, 14.0, 71.0),
-              child: ExtratoBanco(),
-            ),
-            Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 0.0, 14.0, 16.0),
+              child: Conversor(),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16.0, 10.0, 14.0, 16.0),
               child: CartaoHome(),
             ),
-          ],
+          ]
         ),
       ),
     );

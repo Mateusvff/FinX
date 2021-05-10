@@ -45,7 +45,8 @@ class Ajuda extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 30.0, right: 8.0, left: 20.0),
                     child: Text(
-                      'Este aplicativo é um projeto para matéria de desenvolvimento de software',
+                      'Este aplicativo é um projeto para matéria de Desenvolvimento de Software. '
+                      'Links para estudo sobre Finanças Pessoais : https://www.bloomberg.com e https://www.infomoney.com.br',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontFamily: 'NotoSans',
