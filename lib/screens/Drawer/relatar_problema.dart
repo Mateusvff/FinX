@@ -45,7 +45,7 @@ class RelatarProblema extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 30.0, right: 8.0, left: 20.0),
                     child: Text(
-                      'Caso encontre erros e bugs por favor mande um email para nós em: caioberg09@gmail.com',
+                      'Caso encontre erros e bugs por favor mande um email para nós em: equipefinx@gmail.com',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontFamily: 'NotoSans',
