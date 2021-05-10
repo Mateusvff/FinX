@@ -30,6 +30,12 @@ class _CadastroReceitaState extends State<CadastroReceita> {
     );
   }
 
+  void _reset() {
+    cont_receita.clear();
+    cont_nome.clear();
+    cont_desc.clear();
+  }
+
   final cont_receita = MoneyMaskedTextController(decimalSeparator: ',', thousandSeparator: '.');
   TextEditingController cont_data = TextEditingController();
   TextEditingController cont_nome = TextEditingController();
@@ -204,6 +210,7 @@ class _CadastroReceitaState extends State<CadastroReceita> {
                             .collection('receitas')
                             .doc()
                             .set(data);
+                        _reset();
                       },
                       child: Text(
                         "Concluído",
