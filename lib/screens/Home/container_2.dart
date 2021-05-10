@@ -25,24 +25,24 @@ class _Conversor extends State<Conversor> {
   double dolar;
   double euro;
 
-  void _clearAll(){
+  void _clearAll() {
     realController.text = "";
     dolarController.text = "";
     euroController.text = "";
   }
 
-  void _realChanged(String text){
-    if(text.isEmpty) {
+  void _realChanged(String text) {
+    if (text.isEmpty) {
       _clearAll();
       return;
     }
     double real = double.parse(text);
-    dolarController.text = (real/dolar).toStringAsFixed(2);
-    euroController.text = (real/euro).toStringAsFixed(2);
+    dolarController.text = (real / dolar).toStringAsFixed(2);
+    euroController.text = (real / euro).toStringAsFixed(2);
   }
 
-  void _dolarChanged(String text){
-    if(text.isEmpty) {
+  void _dolarChanged(String text) {
+    if (text.isEmpty) {
       _clearAll();
       return;
     }
@@ -51,8 +51,8 @@ class _Conversor extends State<Conversor> {
     euroController.text = (dolar * this.dolar / euro).toStringAsFixed(2);
   }
 
-  void _euroChanged(String text){
-    if(text.isEmpty) {
+  void _euroChanged(String text) {
+    if (text.isEmpty) {
       _clearAll();
       return;
     }
@@ -72,7 +72,7 @@ class _Conversor extends State<Conversor> {
       child: FutureBuilder<Map>(
           future: getData(),
           builder: (context, snapshot) {
-            switch(snapshot.connectionState){
+            switch (snapshot.connectionState) {
               case ConnectionState.none:
               case ConnectionState.waiting:
                 return Center(
@@ -83,7 +83,7 @@ class _Conversor extends State<Conversor> {
                       textAlign: TextAlign.center,)
                 );
               default:
-                if(snapshot.hasError){
+                if (snapshot.hasError) {
                   return Center(
                       child: Text("Erro ao Carregar Dados :(",
                         style: TextStyle(
@@ -102,15 +102,20 @@ class _Conversor extends State<Conversor> {
                       children: <Widget>[
                         Center(
                           child: Text('Conversor de moedas',
-                            style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 17),
-                          ) ,
+                            style: TextStyle(color: Colors.amber,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                          ),
                         ),
                         Divider(),
-                        buildTextField("Reais", "R\$", realController, _realChanged),
+                        buildTextField(
+                            "Reais", "R\$", realController, _realChanged),
                         Divider(),
-                        buildTextField("Dólares", "US\$", dolarController, _dolarChanged),
+                        buildTextField(
+                            "Dólares", "US\$", dolarController, _dolarChanged),
                         Divider(),
-                        buildTextField("Euros", "€", euroController, _euroChanged),
+                        buildTextField(
+                            "Euros", "€", euroController, _euroChanged),
                       ],
                     ),
                   );
@@ -120,7 +125,6 @@ class _Conversor extends State<Conversor> {
     );
   }
 }
-
 Widget buildTextField(String label, String prefix, TextEditingController c, Function f){
   return TextField(
     controller: c,
@@ -137,4 +141,4 @@ Widget buildTextField(String label, String prefix, TextEditingController c, Func
     keyboardType: TextInputType.numberWithOptions(decimal: true),
   );
 }
-
+// função construir TextField
